@@ -188,33 +188,61 @@ def update_match_result(match_id, winner_id):
     """
     Update a match with the winner and propagate the result to the next match
     """
-    match = Match.query.get(match_id)
-    if not match:
-        return False
-    
-    # Validate that winner_id belongs to one of the players in the match
-    if winner_id != match.player1_id and winner_id != match.player2_id:
-        return False
-    
-    match.winner_id = winner_id
-    
-    # Propagate winner to next match if there is one
-    if match.next_match_id:
-        next_match = Match.query.get(match.next_match_id)
+    try:
+        # Convert winner_id to integer if it's a string
+        if isinstance(winner_id, str) and winner_id.isdigit():
+            winner_id = int(winner_id)
         
-        # Determine if this player should be player1 or player2 in the next match
-        # based on the match number being odd or even
-        if match.match_number % 2 == 1:  # Odd match number
-            next_match.player1_id = winner_id
-        else:  # Even match number
-            next_match.player2_id = winner_id
+        match = Match.query.get(match_id)
+        if not match:
+            print(f"Error: Match {match_id} not found")
+            return False
+        
+        # Validate that winner_id belongs to one of the players in the match
+        if not match.player1_id and not match.player2_id:
+            print(f"Error: Match {match_id} has no players")
+            return False
             
-        db.session.add(next_match)
-    
-    db.session.add(match)
-    db.session.commit()
-    
-    return True
+        # If there's a bye (one player is None), the other player automatically wins
+        if not match.player1_id:
+            if winner_id != match.player2_id:
+                print(f"Error: Winner {winner_id} is not player2 {match.player2_id} in a bye match")
+                return False
+        elif not match.player2_id:
+            if winner_id != match.player1_id:
+                print(f"Error: Winner {winner_id} is not player1 {match.player1_id} in a bye match")
+                return False
+        # Regular match with two players
+        elif winner_id != match.player1_id and winner_id != match.player2_id:
+            print(f"Error: Winner {winner_id} is neither player1 {match.player1_id} nor player2 {match.player2_id}")
+            return False
+        
+        match.winner_id = winner_id
+        
+        # Propagate winner to next match if there is one
+        if match.next_match_id:
+            next_match = Match.query.get(match.next_match_id)
+            if not next_match:
+                print(f"Error: Next match {match.next_match_id} not found")
+                return False
+            
+            # Determine if this player should be player1 or player2 in the next match
+            # based on the match number being odd or even
+            if match.match_number % 2 == 1:  # Odd match number
+                next_match.player1_id = winner_id
+            else:  # Even match number
+                next_match.player2_id = winner_id
+                
+            db.session.add(next_match)
+        
+        db.session.add(match)
+        db.session.commit()
+        
+        return True
+    except Exception as e:
+        print(f"Error updating match result: {str(e)}")
+        db.session.rollback()
+        return False
 
 def get_tournament_bracket(tournament_id):
     """

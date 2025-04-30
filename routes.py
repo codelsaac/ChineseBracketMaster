@@ -58,6 +58,17 @@ def add_player(tournament_id):
             flash('Player name and school are required', 'error')
             return redirect(url_for('players', tournament_id=tournament_id))
         
+        # Check if a player with the same name and school already exists in this tournament
+        existing_player = Player.query.filter_by(
+            name=name, 
+            school=school,
+            tournament_id=tournament_id
+        ).first()
+        
+        if existing_player:
+            flash(f'A player named "{name}" from "{school}" already exists in this tournament', 'error')
+            return redirect(url_for('players', tournament_id=tournament_id))
+        
         player = Player(
             name=name,
             school=school,
@@ -86,9 +97,24 @@ def edit_player(tournament_id, player_id):
             flash('Player does not belong to this tournament', 'error')
             return redirect(url_for('players', tournament_id=tournament_id))
         
-        player.name = request.form.get('name')
-        player.school = request.form.get('school')
-        player.is_seeded = request.form.get('is_seeded') == 'on'
+        new_name = request.form.get('name')
+        new_school = request.form.get('school')
+        new_is_seeded = request.form.get('is_seeded') == 'on'
+        
+        # Check for duplicates, but exclude the current player
+        existing_player = Player.query.filter_by(
+            name=new_name, 
+            school=new_school,
+            tournament_id=tournament_id
+        ).filter(Player.id != player_id).first()
+        
+        if existing_player:
+            flash(f'A player named "{new_name}" from "{new_school}" already exists in this tournament', 'error')
+            return redirect(url_for('players', tournament_id=tournament_id))
+        
+        player.name = new_name
+        player.school = new_school
+        player.is_seeded = new_is_seeded
         
         db.session.commit()
         flash('Player updated successfully', 'success')
@@ -170,19 +196,42 @@ def get_bracket(tournament_id):
 def update_match(match_id):
     """API endpoint to update match result"""
     try:
-        data = request.get_json()
-        winner_id = data.get('winner_id')
+        # Log request data for debugging
+        print(f"Updating match {match_id} with request data")
         
+        # Check if match exists
+        match = Match.query.get(match_id)
+        if not match:
+            print(f"Match {match_id} not found")
+            return jsonify({'error': f'Match {match_id} not found'}), 404
+            
+        data = request.get_json()
+        if not data:
+            print("No JSON data received")
+            return jsonify({'error': 'No data provided'}), 400
+            
+        print(f"Received data: {data}")
+        
+        winner_id = data.get('winner_id')
         if not winner_id:
+            print("No winner_id provided")
             return jsonify({'error': 'Winner ID is required'}), 400
+        
+        # Convert winner_id to int if it's a string
+        if isinstance(winner_id, str) and winner_id.isdigit():
+            winner_id = int(winner_id)
+            
+        # Log the players in the match for debugging
+        print(f"Match {match_id} - Player 1: {match.player1_id}, Player 2: {match.player2_id}, Winner: {winner_id}")
         
         success = update_match_result(match_id, winner_id)
         
         if success:
             return jsonify({'success': True})
         else:
-            return jsonify({'error': 'Failed to update match'}), 400
+            return jsonify({'error': 'Failed to update match. Ensure the winner is one of the players in the match.'}), 400
     except Exception as e:
+        print(f"Error in update_match: {str(e)}")
         return jsonify({'error': str(e)}), 500
 
 @app.errorhandler(404)
