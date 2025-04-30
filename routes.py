@@ -156,8 +156,20 @@ def generate_bracket(tournament_id):
             flash('At least 2 players are required to generate a bracket', 'error')
             return redirect(url_for('players', tournament_id=tournament_id))
         
-        # Delete existing matches if any
-        Match.query.filter_by(tournament_id=tournament_id).delete()
+        # Delete existing matches if any - using a safer approach with explicit transaction
+        try:
+            # First, clear any next_match_id relationships to avoid foreign key constraint issues
+            for match in Match.query.filter_by(tournament_id=tournament_id).all():
+                match.next_match_id = None
+            db.session.commit()
+            
+            # Now delete all matches
+            Match.query.filter_by(tournament_id=tournament_id).delete()
+            db.session.commit()
+        except Exception as e:
+            db.session.rollback()
+            flash(f'Error clearing existing matches: {str(e)}', 'error')
+            return redirect(url_for('players', tournament_id=tournament_id))
         
         # Generate new bracket
         matches = create_tournament_bracket(tournament_id)

@@ -230,8 +230,54 @@ def update_match_result(match_id, winner_id):
             # based on the match number being odd or even
             if match.match_number % 2 == 1:  # Odd match number
                 next_match.player1_id = winner_id
+                
+                # Check if this is a bye in the next round
+                if (next_match.player2_id is not None and 
+                    next_match.player1_id is not None and 
+                    next_match.round_number == match.round_number + 1):
+                    # If player 2 is already set and this is not the final round, check for auto-advancement
+                    print(f"Both players present in match {next_match.id}, round {next_match.round_number}")
+                
             else:  # Even match number
                 next_match.player2_id = winner_id
+                
+                # Check if this is a bye in the next round
+                if (next_match.player1_id is not None and 
+                    next_match.player2_id is not None and 
+                    next_match.round_number == match.round_number + 1):
+                    # If player 1 is already set and this is not the final round, check for auto-advancement
+                    print(f"Both players present in match {next_match.id}, round {next_match.round_number}")
+                
+            # Auto advance in case of a bye in a match
+            if next_match.player1_id is not None and next_match.player2_id is None:
+                # If player 2 is a bye, player 1 automatically advances
+                next_match.winner_id = next_match.player1_id
+                print(f"Auto-advancing player {next_match.player1_id} in match {next_match.id} due to bye")
+                
+                # Propagate to the next match if there is one
+                if next_match.next_match_id:
+                    propagate_next_match = Match.query.get(next_match.next_match_id)
+                    if propagate_next_match:
+                        if next_match.match_number % 2 == 1:  # Odd match number
+                            propagate_next_match.player1_id = next_match.player1_id
+                        else:  # Even match number
+                            propagate_next_match.player2_id = next_match.player1_id
+                        db.session.add(propagate_next_match)
+                        
+            elif next_match.player2_id is not None and next_match.player1_id is None:
+                # If player 1 is a bye, player 2 automatically advances
+                next_match.winner_id = next_match.player2_id
+                print(f"Auto-advancing player {next_match.player2_id} in match {next_match.id} due to bye")
+                
+                # Propagate to the next match if there is one
+                if next_match.next_match_id:
+                    propagate_next_match = Match.query.get(next_match.next_match_id)
+                    if propagate_next_match:
+                        if next_match.match_number % 2 == 1:  # Odd match number
+                            propagate_next_match.player1_id = next_match.player2_id
+                        else:  # Even match number
+                            propagate_next_match.player2_id = next_match.player2_id
+                        db.session.add(propagate_next_match)
                 
             db.session.add(next_match)
         
