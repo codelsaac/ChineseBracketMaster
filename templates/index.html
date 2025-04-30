@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block title %}Home - Chinese Chess Tournament Management{% endblock %}
+
+{% block content %}
+<div class="section fade-in">
+    <h1>Chinese Chess Tournament Management System</h1>
+    <p class="lead">Create and manage Chinese Chess tournaments with automated bracket generation.</p>
+    
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Create New Tournament</h2>
+                    <form action="{{ url_for('new_tournament') }}" method="POST" class="needs-validation" novalidate>
+                        <div class="form-group mb-3">
+                            <label for="name" class="form-label">Tournament Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                            <div class="invalid-feedback">
+                                Please provide a tournament name.
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="date" class="form-label">Tournament Date</label>
+                            <input type="date" class="form-control" id="date" name="date" required>
+                            <div class="invalid-feedback">
+                                Please select a date.
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Create Tournament</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Tournament Rules</h2>
+                    <ul>
+                        <li><strong>Knockout Format:</strong> Single elimination tournament.</li>
+                        <li><strong>Player Distribution:</strong> Players from the same school will be separated when possible.</li>
+                        <li><strong>Seeded Players:</strong> Seeded players will be distributed optimally throughout the bracket.</li>
+                        <li><strong>Byes:</strong> Any necessary byes will be distributed in the first round only.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section mt-5">
+        <h2>Existing Tournaments</h2>
+        
+        {% if tournaments %}
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for tournament in tournaments %}
+                            <tr>
+                                <td>{{ tournament.name }}</td>
+                                <td>{{ tournament.date.strftime('%Y-%m-%d') }}</td>
+                                <td>
+                                    {% if tournament.status == 'setup' %}
+                                        <span class="badge bg-primary">Setup</span>
+                                    {% elif tournament.status == 'in_progress' %}
+                                        <span class="badge bg-success">In Progress</span>
+                                    {% elif tournament.status == 'completed' %}
+                                        <span class="badge bg-secondary">Completed</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <a href="{{ url_for('players', tournament_id=tournament.id) }}" class="btn btn-sm btn-outline">
+                                        <i class="fas fa-users"></i> Players
+                                    </a>
+                                    <a href="{{ url_for('view_tournament', tournament_id=tournament.id) }}" class="btn btn-sm btn-outline">
+                                        <i class="fas fa-trophy"></i> Bracket
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="alert alert-warning">
+                No tournaments found. Create your first tournament using the form above.
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

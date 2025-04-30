@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block title %}Tournament Bracket - {{ tournament.name }}{% endblock %}
+
+{% block extra_css %}
+{% endblock %}
+
+{% block content %}
+<div class="section fade-in">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Tournament Bracket - {{ tournament.name }}</h1>
+        <div>
+            <a href="{{ url_for('players', tournament_id=tournament.id) }}" class="btn btn-outline">
+                <i class="fas fa-users"></i> Manage Players
+            </a>
+            <a href="{{ url_for('index') }}" class="btn btn-outline">
+                <i class="fas fa-chevron-left"></i> Back to Tournaments
+            </a>
+        </div>
+    </div>
+    
+    <div class="card mb-4">
+        <div class="card-body">
+            <h4>Tournament Information</h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <strong>Date:</strong> {{ tournament.date.strftime('%Y-%m-%d') }}
+                </div>
+                <div class="col-md-4">
+                    <strong>Status:</strong> 
+                    {% if tournament.status == 'setup' %}
+                        <span class="badge bg-primary">Setup</span>
+                    {% elif tournament.status == 'in_progress' %}
+                        <span class="badge bg-success">In Progress</span>
+                    {% elif tournament.status == 'completed' %}
+                        <span class="badge bg-secondary">Completed</span>
+                    {% endif %}
+                </div>
+                <div class="col-md-4">
+                    <strong>Instructions:</strong> 
+                    {% if tournament.status == 'in_progress' %}
+                        Click on a player's name to mark them as the winner of a match.
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <h2>Bracket</h2>
+    <div id="tournament-bracket" class="tournament-container" data-tournament-id="{{ tournament.id }}">
+        <div class="text-center p-5">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-3">Loading tournament bracket...</p>
+        </div>
+    </div>
+    
+    <div class="card mt-4">
+        <div class="card-body">
+            <h4>Legend</h4>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="d-flex align-items-center mb-2">
+                        <div class="seeded-badge me-2">S</div>
+                        <span>Seeded Player</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="player winner mb-2" style="display: inline-block; padding: 0.25rem 0.5rem; width: auto;">
+                        Winner
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="player bye mb-2" style="display: inline-block; padding: 0.25rem 0.5rem; width: auto;">
+                        Bye
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <p><small>Click on player to mark as winner</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/bracket.js') }}"></script>
+{% endblock %}

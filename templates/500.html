@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}500 - Server Error{% endblock %}
+
+{% block content %}
+<div class="section fade-in text-center">
+    <h1>500 - Server Error</h1>
+    <p class="lead">Something went wrong on our end. Please try again later.</p>
+    <a href="{{ url_for('index') }}" class="btn btn-primary mt-3">
+        <i class="fas fa-home"></i> Return to Home
+    </a>
+</div>
+{% endblock %}

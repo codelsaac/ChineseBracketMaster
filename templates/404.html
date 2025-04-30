@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}404 - Page Not Found{% endblock %}
+
+{% block content %}
+<div class="section fade-in text-center">
+    <h1>404 - Page Not Found</h1>
+    <p class="lead">The page you are looking for does not exist.</p>
+    <a href="{{ url_for('index') }}" class="btn btn-primary mt-3">
+        <i class="fas fa-home"></i> Return to Home
+    </a>
+</div>
+{% endblock %}
