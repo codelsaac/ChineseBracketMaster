@@ -130,7 +130,6 @@ def create_tournament_bracket(tournament_id):
         
         # Create Match object
         match = Match(
-            id=match_id_counter,
             tournament_id=tournament_id,
             round_number=1,
             match_number=(i//2) + 1,
@@ -160,24 +159,34 @@ def create_tournament_bracket(tournament_id):
         
         for match_num in range(1, matches_in_round + 1):
             match = Match(
-                id=match_id_counter,
                 tournament_id=tournament_id,
                 round_number=round_num,
                 match_number=match_num,
                 player1_id=None,
                 player2_id=None,
                 winner_id=None,
-                next_match_id=None if round_num == num_rounds else match_id_counter + (matches_in_round // 2) + ((match_num - 1) // 2)
+                next_match_id=None  # We'll set this after all matches are created
             )
             matches.append(match)
             match_id_counter += 1
     
-    # Connect first round matches to their next round matches
-    for i, match in enumerate(matches):
-        if match.round_number == 1:
+    # Save all matches first so they have proper IDs
+    # Important: We use add_all to add all matches at once rather than individually
+    # This helps SQLAlchemy optimize the operations and avoid duplicate key errors
+    db.session.add_all(matches)
+    db.session.flush()  # This assigns IDs without committing the transaction
+    
+    print(f"Created {len(matches)} matches for tournament {tournament_id}")
+    
+    # Now connect matches to their next round matches
+    for match in matches:
+        if match.round_number < num_rounds:
+            next_round = match.round_number + 1
             next_match_number = (match.match_number - 1) // 2 + 1
+            
+            # Find the next match
             for potential_next in matches:
-                if (potential_next.round_number == 2 and 
+                if (potential_next.round_number == next_round and 
                     potential_next.match_number == next_match_number):
                     match.next_match_id = potential_next.id
                     break

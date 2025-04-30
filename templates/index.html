@@ -83,6 +83,9 @@
                                     <a href="{{ url_for('view_tournament', tournament_id=tournament.id) }}" class="btn btn-sm btn-outline">
                                         <i class="fas fa-trophy"></i> Bracket
                                     </a>
+                                    <button onclick="confirmDeleteTournament({{ tournament.id }}, '{{ tournament.name }}')" class="btn btn-sm btn-danger">
+                                        <i class="fas fa-trash"></i> Delete
+                                    </button>
                                 </td>
                             </tr>
                         {% endfor %}
@@ -95,5 +98,42 @@
             </div>
         {% endif %}
     </div>
+    
+    <!-- Delete Tournament Modal -->
+    <div class="modal fade" id="deleteTournamentModal" tabindex="-1" aria-labelledby="deleteTournamentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteTournamentModalLabel">Confirm Deletion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="delete-tournament-confirm-message">Are you sure you want to delete this tournament?</p>
+                    <p class="text-danger">This will permanently delete the tournament, all players, and all match data. This action cannot be undone.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <form id="delete-tournament-form" action="/tournament/0/delete" method="POST">
+                        <button type="submit" class="btn btn-danger">Delete Tournament</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<script>
+    function confirmDeleteTournament(tournamentId, tournamentName) {
+        // Update the confirmation message
+        document.getElementById('delete-tournament-confirm-message').textContent = `Are you sure you want to delete tournament "${tournamentName}"?`;
+        
+        // Update the form action
+        const form = document.getElementById('delete-tournament-form');
+        form.action = form.action.replace('/0', `/${tournamentId}`);
+        
+        // Show the modal
+        const modal = new bootstrap.Modal(document.getElementById('deleteTournamentModal'));
+        modal.show();
+    }
+</script>
 {% endblock %}

@@ -290,6 +290,50 @@ def page_not_found(e):
     """Custom 404 page"""
     return render_template('404.html'), 404
 
+@app.route('/tournament/<int:tournament_id>/delete', methods=['POST'])
+def delete_tournament(tournament_id):
+    """Delete a tournament and all its related data"""
+    try:
+        tournament = Tournament.query.get_or_404(tournament_id)
+        
+        # Safety measure to prevent accidental deletion in production
+        if tournament.status == 'completed' and False:  # Set to True in production to prevent completed tournament deletion
+            flash('Completed tournaments cannot be deleted', 'error')
+            return redirect(url_for('index'))
+        
+        # First delete all matches related to this tournament
+        # Use raw SQL with proper constraints deferred to avoid FK constraint errors
+        db.session.execute(db.text("SET CONSTRAINTS ALL DEFERRED"))
+        
+        # Clear next_match_id references first
+        db.session.execute(
+            db.text("UPDATE match SET next_match_id = NULL WHERE tournament_id = :tid"),
+            {"tid": tournament_id}
+        )
+        db.session.commit()
+        
+        # Now delete all matches
+        db.session.execute(
+            db.text("DELETE FROM match WHERE tournament_id = :tid"),
+            {"tid": tournament_id}
+        )
+        db.session.commit()
+        
+        # Delete all players in this tournament
+        Player.query.filter_by(tournament_id=tournament_id).delete()
+        
+        # Finally delete the tournament itself
+        db.session.delete(tournament)
+        db.session.commit()
+        
+        flash(f'Tournament "{tournament.name}" deleted successfully', 'success')
+    except Exception as e:
+        db.session.rollback()
+        print(f"Error deleting tournament: {str(e)}")
+        flash(f'Error deleting tournament: {str(e)}', 'error')
+    
+    return redirect(url_for('index'))
+
 @app.errorhandler(500)
 def server_error(e):
     """Custom 500 page"""

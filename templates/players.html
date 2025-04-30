@@ -24,12 +24,17 @@
         </div>
     </div>
     
-    {% if tournament.status == 'setup' %}
+    {% if tournament.status == 'setup' or tournament.status == 'in_progress' %}
     <div class="row">
         <div class="col-md-5">
             <div class="card">
                 <div class="card-body">
                     <h2>Add Player</h2>
+                    {% if tournament.status == 'in_progress' %}
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle"></i> Warning: Adding players to an active tournament may require regenerating the bracket.
+                    </div>
+                    {% endif %}
                     <form action="{{ url_for('add_player', tournament_id=tournament.id) }}" method="POST" class="needs-validation" novalidate>
                         <div class="form-group mb-3">
                             <label for="name" class="form-label">Player Name</label>
