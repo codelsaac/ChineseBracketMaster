@@ -129,17 +129,46 @@ def delete_player(tournament_id, player_id):
     """Delete a player from a tournament"""
     try:
         player = Player.query.get_or_404(player_id)
+        tournament = Tournament.query.get_or_404(tournament_id)
         
         # Ensure player belongs to the specified tournament
         if player.tournament_id != tournament_id:
             flash('Player does not belong to this tournament', 'error')
             return redirect(url_for('players', tournament_id=tournament_id))
         
+        # Special handling when tournament is in progress
+        if tournament.status in ['in_progress', 'completed']:
+            # Find all matches where this player is involved
+            db.session.execute(db.text("SET CONSTRAINTS ALL DEFERRED"))
+            
+            # Clear foreign key references to this player first
+            # Update matches where player is player1
+            db.session.execute(
+                db.text("UPDATE match SET player1_id = NULL WHERE player1_id = :pid AND tournament_id = :tid"),
+                {"pid": player_id, "tid": tournament_id}
+            )
+            
+            # Update matches where player is player2
+            db.session.execute(
+                db.text("UPDATE match SET player2_id = NULL WHERE player2_id = :pid AND tournament_id = :tid"),
+                {"pid": player_id, "tid": tournament_id}
+            )
+            
+            # Update matches where player is winner
+            db.session.execute(
+                db.text("UPDATE match SET winner_id = NULL WHERE winner_id = :pid AND tournament_id = :tid"),
+                {"pid": player_id, "tid": tournament_id}
+            )
+            
+            db.session.commit()
+        
+        # Now delete the player
         db.session.delete(player)
         db.session.commit()
         flash('Player deleted successfully', 'success')
     except Exception as e:
         db.session.rollback()
+        print(f"Error deleting player: {str(e)}")
         flash(f'Error deleting player: {str(e)}', 'error')
     
     return redirect(url_for('players', tournament_id=tournament_id))
@@ -160,18 +189,18 @@ def generate_bracket(tournament_id):
         try:
             # We need to completely recreate the tables to avoid id conflicts
             # Drop all existing matches from this tournament
-            db.session.execute("SET CONSTRAINTS ALL DEFERRED")
+            db.session.execute(db.text("SET CONSTRAINTS ALL DEFERRED"))
             
             # First, clear any next_match_id relationships to avoid foreign key constraint issues
             db.session.execute(
-                "UPDATE match SET next_match_id = NULL WHERE tournament_id = :tid",
+                db.text("UPDATE match SET next_match_id = NULL WHERE tournament_id = :tid"),
                 {"tid": tournament_id}
             )
             db.session.commit()
             
             # Now delete all matches
             db.session.execute(
-                "DELETE FROM match WHERE tournament_id = :tid",
+                db.text("DELETE FROM match WHERE tournament_id = :tid"),
                 {"tid": tournament_id}
             )
             db.session.commit()
