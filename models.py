@@ -48,6 +48,11 @@ class Match(db.Model):
     winner_id = db.Column(db.Integer, db.ForeignKey('player.id'))
     next_match_id = db.Column(db.Integer, db.ForeignKey('match.id'))
     
+    # Add a unique constraint to ensure no duplicate matches in the same tournament and round
+    __table_args__ = (
+        db.UniqueConstraint('tournament_id', 'round_number', 'match_number', name='match_tournament_round_number_uq'),
+    )
+    
     # Define relationships
     tournament = db.relationship('Tournament', backref='matches')
     player1 = db.relationship('Player', foreign_keys=[player1_id])

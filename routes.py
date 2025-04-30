@@ -156,18 +156,28 @@ def generate_bracket(tournament_id):
             flash('At least 2 players are required to generate a bracket', 'error')
             return redirect(url_for('players', tournament_id=tournament_id))
         
-        # Delete existing matches if any - using a safer approach with explicit transaction
+        # Delete existing matches if any - using a complete recreation approach
         try:
+            # We need to completely recreate the tables to avoid id conflicts
+            # Drop all existing matches from this tournament
+            db.session.execute("SET CONSTRAINTS ALL DEFERRED")
+            
             # First, clear any next_match_id relationships to avoid foreign key constraint issues
-            for match in Match.query.filter_by(tournament_id=tournament_id).all():
-                match.next_match_id = None
+            db.session.execute(
+                "UPDATE match SET next_match_id = NULL WHERE tournament_id = :tid",
+                {"tid": tournament_id}
+            )
             db.session.commit()
             
             # Now delete all matches
-            Match.query.filter_by(tournament_id=tournament_id).delete()
+            db.session.execute(
+                "DELETE FROM match WHERE tournament_id = :tid",
+                {"tid": tournament_id}
+            )
             db.session.commit()
         except Exception as e:
             db.session.rollback()
+            print(f"Error clearing matches: {str(e)}")
             flash(f'Error clearing existing matches: {str(e)}', 'error')
             return redirect(url_for('players', tournament_id=tournament_id))
         
