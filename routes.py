@@ -383,25 +383,7 @@ def export_bracket_pdf(tournament_id):
 
 # 圖像導出功能已根據用戶要求移除
 
-@app.route('/tournament/<int:tournament_id>/players/reorder', methods=['POST'])
-def reorder_players(tournament_id):
-    """Update player order based on drag and drop"""
-    try:
-        # Get player order from request
-        player_ids = request.json.get('playerIds', [])
-        if not player_ids:
-            return jsonify({"success": False, "message": "No player IDs provided"}), 400
-            
-        # Verify that tournament exists
-        tournament = Tournament.query.get_or_404(tournament_id)
-        
-        # Log the reordering
-        print(f"Reordering players for tournament {tournament_id}: {player_ids}")
-        
-        return jsonify({"success": True})
-    except Exception as e:
-        print(f"Error reordering players: {str(e)}")
-        return jsonify({"success": False, "message": str(e)}), 500
+# 拖曳排序功能已根據用戶要求移除
 
 @app.errorhandler(500)
 def server_error(e):

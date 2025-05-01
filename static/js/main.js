@@ -203,58 +203,56 @@ function confirmDeletePlayer(playerId, playerName) {
 }
 
 /**
- * Initialize sortable players functionality
+ * Sortable players functionality has been removed as per requirements
  */
-function initSortablePlayers() {
-    const sortable = Sortable.create(document.getElementById('sortable-players'), {
-        handle: '.drag-handle', // Drag handle selector within list items
-        animation: 150,
-        ghostClass: 'sortable-ghost', // Class name for the drop placeholder
-        chosenClass: 'sortable-chosen', // Class name for the chosen item
-        dragClass: 'sortable-drag', // Class name for the dragging item
-        onEnd: function(evt) {
-            // Get the tournament ID from the URL
-            const pathParts = window.location.pathname.split('/');
-            const tournamentId = pathParts[pathParts.indexOf('tournament') + 1];
-            
-            // Get all player IDs in order
-            const playerIds = Array.from(document.querySelectorAll('#sortable-players tr')).map(row => row.dataset.id);
-            
-            // Send the order to the server
-            fetch(`/tournament/${tournamentId}/players/reorder`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ playerIds: playerIds }),
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (!data.success) {
-                    console.error('Error reordering players:', data.message);
-                }
-            })
-            .catch(error => {
-                console.error('Error reordering players:', error);
-            });
-        }
-    });
-}
+// Function removed as drag-and-drop sorting is no longer needed
 
 /**
  * Initialize confetti celebration
  */
 function initConfetti() {
-    // Create confetti instance but don't start it yet
-    const confettiSettings = { target: 'confetti-canvas', max: 150 };
-    const confetti = new ConfettiGenerator(confettiSettings);
-    confetti.render();
-    
-    // Hide the canvas initially
-    document.getElementById('confetti-canvas').style.display = 'none';
-    
-    // Store the confetti instance for later use
-    window.tournamentConfetti = confetti;
+    try {
+        // Check for confetti canvas
+        const canvas = document.getElementById('confetti-canvas');
+        if (!canvas) {
+            console.error('Could not find confetti canvas element');
+            return;
+        }
+
+        console.log('Initializing confetti celebration');
+
+        // Create confetti instance but don't start it yet
+        const confettiSettings = { 
+            target: 'confetti-canvas', 
+            max: 150,
+            size: 1.5,
+            animate: true,
+            props: ['circle', 'square', 'triangle', 'line'],
+            colors: [[165,104,246],[230,61,135],[0,199,228],[253,214,126]],
+            clock: 25,
+            rotate: true,
+            start_from_edge: true,
+            respawn: true
+        };
+        
+        // Make sure ConfettiGenerator is available
+        if (typeof ConfettiGenerator !== 'function') {
+            console.error('ConfettiGenerator not loaded!');
+            return;
+        }
+        
+        const confetti = new ConfettiGenerator(confettiSettings);
+        confetti.render();
+        
+        // Hide the canvas initially
+        canvas.style.display = 'none';
+        
+        // Store the confetti instance for later use
+        window.tournamentConfetti = confetti;
+        console.log('Confetti initialized successfully');
+    } catch (error) {
+        console.error('Error initializing confetti:', error);
+    }
 }
 
 /**
@@ -262,15 +260,27 @@ function initConfetti() {
  */
 function celebrateWinner() {
     const canvas = document.getElementById('confetti-canvas');
-    if (!canvas) return;
+    if (!canvas) {
+        console.error('Confetti canvas not found!');
+        return;
+    }
+    
+    console.log('Celebrating with confetti!');
     
     // Display the canvas
     canvas.style.display = 'block';
     
-    // Let it run for 3 seconds then stop
+    // Make sure the confetti instance exists
+    if (!window.tournamentConfetti) {
+        // If not initialized yet, initialize it now
+        initConfetti();
+    }
+    
+    // Let it run for 5 seconds then stop
     setTimeout(() => {
         canvas.style.display = 'none';
-    }, 3000);
+        console.log('Confetti celebration ended');
+    }, 5000);
 }
 
 
