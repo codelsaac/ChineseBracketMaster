@@ -119,29 +119,41 @@ function createMatchElement(match, players, roundNumber, totalRounds) {
     
     // Player 1
     const player1Element = createPlayerElement(match.player1_id, players, match.winner_id);
-    if (isFinalMatch && match.winner_id === match.player1_id) {
+    // Only add trophy if player1 exists (not TBD), is the winner in final match, 
+    // and there's a valid winner ID (not null/undefined/0)
+    if (isFinalMatch && match.player1_id && match.winner_id && match.winner_id === match.player1_id) {
         // Add trophy to player 1 if they are the winner in the final
-        const trophyIcon = document.createElement('span');
-        trophyIcon.className = 'winner-trophy';
-        trophyIcon.innerHTML = '🏆';
-        trophyIcon.title = '冠軍';
-        trophyIcon.style.marginLeft = '5px';
-        trophyIcon.style.fontSize = '1.2em';
-        player1Element.appendChild(trophyIcon);
+        const trophyDiv = document.createElement('div');
+        trophyDiv.className = 'winner-trophy';
+        trophyDiv.innerHTML = '🏆';
+        trophyDiv.title = '冠軍';
+        trophyDiv.style.position = 'absolute';
+        trophyDiv.style.right = '10px';
+        trophyDiv.style.top = '50%';
+        trophyDiv.style.transform = 'translateY(-50%)';
+        trophyDiv.style.fontSize = '1.5em';
+        player1Element.style.position = 'relative';
+        player1Element.appendChild(trophyDiv);
     }
     matchElement.appendChild(player1Element);
     
     // Player 2
     const player2Element = createPlayerElement(match.player2_id, players, match.winner_id);
-    if (isFinalMatch && match.winner_id === match.player2_id) {
+    // Only add trophy if player2 exists (not TBD), is the winner in final match, 
+    // and there's a valid winner ID (not null/undefined/0)
+    if (isFinalMatch && match.player2_id && match.winner_id && match.winner_id === match.player2_id) {
         // Add trophy to player 2 if they are the winner in the final
-        const trophyIcon = document.createElement('span');
-        trophyIcon.className = 'winner-trophy';
-        trophyIcon.innerHTML = '🏆';
-        trophyIcon.title = '冠軍';
-        trophyIcon.style.marginLeft = '5px';
-        trophyIcon.style.fontSize = '1.2em';
-        player2Element.appendChild(trophyIcon);
+        const trophyDiv = document.createElement('div');
+        trophyDiv.className = 'winner-trophy';
+        trophyDiv.innerHTML = '🏆';
+        trophyDiv.title = '冠軍';
+        trophyDiv.style.position = 'absolute';
+        trophyDiv.style.right = '10px';
+        trophyDiv.style.top = '50%';
+        trophyDiv.style.transform = 'translateY(-50%)';
+        trophyDiv.style.fontSize = '1.5em';
+        player2Element.style.position = 'relative';
+        player2Element.appendChild(trophyDiv);
     }
     matchElement.appendChild(player2Element);
     
