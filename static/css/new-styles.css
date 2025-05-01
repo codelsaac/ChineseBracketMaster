@@ -476,8 +476,28 @@ body.dark-mode .footer-wave-container .shape-fill {
 .tournament-round {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
     padding: 1rem;
+    min-width: 300px;
+}
+
+/* 賽程表大小調整 */
+#tournament-bracket {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 30px 15px;
+    align-items: flex-start;
+}
+
+.round-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: var(--primary-red);
+    border-bottom: 2px dashed #d4a255;
+    padding-bottom: 10px;
 }
 
 /* 棋盤網格線 */
@@ -569,6 +589,21 @@ body.dark-mode .table th {
 body.dark-mode .form-control {
     background-color: var(--card-dark-mode);
     border-color: var(--border-dark-mode);
+    color: var(--text-dark-mode);
+}
+
+/* 玻璃效果樣式 */
+.glass-effect {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .glass-effect {
+    background-color: rgba(50, 50, 50, 0.85) !important;
+    border-color: rgba(100, 100, 100, 0.3) !important;
     color: var(--text-dark-mode);
 }
 

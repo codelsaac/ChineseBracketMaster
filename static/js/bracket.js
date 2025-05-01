@@ -101,7 +101,7 @@ function getRoundTitle(roundNumber, totalRounds) {
  */
 function calculateMatchSpacing(roundNumber, totalRounds) {
     // Spacing increases exponentially with each round
-    const baseSpacing = 20;
+    const baseSpacing = 40; // 增加基本間距
     const factor = 2;
     
     return baseSpacing * Math.pow(factor, roundNumber - 1);
@@ -244,7 +244,9 @@ function createPlayerElement(playerId, players, winnerId) {
         const playerNameDiv = document.createElement('div');
         playerNameDiv.className = 'player-name';
         
-        // 移除顏色功能
+        // 添加與學校相關的顏色（保持 Chinese Chess 主題顏色）
+        const schoolColorClass = player.school.length % 2 === 0 ? 'player-red' : 'player-black';
+        playerElement.classList.add(schoolColorClass);
         
         playerNameDiv.appendChild(document.createTextNode(player.name));
         

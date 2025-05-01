@@ -233,6 +233,7 @@ body.dark-mode .tournament-rules li {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     overflow: visible;
+    width: 280px;
 }
 
 body.dark-mode .match-card {
@@ -274,6 +275,44 @@ body.dark-mode .match-card {
 }
 
 /* 賽事中的選手卡片 */
+/* 選手樣式 */
+.player {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: var(--border-radius);
+    background-color: white;
+    border-left: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.player-red {
+    border-left-color: #e63946;
+}
+
+.player-black {
+    border-left-color: #1d3557;
+}
+
+.player-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.player-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+}
+
+.player-school {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-top: 2px;
+}
+
 .match-player {
     padding: 12px 15px;
     margin-bottom: 8px;
@@ -290,34 +329,39 @@ body.dark-mode .match-player {
     background-color: #3a3a3a;
 }
 
-.match-player:hover {
+body.dark-mode .player {
+    background-color: #3a3a3a;
+    color: #fff;
+}
+
+.player:hover, .match-player:hover {
     background-color: #f8f8f8;
     transform: translateX(5px);
 }
 
-body.dark-mode .match-player:hover {
+body.dark-mode .player:hover, body.dark-mode .match-player:hover {
     background-color: #444444;
 }
 
-.match-player.winner {
+.player.winner, .match-player.winner {
     background-color: #e6f3e6;
     font-weight: 700;
     border-left: 3px solid #28a745;
 }
 
-body.dark-mode .match-player.winner {
+body.dark-mode .player.winner, body.dark-mode .match-player.winner {
     background-color: #1e3e1e;
     border-color: #28a745;
 }
 
-.match-player.bye {
+.player.bye, .match-player.bye {
     background-color: #f0f0f0;
     color: #6c757d;
     font-style: italic;
     border-left: 3px dashed #6c757d;
 }
 
-body.dark-mode .match-player.bye {
+body.dark-mode .player.bye, body.dark-mode .match-player.bye {
     background-color: #333333;
 }
 
