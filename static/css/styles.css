@@ -658,13 +658,10 @@ body.dark-theme .championship-match {
   border-color: var(--dark-primary);
 }
 
+/* 移除自動顯示的獎盃圖標 */
 .championship-match::before {
-  content: '🏆';
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  font-size: 1rem;
-  opacity: 0.3;
+  content: '';
+  /* 不再顯示獎盃圖標 */
 }
 
 .championship-match .player.winner {
