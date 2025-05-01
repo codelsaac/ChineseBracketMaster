@@ -11,6 +11,11 @@
         linear-gradient(90deg, rgba(212, 162, 83, 0.3) 1px, transparent 1px);
     background-size: 40px 40px;
     border: 2px solid #b98c54;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chess-board-bg:hover {
+    box-shadow: 0 8px 25px rgba(185, 140, 84, 0.4);
 }
 
 body.dark-mode .chess-board-bg {
@@ -217,16 +222,17 @@ body.dark-mode .tournament-rules li {
     animation: chessMove 2s ease-in-out infinite;
 }
 
-/* 賽程表中的對戰卡片 */
+/* 賽程表中的對戰卡片 - 中國象棋風格 */
 .match-card {
     border: 2px solid #d4a255;
     border-radius: var(--border-radius);
     background-color: #f8f1e0;
-    padding: 10px;
-    margin-bottom: 1rem;
+    padding: 15px;
+    margin-bottom: 1.5rem;
     position: relative;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    overflow: visible;
 }
 
 body.dark-mode .match-card {
@@ -235,30 +241,49 @@ body.dark-mode .match-card {
 }
 
 .match-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(212, 162, 85, 0.2);
+    z-index: 5;
 }
 
+/* 使用中國象棋特有的圓形標記 */
 .match-card:before {
     content: '';
     position: absolute;
-    top: -5px;
+    top: -8px;
     left: 50%;
     transform: translateX(-50%);
-    width: 10px;
-    height: 10px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
     background-color: var(--primary-red);
     z-index: 1;
+    box-shadow: 0 0 10px rgba(230, 57, 70, 0.5);
 }
 
+/* 賽事的連接線條 */
+.match-card:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    width: 20px;
+    height: 2px;
+    background-color: #d4a255;
+    z-index: 0;
+}
+
+/* 賽事中的選手卡片 */
 .match-player {
-    padding: 8px;
-    margin-bottom: 5px;
+    padding: 12px 15px;
+    margin-bottom: 8px;
     border-radius: var(--border-radius);
     background-color: white;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
     cursor: pointer;
+    position: relative;
+    border-left: 3px solid transparent;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 body.dark-mode .match-player {
@@ -266,7 +291,8 @@ body.dark-mode .match-player {
 }
 
 .match-player:hover {
-    background-color: #f0f0f0;
+    background-color: #f8f8f8;
+    transform: translateX(5px);
 }
 
 body.dark-mode .match-player:hover {
@@ -288,6 +314,7 @@ body.dark-mode .match-player.winner {
     background-color: #f0f0f0;
     color: #6c757d;
     font-style: italic;
+    border-left: 3px dashed #6c757d;
 }
 
 body.dark-mode .match-player.bye {
@@ -297,12 +324,34 @@ body.dark-mode .match-player.bye {
 /* 冠軍比賽特殊樣式 */
 .championship-match {
     border-color: var(--accent-gold);
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 0 18px rgba(255, 215, 0, 0.4);
+    background-color: #fdf9e9;
+    z-index: 10;
+}
+
+body.dark-mode .championship-match {
+    background-color: #332f22;
 }
 
 .championship-match:before {
     background-color: var(--accent-gold);
-    width: 15px;
-    height: 15px;
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+    top: -10px;
+}
+
+/* 增加美觀的右上角裝飾 */
+.match-card .corner-decoration {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    background-color: var(--primary-red);
+    transform: translate(50%, -50%) rotate(45deg);
+}
+
+.championship-match .corner-decoration {
+    background-color: var(--accent-gold);
 }

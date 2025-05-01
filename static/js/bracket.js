@@ -126,6 +126,11 @@ function createMatchElement(match, players, roundNumber, totalRounds) {
     matchElement.className = 'match-card';
     matchElement.dataset.matchId = match.id;
     
+    // 添加右上角裝飾元素
+    const cornerDecoration = document.createElement('div');
+    cornerDecoration.className = 'corner-decoration';
+    matchElement.appendChild(cornerDecoration);
+    
     // Add championship match styling if it's the final
     const isFinalMatch = parseInt(roundNumber) === parseInt(totalRounds);
     if (isFinalMatch) {

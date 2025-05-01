@@ -58,18 +58,34 @@ a:hover {
 
 /* Header 樣式 */
 .header {
-    background-color: var(--primary-red);
+    position: relative;
+    text-align: center;
+    background: linear-gradient(60deg, var(--primary-red) 0%, #c1121f 100%);
     color: white;
     padding: 0;
-    position: relative;
     overflow: hidden;
-    min-height: var(--header-height);
     transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.inner-header {
+    min-height: var(--header-height);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .header .container {
     position: relative;
     z-index: 10;
+    width: 100%;
 }
 
 .header-content {
@@ -112,30 +128,51 @@ a:hover {
 }
 
 /* 波浪效果 */
-.wave-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    z-index: 1;
-}
-
-.wave-container svg {
+.waves {
     position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 50px;
-    transform: rotateY(180deg);
+    width: 100%;
+    height: 15vh;
+    margin-bottom: -7px; /* Fix for safari gap */
+    min-height: 80px;
+    max-height: 120px;
 }
 
-.wave-container .shape-fill {
-    fill: var(--bg-light);
+/* Animation */
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+
+.parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+
+.parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px,0,0);
+    }
+    100% { 
+        transform: translate3d(85px,0,0);
+    }
 }
 
 /* 暗色模式下的波浪填充 */
-body.dark-mode .wave-container .shape-fill {
+body.dark-mode .parallax > use:nth-child(4) {
     fill: var(--bg-dark-mode);
 }
 
