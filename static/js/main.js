@@ -38,7 +38,13 @@ function initThemeToggle() {
     const currentTheme = localStorage.getItem('theme') || 'light';
     
     // Apply the theme class to the body
-    document.body.classList.toggle('dark-theme', currentTheme === 'dark');
+    if (currentTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        document.body.classList.add('dark-theme');
+    } else {
+        document.body.classList.remove('dark-mode');
+        document.body.classList.remove('dark-theme');
+    }
     
     // Update the toggle button icon
     updateThemeToggleIcon(currentTheme);
@@ -46,10 +52,17 @@ function initThemeToggle() {
     // Add event listener for toggle click
     themeToggle.addEventListener('click', function() {
         // Toggle the theme
-        const newTheme = document.body.classList.contains('dark-theme') ? 'light' : 'dark';
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        const newTheme = isDarkMode ? 'light' : 'dark';
         
-        // Update body class
-        document.body.classList.toggle('dark-theme');
+        // Update body classes
+        if (newTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+            document.body.classList.add('dark-theme');
+        } else {
+            document.body.classList.remove('dark-mode');
+            document.body.classList.remove('dark-theme');
+        }
         
         // Save the theme preference
         localStorage.setItem('theme', newTheme);
