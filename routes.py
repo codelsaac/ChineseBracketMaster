@@ -371,7 +371,9 @@ def export_bracket_pdf(tournament_id):
         # Create a response with PDF data
         response = make_response(pdf_content)
         response.headers['Content-Type'] = 'application/pdf'
-        response.headers['Content-Disposition'] = f'attachment; filename=tournament_{tournament_id}_{tournament.name}.pdf'
+        # Clean the filename to avoid special characters
+        safe_filename = tournament.name.replace(' ', '_').replace('/', '_').replace('\\', '_')
+        response.headers['Content-Disposition'] = f'inline; filename="tournament_{tournament_id}_{safe_filename}.pdf"'
         
         return response
     except Exception as e:

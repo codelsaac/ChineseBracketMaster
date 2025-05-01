@@ -25,6 +25,10 @@ def create_tournament_bracket(tournament_id):
     num_rounds = math.ceil(math.log2(num_players))
     total_slots = 2 ** num_rounds
     
+    # Ensure we have at least 2 rounds for testing auto-advancement
+    num_rounds = max(num_rounds, 2)
+    total_slots = 2 ** num_rounds
+    
     # Calculate number of byes needed (empty slots)
     num_byes = total_slots - num_players
     
@@ -178,7 +182,8 @@ def create_tournament_bracket(tournament_id):
     
     print(f"Created {len(matches)} matches for tournament {tournament_id}")
     
-    # Now connect matches to their next round matches
+    # Now connect matches to their next round matches and auto-advance byes
+    # First pass: set next_match_id for each match
     for match in matches:
         if match.round_number < num_rounds:
             next_round = match.round_number + 1
@@ -190,6 +195,29 @@ def create_tournament_bracket(tournament_id):
                     potential_next.match_number == next_match_number):
                     match.next_match_id = potential_next.id
                     break
+    
+    # Second pass: auto-advance bye matches
+    for match in matches:
+        # If this is a bye match with a winner already set
+        if match.winner_id and match.next_match_id:
+            next_match = None
+            for potential_next in matches:
+                if potential_next.id == match.next_match_id:
+                    next_match = potential_next
+                    break
+            
+            if next_match:
+                # Set the player in next match based on match number
+                if match.match_number % 2 == 1:  # Odd match number
+                    next_match.player1_id = match.winner_id
+                else:  # Even match number
+                    next_match.player2_id = match.winner_id
+                    
+                # If this created a single-player match (other slot is a bye)
+                if (next_match.player1_id and not next_match.player2_id) or \
+                   (next_match.player2_id and not next_match.player1_id):
+                    # Auto-advance this player
+                    next_match.winner_id = next_match.player1_id or next_match.player2_id
     
     return matches
 
