@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament Bracket - {{ tournament.name }} (PDF Export)</title>
+    <style>
+        /* Custom styling for PDF output */
+        @page {
+            size: A4 landscape;
+            margin: 1cm;
+        }
+        
+        body {
+            font-family: 'Roboto', 'Noto Sans TC', sans-serif;
+            color: #121212;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #0D6EFD;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        
+        .header p {
+            margin: 5px 0 0;
+            font-size: 14px;
+        }
+        
+        .tournament-info {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+        
+        .tournament-container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            margin-top: 20px;
+            font-size: 12px;
+            padding: 0 10px;
+        }
+        
+        .tournament-round {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin-right: 15px;
+        }
+        
+        .round-title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .match-card {
+            border: 1px solid #CED4DA;
+            border-radius: 4px;
+            margin: 5px 0;
+            padding: 8px;
+            background-color: white;
+        }
+        
+        .player {
+            padding: 5px;
+            margin-bottom: 3px;
+            border-radius: 3px;
+        }
+        
+        .player:last-child {
+            margin-bottom: 0;
+        }
+        
+        .player.winner {
+            background-color: rgba(25, 135, 84, 0.1);
+            font-weight: bold;
+        }
+        
+        .player-name {
+            font-weight: normal;
+        }
+        
+        .player-school {
+            font-size: 10px;
+            color: #545454;
+        }
+        
+        .seeded-badge {
+            display: inline-block;
+            background-color: #0D6EFD;
+            color: white;
+            font-size: 9px;
+            padding: 1px 3px;
+            border-radius: 3px;
+            margin-left: 3px;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 10px;
+            color: #545454;
+            padding: 10px;
+            border-top: 1px solid #CED4DA;
+        }
+        
+        /* Championship match styling */
+        .championship-match {
+            border: 2px solid #0D6EFD;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>中國象棋錦標賽 - {{ tournament.name }}</h1>
+        <p>Tournament Date: {{ tournament.date.strftime('%Y-%m-%d') }}</p>
+    </div>
+    
+    <div class="tournament-info">
+        <strong>Status:</strong> 
+        {% if tournament.status == 'setup' %}
+            Setup
+        {% elif tournament.status == 'in_progress' %}
+            In Progress
+        {% elif tournament.status == 'completed' %}
+            Completed
+        {% endif %}
+        | <strong>Players:</strong> {{ bracket_data.players|length }}
+        | <strong>Export Date:</strong> {{ now.strftime('%Y-%m-%d') }}
+    </div>
+    
+    <div class="tournament-container">
+        {% for round_num, matches in bracket_data.rounds.items() %}
+            <div class="tournament-round">
+                <div class="round-title">
+                    {% if round_num|int == max_round %}
+                        Final
+                    {% elif round_num|int == max_round - 1 %}
+                        Semi-finals
+                    {% elif round_num|int == max_round - 2 %}
+                        Quarter-finals
+                    {% else %}
+                        Round {{ round_num }}
+                    {% endif %}
+                </div>
+                
+                {% for match in matches %}
+                    <div class="match-card {% if round_num|int == max_round %}championship-match{% endif %}">
+                        {% if match.player1_id %}
+                            <div class="player {% if match.winner_id == match.player1_id %}winner{% endif %}">
+                                <div class="player-name">
+                                    {{ bracket_data.players[match.player1_id|string].name }}
+                                    {% if bracket_data.players[match.player1_id|string].is_seeded %}
+                                        <span class="seeded-badge">S</span>
+                                    {% endif %}
+                                </div>
+                                <div class="player-school">{{ bracket_data.players[match.player1_id|string].school }}</div>
+                            </div>
+                        {% else %}
+                            <div class="player">TBD</div>
+                        {% endif %}
+                        
+                        {% if match.player2_id %}
+                            <div class="player {% if match.winner_id == match.player2_id %}winner{% endif %}">
+                                <div class="player-name">
+                                    {{ bracket_data.players[match.player2_id|string].name }}
+                                    {% if bracket_data.players[match.player2_id|string].is_seeded %}
+                                        <span class="seeded-badge">S</span>
+                                    {% endif %}
+                                </div>
+                                <div class="player-school">{{ bracket_data.players[match.player2_id|string].school }}</div>
+                            </div>
+                        {% else %}
+                            <div class="player">TBD</div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+    
+    <div class="footer">
+        <p>Generated by Chinese Chess Tournament Management System | {{ now.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+    </div>
+</body>
+</html>

@@ -351,6 +351,8 @@ def export_bracket_pdf(tournament_id):
             'exports/bracket_pdf.html',
             tournament=tournament,
             bracket_data=bracket_data,
+            max_round=max(map(int, bracket_data['rounds'].keys())),
+            now=datetime.now(),
             css_url=url_for('static', filename='css/styles.css', _external=True)
         )
         
@@ -394,6 +396,8 @@ def export_bracket_image(tournament_id):
             'exports/bracket_image.html',
             tournament=tournament,
             bracket_data=bracket_data,
+            max_round=max(map(int, bracket_data['rounds'].keys())),
+            now=datetime.now(),
             css_url=url_for('static', filename='css/styles.css', _external=True)
         )
         
