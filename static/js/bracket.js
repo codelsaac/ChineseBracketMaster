@@ -181,7 +181,7 @@ function createPlayerElement(playerId, players, winnerId) {
     } else {
         // Empty slot or bye
         playerElement.classList.add('bye');
-        playerElement.textContent = 'Bye';
+        playerElement.textContent = 'TBD';
     }
     
     return playerElement;

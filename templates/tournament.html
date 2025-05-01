@@ -19,6 +19,12 @@
                     <li><a class="dropdown-item" href="{{ url_for('export_bracket_image', tournament_id=tournament.id) }}" target="_blank"><i class="fas fa-file-image"></i> Export as Image</a></li>
                 </ul>
             </div>
+            {% if tournament.status == 'in_progress' %}
+            <form method="POST" action="{{ url_for('generate_bracket', tournament_id=tournament.id) }}" class="d-inline me-2">
+                <input type="hidden" name="regenerate" value="true">
+                <button type="submit" class="btn btn-warning" onclick="return confirm('This will regenerate the entire bracket. Existing match results will be lost. Continue?');">Regenerate Bracket</button>
+            </form>
+            {% endif %}
             <a href="{{ url_for('players', tournament_id=tournament.id) }}" class="btn btn-outline">
                 <i class="fas fa-users"></i> Manage Players
             </a>
