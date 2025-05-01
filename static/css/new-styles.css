@@ -1,0 +1,763 @@
+/* Chinese Chess Tournament Management System - Enhanced UI */
+
+:root {
+  /* 基礎色彩 - 使用傳統中國象棋的紅黑配色 */
+  --primary-red: #c41206;  /* 傳統中國象棋紅方 */
+  --primary-red-dark: #9e0e05;
+  --primary-black: #212121;  /* 傳統象棋黑方 */
+  --accent: #ffd659;  /* 象棋金色，代表棋子和棋盤的質感 */
+  --background-light: #fffbf0; /* 淡淡的米黃色，像棋盤的底色 */
+  --background-dark: #2c2c2c;
+  --text-light: #f8f8f8;
+  --text-dark: #222;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-dark: rgba(0, 0, 0, 0.3);
+  
+  /* 間距變量 */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2.5rem;
+  
+  /* 邊框圓角 */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+  
+  /* 動畫時間 */
+  --transition-fast: 0.2s;
+  --transition-normal: 0.3s;
+  --transition-slow: 0.5s;
+}
+
+/* 全局重置 */
+body {
+  font-family: 'Noto Sans TC', 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-light);
+  color: var(--text-dark);
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* 波浪頁頭設計 */
+.header {
+  position: relative;
+  background-color: var(--primary-red);
+  color: var(--text-light);
+  padding-top: 1rem;
+  padding-bottom: 4.5rem; /* 增加底部空間給波浪 */
+  overflow: hidden;
+}
+
+/* 波浪效果 - 使用z-index讓它顯示在內容下方 */
+.wave-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 0;
+}
+
+.wave-container svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 65px;
+  transform: rotateY(180deg);
+}
+
+.wave-container .shape-fill {
+  fill: var(--background-light); /* 與頁面背景色匹配 */
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  color: var(--text-light);
+  text-decoration: none;
+  transition: transform var(--transition-fast);
+}
+
+.logo a:hover {
+  transform: scale(1.05);
+}
+
+/* 自訂象棋圖標 */
+.chess-piece-icon {
+  margin-right: 0.5rem;
+  height: 2rem;
+  width: 2rem;
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.2));
+}
+
+/* 導航欄 */
+.nav {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.nav-link {
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 導航鏈接動畫效果 */
+.nav-link:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: transform var(--transition-normal);
+  transform: skewX(-15deg);
+}
+
+.nav-link:hover:before {
+  transform: translateX(100%) skewX(-15deg);
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--accent);
+}
+
+/* 主內容區域 */
+.main {
+  position: relative;
+  z-index: 1;
+  padding: var(--spacing-xl) 0;
+}
+
+/* 首頁卡片動畫效果 */
+.card {
+  background-color: white;
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 2px 8px var(--shadow-light);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px var(--shadow-light);
+}
+
+/* 卡片裝飾效果 */
+.card:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--primary-red);
+  transition: all var(--transition-normal);
+}
+
+.card:hover:before {
+  width: 8px;
+}
+
+/* 頁面標題 */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-black);
+  margin-top: 0;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+  padding-bottom: var(--spacing-sm);
+}
+
+h1:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: var(--primary-red);
+}
+
+/* 按鈕樣式 */
+.btn {
+  border-radius: var(--border-radius-md);
+  padding: 0.5rem 1.25rem;
+  font-weight: 500;
+  transition: all var(--transition-normal);
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background-color: var(--primary-red);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary-red);
+  border: 1px solid var(--primary-red);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-red);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 按鈕波紋效果 */
+.btn:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.btn:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+/* 表格樣式 */
+.table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: 0 2px 8px var(--shadow-light);
+}
+
+.table thead th {
+  background-color: var(--primary-red);
+  color: white;
+  font-weight: 600;
+  padding: 1rem;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.table tbody tr {
+  transition: all var(--transition-fast);
+}
+
+.table tbody tr:hover {
+  background-color: rgba(var(--primary-red), 0.05);
+}
+
+.table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* 徽章樣式 */
+.badge {
+  padding: 0.35em 0.65em;
+  font-size: 0.75em;
+  font-weight: 700;
+  border-radius: var(--border-radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.bg-primary {
+  background-color: var(--primary-red) !important;
+}
+
+/* 表單樣式 */
+.form-control {
+  border-radius: var(--border-radius-md);
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all var(--transition-fast);
+}
+
+.form-control:focus {
+  border-color: var(--primary-red);
+  box-shadow: 0 0 0 3px rgba(196, 18, 6, 0.1);
+}
+
+.form-label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+/* 頁腳樣式 */
+.footer {
+  background-color: var(--primary-black);
+  color: var(--text-light);
+  padding: 2rem 0;
+  margin-top: 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 頁腳波浪效果 */
+.footer-wave-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.footer-wave-container svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 65px;
+}
+
+.footer-wave-container .shape-fill {
+  fill: var(--background-light);
+}
+
+/* 比賽括號樣式 */
+.tournament-container {
+  display: flex;
+  overflow-x: auto;
+  padding: var(--spacing-md) 0;
+  justify-content: flex-start;
+  margin-bottom: var(--spacing-lg);
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+.tournament-round {
+  display: flex;
+  flex-direction: column;
+  min-width: 220px;
+  margin-right: var(--spacing-lg);
+  position: relative;
+}
+
+/* 回合標題動畫 */
+.round-title {
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+  font-weight: 600;
+  color: var(--primary-red);
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.round-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: var(--primary-red);
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.tournament-round:hover .round-title:after {
+  opacity: 1;
+}
+
+/* 比賽卡片 */
+.match-card {
+  background-color: white;
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: var(--spacing-sm) 0;
+  padding: var(--spacing-sm);
+  transition: all var(--transition-normal);
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.match-card:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+/* 象棋主題的冠軍賽卡片 */
+.championship-match {
+  border: 3px solid var(--accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 214, 89, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.championship-match:after {
+  content: '決賽';
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--accent);
+  color: var(--primary-black);
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-bottom-left-radius: var(--border-radius-sm);
+}
+
+/* 球員樣式 */
+.player {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  margin-bottom: var(--spacing-xs);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+  position: relative;
+}
+
+.player:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: var(--primary-red);
+  transition: width var(--transition-normal);
+}
+
+.player:hover:after {
+  width: 100%;
+}
+
+.player:last-child {
+  margin-bottom: 0;
+}
+
+.player:hover {
+  background-color: rgba(196, 18, 6, 0.05);
+  border-color: rgba(196, 18, 6, 0.15);
+}
+
+.player.winner {
+  background-color: rgba(76, 175, 80, 0.15);
+  font-weight: 600;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+  position: relative;
+}
+
+.player.winner:before {
+  content: '✓';
+  position: absolute;
+  right: 8px;
+  color: rgba(76, 175, 80, 0.8);
+  font-weight: 700;
+}
+
+.player.bye {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.5);
+  font-style: italic;
+  cursor: not-allowed;
+}
+
+/* 種子球員徽章 */
+.seeded-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background-color: var(--accent);
+  color: var(--primary-black);
+  border-radius: 50%;
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-left: 0.5rem;
+}
+
+/* 獎盃圖標 */
+.winner-trophy {
+  font-size: 1.5em;
+  margin-left: 0.5rem;
+  color: var(--accent);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: trophy-pulse 1.5s infinite alternate;
+}
+
+@keyframes trophy-pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+/* 暗黑模式支持 */
+body.dark-theme {
+  background-color: var(--background-dark);
+  color: var(--text-light);
+}
+
+body.dark-theme .header {
+  background-color: var(--primary-red-dark);
+}
+
+body.dark-theme .wave-container .shape-fill {
+  fill: var(--background-dark);
+}
+
+body.dark-theme .footer-wave-container .shape-fill {
+  fill: var(--background-dark);
+}
+
+body.dark-theme h1, 
+body.dark-theme h2, 
+body.dark-theme h3, 
+body.dark-theme h4, 
+body.dark-theme h5, 
+body.dark-theme h6 {
+  color: var(--text-light);
+}
+
+body.dark-theme .card {
+  background-color: #3a3a3a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-theme .player:hover {
+  background-color: rgba(196, 18, 6, 0.15);
+}
+
+body.dark-theme .player.winner {
+  background-color: rgba(76, 175, 80, 0.2);
+  border-color: rgba(76, 175, 80, 0.3);
+}
+
+body.dark-theme .player.bye {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+body.dark-theme .match-card {
+  background-color: #3a3a3a;
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .table thead th {
+  background-color: var(--primary-red-dark);
+}
+
+body.dark-theme .table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .table td {
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+/* 響應式樣式 */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+  
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .tournament-round {
+    min-width: 180px;
+  }
+  
+  .wave-container svg,
+  .footer-wave-container svg {
+    height: 40px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tournament-round {
+    min-width: 150px;
+  }
+  
+  .match-card {
+    padding: var(--spacing-xs);
+  }
+  
+  .player {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* 動畫效果 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn var(--transition-normal);
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.slide-in {
+  animation: slideIn var(--transition-normal);
+}
+
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float {
+  animation: floatAnimation 4s ease-in-out infinite;
+}
+
+/* 象棋主題元素動畫 */
+.chess-piece {
+  position: absolute;
+  opacity: 0.1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.chess-piece.red {
+  background-color: var(--primary-red);
+}
+
+.chess-piece.black {
+  background-color: var(--primary-black);
+}
+
+.chess-piece-1 {
+  top: 10%;
+  left: 5%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  animation: floatAnimation 4s ease-in-out infinite;
+}
+
+.chess-piece-2 {
+  top: 60%;
+  right: 10%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  animation: floatAnimation 5s ease-in-out infinite 1s;
+}
+
+/* 添加更多棋子 */
+.chess-piece-3 {
+  bottom: 30%;
+  left: 15%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  animation: floatAnimation 6s ease-in-out infinite 0.5s;
+}
+
+/* Confetti Canvas */
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
