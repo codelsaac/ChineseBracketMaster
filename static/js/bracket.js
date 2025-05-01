@@ -106,6 +106,12 @@ function calculateMatchSpacing(roundNumber, totalRounds) {
  * @returns {HTMLElement} The match element
  */
 function createMatchElement(match, players, roundNumber, totalRounds) {
+    // Check if match and players data exists
+    if (!match || !players) {
+        console.error('Missing match or players data');
+        return document.createElement('div');
+    }
+    
     const matchElement = document.createElement('div');
     matchElement.className = 'match-card';
     matchElement.dataset.matchId = match.id;
@@ -117,45 +123,63 @@ function createMatchElement(match, players, roundNumber, totalRounds) {
         matchElement.dataset.isFinal = 'true';
     }
     
+    // First let's clean up any existing trophy icons in the DOM
+    // before we create any new elements
+    const existingTrophies = document.querySelectorAll('.winner-trophy');
+    existingTrophies.forEach(trophy => {
+        console.log('Removing existing trophy');
+        trophy.remove();
+    });
+    
     // Player 1
     const player1Element = createPlayerElement(match.player1_id, players, match.winner_id);
-    // Only add trophy if player1 exists (not TBD), is the winner in final match, 
-    // and there's a valid winner ID (not null/undefined/0)
-    if (isFinalMatch && match.player1_id && match.winner_id && match.winner_id === match.player1_id) {
-        // Add trophy to player 1 if they are the winner in the final
-        const trophyDiv = document.createElement('div');
-        trophyDiv.className = 'winner-trophy';
-        trophyDiv.innerHTML = '🏆';
-        trophyDiv.title = '冠軍';
-        trophyDiv.style.position = 'absolute';
-        trophyDiv.style.right = '10px';
-        trophyDiv.style.top = '50%';
-        trophyDiv.style.transform = 'translateY(-50%)';
-        trophyDiv.style.fontSize = '1.5em';
-        player1Element.style.position = 'relative';
-        player1Element.appendChild(trophyDiv);
-    }
     matchElement.appendChild(player1Element);
     
     // Player 2
     const player2Element = createPlayerElement(match.player2_id, players, match.winner_id);
-    // Only add trophy if player2 exists (not TBD), is the winner in final match, 
-    // and there's a valid winner ID (not null/undefined/0)
-    if (isFinalMatch && match.player2_id && match.winner_id && match.winner_id === match.player2_id) {
-        // Add trophy to player 2 if they are the winner in the final
+    matchElement.appendChild(player2Element);
+    
+    // We'll only add trophy to final match with a valid winner
+    if (isFinalMatch && match.winner_id) {
+        // Determine if players exist in the database
+        const player1Exists = match.player1_id && players[match.player1_id];
+        const player2Exists = match.player2_id && players[match.player2_id];
+        
+        // Check which player is the winner
+        if (player1Exists && match.player1_id === match.winner_id) {
+            // Player 1 is winner - add trophy if not TBD/bye
+            if (!player1Element.classList.contains('bye')) {
+                addTrophyToElement(player1Element);
+            }
+        } else if (player2Exists && match.player2_id === match.winner_id) {
+            // Player 2 is winner - add trophy if not TBD/bye
+            if (!player2Element.classList.contains('bye')) {
+                addTrophyToElement(player2Element);
+            }
+        }
+    }
+    
+    // Helper function to add trophy to an element
+    function addTrophyToElement(element) {
+        // Create the trophy with unique positioning
         const trophyDiv = document.createElement('div');
         trophyDiv.className = 'winner-trophy';
         trophyDiv.innerHTML = '🏆';
         trophyDiv.title = '冠軍';
         trophyDiv.style.position = 'absolute';
-        trophyDiv.style.right = '10px';
+        trophyDiv.style.right = '8px';
         trophyDiv.style.top = '50%';
         trophyDiv.style.transform = 'translateY(-50%)';
         trophyDiv.style.fontSize = '1.5em';
-        player2Element.style.position = 'relative';
-        player2Element.appendChild(trophyDiv);
+        trophyDiv.style.zIndex = '5';
+        
+        // Ensure the element has relative positioning
+        element.style.position = 'relative';
+        
+        // Add trophy icon
+        element.appendChild(trophyDiv);
+        console.log('Trophy added to element');
     }
-    matchElement.appendChild(player2Element);
     
     return matchElement;
 }
@@ -255,6 +279,15 @@ function addPlayerSelectionListeners() {
  * @param {number} winnerId - The ID of the winning player
  */
 function updateMatchWinner(matchId, winnerId) {
+    console.log(`Updating match ${matchId} with winner ${winnerId}`);
+    
+    // First remove any existing trophy icons to prevent duplicates
+    const existingTrophies = document.querySelectorAll('.winner-trophy');
+    existingTrophies.forEach(trophy => {
+        console.log('Removing existing trophy during update');
+        trophy.remove();
+    });
+    
     // Send the update to the server
     fetch(`/api/match/${matchId}/update`, {
         method: 'POST',
@@ -281,19 +314,20 @@ function updateMatchWinner(matchId, winnerId) {
                     console.log('Final match won! Celebrating...');
                     celebrateWinner();
                     
-                    // Show congratulatory message
+                    // Find the winner element to get the name
                     const winnerElement = document.querySelector(`[data-player-id="${winnerId}"]`);
                     let winnerName = 'Champion';
-                    if (winnerElement) {
+                    if (winnerElement && !winnerElement.classList.contains('bye')) {
                         const nameEl = winnerElement.querySelector('.player-name');
                         if (nameEl) {
                             winnerName = nameEl.textContent.trim();
                         }
+                        
+                        // Show congratulatory message
+                        setTimeout(() => {
+                            alert(`\u606d\u559c\uff01 ${winnerName} \u662f\u8cfd\u4e8b\u7684\u51a0\u8ecd\uff01`);
+                        }, 1000);
                     }
-                    
-                    setTimeout(() => {
-                        alert(`\u606d\u559c\uff01 ${winnerName} \u662f\u8cfd\u4e8b\u7684\u51a0\u8ecd\uff01`);
-                    }, 1000);
                 }
             }
             
@@ -301,6 +335,7 @@ function updateMatchWinner(matchId, winnerId) {
             const tournamentContainer = document.getElementById('tournament-bracket');
             if (tournamentContainer) {
                 const tournamentId = tournamentContainer.dataset.tournamentId;
+                console.log('Reloading tournament data for ID:', tournamentId);
                 loadTournamentData(tournamentId);
             }
         } else {
