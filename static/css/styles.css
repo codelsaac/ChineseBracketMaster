@@ -605,8 +605,26 @@ body.dark-theme .player.winner {
 }
 
 .championship-match {
-  border: 2px solid var(--primary);
+  border: 3px solid var(--primary);
   box-shadow: 0 4px 12px var(--shadow);
+  background-color: rgba(var(--primary-rgb), 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.championship-match::before {
+  content: '🏆';
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 1rem;
+  opacity: 0.3;
+}
+
+.championship-match .player.winner {
+  background-color: rgba(var(--success-rgb), 0.3);
+  transform: scale(1.02);
+  transition: all var(--transition-fast);
 }
 
 /* ========================
