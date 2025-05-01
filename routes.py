@@ -381,60 +381,7 @@ def export_bracket_pdf(tournament_id):
         flash(f'Error exporting bracket as PDF: {str(e)}', 'error')
         return redirect(url_for('view_tournament', tournament_id=tournament_id))
 
-@app.route('/tournament/<int:tournament_id>/export/image')
-def export_bracket_image(tournament_id):
-    """Export tournament bracket as Image"""
-    # Since the image export relies on finding Chrome which isn't available in our environment,
-    # We'll switch to exporting a PDF instead which should be more reliable
-    return export_bracket_pdf(tournament_id)
-
-def export_bracket_image_orig(tournament_id):
-    """Original image export function (disabled due to Chrome dependency)"""
-    try:
-        from html2image import Html2Image
-        from flask import make_response
-        import tempfile
-        import os
-        
-        tournament = Tournament.query.get_or_404(tournament_id)
-        bracket_data = get_tournament_bracket(tournament_id)
-        
-        # Create a custom HTML template for the image export
-        html_content = render_template(
-            'exports/bracket_image.html',
-            tournament=tournament,
-            bracket_data=bracket_data,
-            max_round=max(map(int, bracket_data['rounds'].keys())),
-            now=datetime.now(),
-            css_url=url_for('static', filename='css/styles.css', _external=True)
-        )
-        
-        with tempfile.NamedTemporaryFile(suffix='.html', delete=False) as html_file:
-            html_file.write(html_content.encode('utf-8'))
-            html_path = html_file.name
-        
-        # Create a temporary directory for output
-        with tempfile.TemporaryDirectory() as tmp_dir:
-            hti = Html2Image(output_path=tmp_dir)
-            screenshot_path = hti.screenshot(html_path=html_path, save_as=f'tournament_{tournament_id}.png')[0]
-            
-            # Read the generated image
-            with open(screenshot_path, 'rb') as img_file:
-                img_content = img_file.read()
-            
-            # Clean up the temporary HTML file
-            os.unlink(html_path)
-        
-        # Create a response with image data
-        response = make_response(img_content)
-        response.headers['Content-Type'] = 'image/png'
-        response.headers['Content-Disposition'] = f'attachment; filename=tournament_{tournament_id}_{tournament.name}.png'
-        
-        return response
-    except Exception as e:
-        print(f"Error exporting image: {str(e)}")
-        flash(f'Error exporting bracket as image: {str(e)}', 'error')
-        return redirect(url_for('view_tournament', tournament_id=tournament_id))
+# 圖像導出功能已根據用戶要求移除
 
 @app.route('/tournament/<int:tournament_id>/players/reorder', methods=['POST'])
 def reorder_players(tournament_id):
