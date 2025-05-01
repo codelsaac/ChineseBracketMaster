@@ -580,6 +580,15 @@ body.dark-theme .player.winner {
   align-items: center;
 }
 
+.team-color {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: var(--spacing-xs);
+  border: 1px solid var(--border);
+}
+
 .seeded-badge {
   background-color: var(--primary);
   color: white;

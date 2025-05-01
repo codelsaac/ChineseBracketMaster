@@ -215,7 +215,7 @@ function addPlayerSelectionListeners() {
             }
             
             // Confirm the selection
-            if (confirm('Mark this player as the winner of this match?')) {
+            if (confirm('確定將這名選手標記為比賽勝利者嗎?')) {
                 updateMatchWinner(matchId, playerId);
             }
         });
@@ -244,6 +244,32 @@ function updateMatchWinner(matchId, winnerId) {
     })
     .then(data => {
         if (data.success) {
+            // Check if this was the final match
+            const matchElement = document.querySelector(`[data-match-id="${matchId}"]`);
+            if (matchElement) {
+                const isFinalMatch = matchElement.closest('.championship-match') !== null;
+                
+                // If this was the final match, celebrate with confetti!
+                if (isFinalMatch) {
+                    console.log('Final match won! Celebrating...');
+                    celebrateWinner();
+                    
+                    // Show congratulatory message
+                    const winnerElement = document.querySelector(`[data-player-id="${winnerId}"]`);
+                    let winnerName = 'Champion';
+                    if (winnerElement) {
+                        const nameEl = winnerElement.querySelector('.player-name');
+                        if (nameEl) {
+                            winnerName = nameEl.textContent.trim();
+                        }
+                    }
+                    
+                    setTimeout(() => {
+                        alert(`\u606d\u559c\uff01 ${winnerName} \u662f\u8cfd\u4e8b\u7684\u51a0\u8ecd\uff01`);
+                    }, 1000);
+                }
+            }
+            
             // Reload the tournament data to reflect the changes
             const tournamentContainer = document.getElementById('tournament-bracket');
             if (tournamentContainer) {
