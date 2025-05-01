@@ -151,7 +151,17 @@ function createPlayerElement(playerId, players, winnerId) {
         // Create player name and details
         const playerNameDiv = document.createElement('div');
         playerNameDiv.className = 'player-name';
-        playerNameDiv.textContent = player.name;
+        
+        // Add team color indicator if available
+        const teamColor = localStorage.getItem(`school_color_${player.school}`);
+        if (teamColor) {
+            const colorIndicator = document.createElement('span');
+            colorIndicator.className = 'team-color';
+            colorIndicator.style.backgroundColor = teamColor;
+            playerNameDiv.appendChild(colorIndicator);
+        }
+        
+        playerNameDiv.appendChild(document.createTextNode(player.name));
         
         // Add seeded badge if applicable
         if (player.is_seeded) {
