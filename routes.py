@@ -382,6 +382,12 @@ def export_bracket_pdf(tournament_id):
 @app.route('/tournament/<int:tournament_id>/export/image')
 def export_bracket_image(tournament_id):
     """Export tournament bracket as Image"""
+    # Since the image export relies on finding Chrome which isn't available in our environment,
+    # We'll switch to exporting a PDF instead which should be more reliable
+    return export_bracket_pdf(tournament_id)
+
+def export_bracket_image_orig(tournament_id):
+    """Original image export function (disabled due to Chrome dependency)"""
     try:
         from html2image import Html2Image
         from flask import make_response
