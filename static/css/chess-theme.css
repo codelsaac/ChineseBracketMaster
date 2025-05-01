@@ -5,15 +5,13 @@
 
 /* 棋盤背景 */
 .chess-board-bg {
-    background-color: rgba(248, 229, 187, 0.85);
+    background-color: #f8e5bb;
     background-image: 
         linear-gradient(rgba(212, 162, 83, 0.3) 1px, transparent 1px),
         linear-gradient(90deg, rgba(212, 162, 83, 0.3) 1px, transparent 1px);
     background-size: 40px 40px;
     border: 2px solid #b98c54;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
 }
 
 .chess-board-bg:hover {
@@ -21,13 +19,11 @@
 }
 
 body.dark-mode .chess-board-bg {
-    background-color: rgba(60, 50, 38, 0.85);
+    background-color: #3c3226;
     background-image: 
         linear-gradient(rgba(212, 162, 83, 0.2) 1px, transparent 1px),
         linear-gradient(90deg, rgba(212, 162, 83, 0.2) 1px, transparent 1px);
     border-color: #5d4a33;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
 }
 
 /* 中國象棋棋子卡片 */
