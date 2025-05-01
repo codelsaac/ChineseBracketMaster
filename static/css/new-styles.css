@@ -479,16 +479,18 @@ body.dark-mode .footer-wave-container .shape-fill {
     gap: 2rem;
     padding: 1rem;
     min-width: 300px;
+    align-items: center;
 }
 
 /* 賽程表大小調整 */
 #tournament-bracket {
     display: flex;
     flex-wrap: nowrap;
-    gap: 20px;
+    gap: 60px;
     overflow-x: auto;
     padding: 30px 15px;
     align-items: flex-start;
+    justify-content: center;
 }
 
 .round-title {

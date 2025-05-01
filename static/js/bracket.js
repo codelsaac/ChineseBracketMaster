@@ -101,7 +101,7 @@ function getRoundTitle(roundNumber, totalRounds) {
  */
 function calculateMatchSpacing(roundNumber, totalRounds) {
     // Spacing increases exponentially with each round
-    const baseSpacing = 40; // 增加基本間距
+    const baseSpacing = 60; // 增加基本間距
     const factor = 2;
     
     return baseSpacing * Math.pow(factor, roundNumber - 1);

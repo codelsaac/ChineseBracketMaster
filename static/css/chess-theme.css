@@ -236,6 +236,8 @@ body.dark-mode .tournament-rules li {
     width: 280px;
     display: flex;
     flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 body.dark-mode .match-card {
