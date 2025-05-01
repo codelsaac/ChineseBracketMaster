@@ -238,6 +238,8 @@ body.dark-mode .tournament-rules li {
     transition: all 0.3s ease;
     overflow: visible;
     width: 280px;
+    display: flex;
+    flex-direction: column;
 }
 
 body.dark-mode .match-card {
@@ -289,6 +291,7 @@ body.dark-mode .match-card {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    width: 100%;
 }
 
 .player-red {
@@ -331,11 +334,14 @@ body.dark-mode .match-card {
 
 body.dark-mode .match-player {
     background-color: #3a3a3a;
+    color: #eee;
+    border-color: #555;
 }
 
 body.dark-mode .player {
     background-color: #3a3a3a;
-    color: #fff;
+    color: #eee;
+    border-color: #555;
 }
 
 .player:hover, .match-player:hover {
@@ -367,6 +373,8 @@ body.dark-mode .player.winner, body.dark-mode .match-player.winner {
 
 body.dark-mode .player.bye, body.dark-mode .match-player.bye {
     background-color: #333333;
+    color: #aaa;
+    border-left: 3px dashed #555;
 }
 
 /* 冠軍比賽特殊樣式 */
