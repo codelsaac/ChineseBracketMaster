@@ -149,42 +149,42 @@ function createMatchElement(match, players, roundNumber, totalRounds) {
     const player2Element = createPlayerElement(match.player2_id, players, match.winner_id);
     matchElement.appendChild(player2Element);
     
-    // We'll only add trophy to final match with a valid winner
-    // AND only if the winner wasn't an auto-bye player
+    // We'll only add trophy to final match with a valid winner (explicitly chosen by user)
+    // Do not auto-add trophy for any match that looks like auto-bye winners
     if (isFinalMatch && match.winner_id) {
-        // Check for special auto-bye case: prevent auto-crowned champions
-        // If either player1 or player2 is NULL, and winner is set, this might be an auto-bye situation
-        const isAutoBye = ((match.player1_id === null || match.player2_id === null) && 
-                         match.player1_id !== match.player2_id);  // make sure they aren't both null
-                         
-        // Only show trophy if this wasn't an auto-bye (user must explicitly choose winner)
-        if (!isAutoBye) {
-            // Log which trophies we're detecting
+        // Define several conditions that might indicate auto-bye situations
+        const hasEmptySlot = (match.player1_id === null || match.player2_id === null);
+        const bothPlayersNotNull = (match.player1_id !== null && match.player2_id !== null);
+        
+        // Only show trophy when both players are present AND a winner is explicitly chosen by user
+        // This prevents auto-crowned champions completely
+        if (bothPlayersNotNull) {
+            // Log the details for debugging
             console.log('Final match details:', {
                 player1_id: match.player1_id,
                 player2_id: match.player2_id,
                 winner_id: match.winner_id,
-                isAutoBye
+                bothPlayersPresent: bothPlayersNotNull
             });
             
             // Determine if players exist in the database
             const player1Exists = match.player1_id && players[match.player1_id];
             const player2Exists = match.player2_id && players[match.player2_id];
             
-            // Check which player is the winner
+            // Add trophy only when both players exist and user selected a winner
             if (player1Exists && match.player1_id === match.winner_id) {
-                // Player 1 is winner - add trophy if not TBD/bye
+                // Player 1 is the explicitly chosen winner
                 if (!player1Element.classList.contains('bye')) {
                     addTrophyToElement(player1Element);
                 }
             } else if (player2Exists && match.player2_id === match.winner_id) {
-                // Player 2 is winner - add trophy if not TBD/bye
+                // Player 2 is the explicitly chosen winner
                 if (!player2Element.classList.contains('bye')) {
                     addTrophyToElement(player2Element);
                 }
             }
         } else {
-            console.log('Auto-bye detected in final, not showing trophy automatically');
+            console.log('Auto-bye detected in final or incomplete match, not showing trophy');
         }
     }
     
