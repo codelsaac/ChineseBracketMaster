@@ -216,8 +216,20 @@ def create_tournament_bracket(tournament_id):
                 # If this created a single-player match (other slot is a bye)
                 if (next_match.player1_id and not next_match.player2_id) or \
                    (next_match.player2_id and not next_match.player1_id):
-                    # Auto-advance this player
-                    next_match.winner_id = next_match.player1_id or next_match.player2_id
+                    # Check if this is the final match before auto-advancing
+                    is_final_match = True
+                    for potential_next_next in matches:
+                        if potential_next_next.id == next_match.next_match_id:
+                            is_final_match = False
+                            break
+                            
+                    if is_final_match:
+                        # This is the final match - don't auto-advance the winner
+                        print(f"Final match {next_match.id} - not auto-crowning in initial bracket creation")
+                        next_match.winner_id = None
+                    else:
+                        # Not the final - auto-advance this player
+                        next_match.winner_id = next_match.player1_id or next_match.player2_id
     
     return matches
 
@@ -285,6 +297,10 @@ def update_match_result(match_id, winner_id):
                     # This is the final match, but we DON'T auto-advance player 1 as the winner
                     # The user must explicitly choose the winner even in a bye situation
                     print(f"Player {next_match.player1_id} in final match {next_match.id} needs explicit selection")
+                    
+                    # Make sure winner_id is None to force user selection
+                    next_match.winner_id = None
+                    db.session.add(next_match)
                 else:
                     # Not the final match, so auto-advance as normal
                     propagate_auto_advance(next_match, next_match.player1_id)
@@ -294,6 +310,10 @@ def update_match_result(match_id, winner_id):
                     # This is the final match, but we DON'T auto-advance player 2 as the winner
                     # The user must explicitly choose the winner even in a bye situation
                     print(f"Player {next_match.player2_id} in final match {next_match.id} needs explicit selection")
+                    
+                    # Make sure winner_id is None to force user selection
+                    next_match.winner_id = None
+                    db.session.add(next_match)
                 else:
                     # Not the final match, so auto-advance as normal
                     propagate_auto_advance(next_match, next_match.player2_id)
@@ -341,6 +361,14 @@ def propagate_auto_advance(match, winner_id):
             if next_next_match is None:
                 # This is the final match - we DON'T auto-advance in the final even if one side is a bye
                 print(f"Final match {next_match.id} - not auto-advancing players")
+                
+                # Explicitly reset winner_id to None to prevent auto-crowning champions
+                if next_match.winner_id:
+                    next_match.winner_id = None
+                    db.session.add(next_match)
+                    db.session.flush()
+                    print(f"Final match {next_match.id} - reset winner_id to None")
+                
                 return
                 
             # For non-final matches, continue auto-advancing in case of byes
