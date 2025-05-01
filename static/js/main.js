@@ -412,6 +412,10 @@ function setupPreviewControls(data) {
  * @param {Object} data - Tournament data
  */
 function renderPreviewBracket(container, data) {
+    // Get the currently selected round from the select element
+    const previewRoundSelect = document.getElementById('preview-round');
+    const currentRound = previewRoundSelect ? previewRoundSelect.value : '1';
+    
     // Create a clone of the tournament container
     const fragment = document.createDocumentFragment();
     
@@ -433,8 +437,21 @@ function renderPreviewBracket(container, data) {
         roundDiv.appendChild(titleDiv);
         
         // Add each match in this round
-        roundData.forEach(match => {
+        roundData.forEach((match, matchIndex) => {
             const matchElement = createPreviewMatchElement(match, data.players, i, maxRound);
+            
+            // Add highlight class with delay for animation effect
+            if (i === parseInt(currentRound)) {
+                setTimeout(() => {
+                    matchElement.classList.add('highlight');
+                    
+                    // Remove highlight after 1 second
+                    setTimeout(() => {
+                        matchElement.classList.remove('highlight');
+                    }, 1000);
+                }, matchIndex * 200); // Stagger the animations
+            }
+            
             roundDiv.appendChild(matchElement);
         });
         

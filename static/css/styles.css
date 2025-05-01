@@ -14,12 +14,28 @@
 
 /* Preview mode styles */
 .preview-mode {
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
+  opacity: 0.85;
+  transition: all 0.5s ease;
 }
 
 .preview-mode.active {
   opacity: 1;
+}
+
+.preview-mode .match-card {
+  transform-origin: center;
+  transition: all 0.5s ease;
+}
+
+.preview-mode .match-card.highlight {
+  transform: scale(1.05);
+  border-color: var(--primary);
+  box-shadow: 0 0 15px rgba(var(--light-primary-rgb), 0.5);
+  z-index: 10;
+}
+
+body.dark-theme .preview-mode .match-card.highlight {
+  box-shadow: 0 0 15px rgba(var(--dark-primary-rgb), 0.5);
 }
 
 /* Animation styles for loading */
@@ -58,19 +74,44 @@
 
 /* Color customization styles */
 .color-picker-item {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
-  align-items: center;
+  padding: 0.75rem;
+  background-color: var(--surface);
+  border-radius: var(--border-radius-sm);
+  box-shadow: 0 1px 3px var(--shadow);
+  transition: all var(--transition-fast);
   margin-bottom: 1rem;
 }
 
+.color-picker-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px var(--shadow);
+}
+
 .color-preview {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  margin-right: 10px;
+  margin: 0 auto 0.5rem;
   border: 1px solid var(--border);
+  box-shadow: 0 2px 4px var(--shadow);
+  transition: transform var(--transition-fast);
   cursor: pointer;
+}
+
+.color-preview:hover {
+  transform: scale(1.1);
+}
+
+.color-input {
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: all var(--transition-fast);
+}
+
+.color-input:hover {
+  transform: scale(1.05);
 }
 
 /* Team colors for brackets */
@@ -607,9 +648,14 @@ body.dark-theme .player.winner {
 .championship-match {
   border: 3px solid var(--primary);
   box-shadow: 0 4px 12px var(--shadow);
-  background-color: rgba(var(--primary-rgb), 0.05);
+  background-color: rgba(var(--light-primary-rgb), 0.05);
   position: relative;
   overflow: hidden;
+}
+
+body.dark-theme .championship-match {
+  background-color: rgba(var(--dark-primary-rgb), 0.2);
+  border-color: var(--dark-primary);
 }
 
 .championship-match::before {
@@ -622,9 +668,13 @@ body.dark-theme .player.winner {
 }
 
 .championship-match .player.winner {
-  background-color: rgba(var(--success-rgb), 0.3);
+  background-color: rgba(var(--light-success-rgb), 0.3);
   transform: scale(1.02);
   transition: all var(--transition-fast);
+}
+
+body.dark-theme .championship-match .player.winner {
+  background-color: rgba(var(--dark-success-rgb), 0.3);
 }
 
 /* ========================
