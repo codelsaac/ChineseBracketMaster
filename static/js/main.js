@@ -15,11 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         initConfetti();
     }
     
-    // Initialize sortable players if on the players page
-    const sortablePlayers = document.getElementById('sortable-players');
-    if (sortablePlayers) {
-        initSortablePlayers();
-    }
+    // Sortable players feature removed
     
     // Initialize theme toggle
     initThemeToggle();
