@@ -10,6 +10,15 @@
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1>Tournament Bracket - {{ tournament.name }}</h1>
         <div>
+            <div class="dropdown d-inline-block me-2">
+                <button class="btn btn-success dropdown-toggle" type="button" id="exportDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-download"></i> Export
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="exportDropdown">
+                    <li><a class="dropdown-item" href="{{ url_for('export_bracket_pdf', tournament_id=tournament.id) }}" target="_blank"><i class="fas fa-file-pdf"></i> Export as PDF</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('export_bracket_image', tournament_id=tournament.id) }}" target="_blank"><i class="fas fa-file-image"></i> Export as Image</a></li>
+                </ul>
+            </div>
             <a href="{{ url_for('players', tournament_id=tournament.id) }}" class="btn btn-outline">
                 <i class="fas fa-users"></i> Manage Players
             </a>

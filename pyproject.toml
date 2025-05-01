@@ -12,4 +12,6 @@ dependencies = [
     "psycopg2-binary>=2.9.10",
     "flask-wtf>=1.2.2",
     "sqlalchemy>=2.0.40",
+    "weasyprint>=65.1",
+    "html2image>=2.0.5",
 ]

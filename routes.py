@@ -334,6 +334,96 @@ def delete_tournament(tournament_id):
     
     return redirect(url_for('index'))
 
+@app.route('/tournament/<int:tournament_id>/export/pdf')
+def export_bracket_pdf(tournament_id):
+    """Export tournament bracket as PDF"""
+    try:
+        from weasyprint import HTML, CSS
+        from flask import make_response
+        import tempfile
+        import os
+        
+        tournament = Tournament.query.get_or_404(tournament_id)
+        bracket_data = get_tournament_bracket(tournament_id)
+        
+        # Create a custom HTML template for the PDF export
+        html_content = render_template(
+            'exports/bracket_pdf.html',
+            tournament=tournament,
+            bracket_data=bracket_data,
+            css_url=url_for('static', filename='css/styles.css', _external=True)
+        )
+        
+        # Create a temporary file
+        with tempfile.NamedTemporaryFile(suffix='.pdf', delete=False) as tmp:
+            # Convert HTML to PDF
+            HTML(string=html_content).write_pdf(tmp.name)
+            
+            # Read the PDF file
+            with open(tmp.name, 'rb') as f:
+                pdf_content = f.read()
+            
+            # Delete the temporary file
+            os.unlink(tmp.name)
+        
+        # Create a response with PDF data
+        response = make_response(pdf_content)
+        response.headers['Content-Type'] = 'application/pdf'
+        response.headers['Content-Disposition'] = f'attachment; filename=tournament_{tournament_id}_{tournament.name}.pdf'
+        
+        return response
+    except Exception as e:
+        print(f"Error exporting PDF: {str(e)}")
+        flash(f'Error exporting bracket as PDF: {str(e)}', 'error')
+        return redirect(url_for('view_tournament', tournament_id=tournament_id))
+
+@app.route('/tournament/<int:tournament_id>/export/image')
+def export_bracket_image(tournament_id):
+    """Export tournament bracket as Image"""
+    try:
+        from html2image import Html2Image
+        from flask import make_response
+        import tempfile
+        import os
+        
+        tournament = Tournament.query.get_or_404(tournament_id)
+        bracket_data = get_tournament_bracket(tournament_id)
+        
+        # Create a custom HTML template for the image export
+        html_content = render_template(
+            'exports/bracket_image.html',
+            tournament=tournament,
+            bracket_data=bracket_data,
+            css_url=url_for('static', filename='css/styles.css', _external=True)
+        )
+        
+        with tempfile.NamedTemporaryFile(suffix='.html', delete=False) as html_file:
+            html_file.write(html_content.encode('utf-8'))
+            html_path = html_file.name
+        
+        # Create a temporary directory for output
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            hti = Html2Image(output_path=tmp_dir)
+            screenshot_path = hti.screenshot(html_path=html_path, save_as=f'tournament_{tournament_id}.png')[0]
+            
+            # Read the generated image
+            with open(screenshot_path, 'rb') as img_file:
+                img_content = img_file.read()
+            
+            # Clean up the temporary HTML file
+            os.unlink(html_path)
+        
+        # Create a response with image data
+        response = make_response(img_content)
+        response.headers['Content-Type'] = 'image/png'
+        response.headers['Content-Disposition'] = f'attachment; filename=tournament_{tournament_id}_{tournament.name}.png'
+        
+        return response
+    except Exception as e:
+        print(f"Error exporting image: {str(e)}")
+        flash(f'Error exporting bracket as image: {str(e)}', 'error')
+        return redirect(url_for('view_tournament', tournament_id=tournament_id))
+
 @app.errorhandler(500)
 def server_error(e):
     """Custom 500 page"""

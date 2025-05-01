@@ -4,34 +4,34 @@
     Base Styles & Variables 
    ======================== */
 :root {
-  /* Light Theme (Material Design) */
-  --light-primary: #2196F3;       /* Blue */
-  --light-primary-light: #64B5F6; /* Lighter blue */
-  --light-primary-dark: #1976D2;  /* Darker blue */
-  --light-secondary: #FF4081;     /* Pink */
+  /* Light Theme (Material Design) - Enhanced Contrast */
+  --light-primary: #0D6EFD;       /* Darker Blue */
+  --light-primary-light: #499BFF; /* Lighter blue */
+  --light-primary-dark: #0255D2;  /* Much Darker blue */
+  --light-secondary: #E91E63;     /* Deeper Pink */
   --light-background: #FFFFFF;    /* White */
-  --light-text: #212121;          /* Dark grey */
-  --light-text-secondary: #757575; /* Medium grey */
+  --light-text: #121212;          /* Almost Black */
+  --light-text-secondary: #545454; /* Darker Medium grey */
   --light-surface: #F5F5F5;       /* Light grey */
-  --light-error: #F44336;         /* Red */
-  --light-success: #4CAF50;       /* Green */
+  --light-error: #DC3545;         /* Deeper Red */
+  --light-success: #198754;       /* Deeper Green */
   --light-warning: #FFC107;       /* Amber */
-  --light-border: #E0E0E0;        /* Light grey */
-  --light-shadow: rgba(0, 0, 0, 0.1);
+  --light-border: #CED4DA;        /* Darker border */
+  --light-shadow: rgba(0, 0, 0, 0.2);
 
-  /* Dark Theme */
+  /* Dark Theme - Enhanced Contrast */
   --dark-primary: #BB86FC;        /* Purple */
   --dark-primary-light: #D7B8FF;  /* Lighter purple */
   --dark-primary-dark: #9A67EA;   /* Darker purple */
   --dark-secondary: #03DAC6;      /* Teal */
   --dark-background: #121212;     /* Dark grey */
   --dark-text: #FFFFFF;           /* White */
-  --dark-text-secondary: #B0B0B0; /* Light grey */
+  --dark-text-secondary: #D0D0D0; /* Even Lighter grey for better contrast */
   --dark-surface: #1E1E1E;        /* Dark grey */
-  --dark-error: #CF6679;          /* Pink-ish */
-  --dark-success: #5CDD6D;        /* Green */
+  --dark-error: #F86384;          /* Brighter Pink-ish */
+  --dark-success: #4AEF61;        /* Brighter Green */
   --dark-warning: #FFCF44;        /* Yellow */
-  --dark-border: #2D2D2D;         /* Dark grey */
+  --dark-border: #3D3D3D;         /* Lighter border for contrast */
   --dark-shadow: rgba(0, 0, 0, 0.5);
 
   /* Default theme (light) */
