@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% block title %}Tournament Bracket - {{ tournament.name }}{% endblock %}
+{% block title %}比賽賽程 - {{ tournament.name }}{% endblock %}
 
 {% block extra_css %}
 {% endblock %}
@@ -10,20 +10,24 @@
     <!-- Canvas for confetti celebration will be at the bottom -->
 
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1>Tournament Bracket - {{ tournament.name }}</h1>
-        <div>
+        <h1 class="chess-title">比賽賽程 - {{ tournament.name }}</h1>
+        
+        <div class="tournament-actions">
             <div class="dropdown d-inline-block me-2">
-                <button class="btn btn-success dropdown-toggle" type="button" id="exportDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fas fa-download"></i> Export
+                <button class="btn btn-chinese dropdown-toggle" type="button" id="exportDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-download"></i> 導出
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="exportDropdown">
-                    <li><a class="dropdown-item" href="{{ url_for('export_bracket_pdf', tournament_id=tournament.id) }}" target="_blank"><i class="fas fa-file-pdf"></i> Export as PDF</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('export_bracket_pdf', tournament_id=tournament.id) }}" target="_blank"><i class="fas fa-file-pdf"></i> 導出為PDF</a></li>
                 </ul>
             </div>
+            
             {% if tournament.status == 'in_progress' %}
             <form method="POST" action="{{ url_for('generate_bracket', tournament_id=tournament.id) }}" class="d-inline me-2">
                 <input type="hidden" name="regenerate" value="true">
-                <button type="submit" class="btn btn-warning" onclick="return confirm('這將重新生成整個賽程表。所有現有的比賽結果將被刪除。確定繼續嗎?');">重新生成賽程表</button>
+                <button type="submit" class="btn btn-outline" onclick="return confirm('這將重新生成整個賽程表。所有現有的比賽結果將被刪除。確定繼續嗎?');">
+                    <i class="fas fa-sync-alt"></i> 重新生成賽程表
+                </button>
             </form>
             {% endif %}
 
@@ -36,73 +40,87 @@
         </div>
     </div>
     
-    <div class="card mb-4">
+    <div class="card mb-4 chess-board-bg match-card-chinese">
         <div class="card-body">
-            <h4>Tournament Information</h4>
+            <h4>比賽資訊</h4>
             <div class="row">
                 <div class="col-md-4">
-                    <strong>Date:</strong> {{ tournament.date.strftime('%Y-%m-%d') }}
+                    <strong><i class="far fa-calendar-alt"></i> 日期:</strong> {{ tournament.date.strftime('%Y-%m-%d') }}
                 </div>
                 <div class="col-md-4">
-                    <strong>Status:</strong> 
+                    <strong><i class="fas fa-info-circle"></i> 狀態:</strong> 
                     {% if tournament.status == 'setup' %}
-                        <span class="badge bg-primary">Setup</span>
+                        <span class="badge bg-primary">設置中</span>
                     {% elif tournament.status == 'in_progress' %}
-                        <span class="badge bg-success">In Progress</span>
+                        <span class="badge bg-success">進行中</span>
                     {% elif tournament.status == 'completed' %}
-                        <span class="badge bg-secondary">Completed</span>
+                        <span class="badge bg-secondary">已完成</span>
                     {% endif %}
                 </div>
                 <div class="col-md-4">
-                    <strong>Instructions:</strong> 
+                    <strong><i class="fas fa-question-circle"></i> 說明:</strong> 
                     {% if tournament.status == 'in_progress' %}
-                        Click on a player's name to mark them as the winner of a match.
+                        點擊選手的名字將其標記為比賽勝利者。
                     {% endif %}
                 </div>
             </div>
         </div>
     </div>
     
-    <h2>Bracket</h2>
-    <div id="tournament-bracket" class="tournament-container" data-tournament-id="{{ tournament.id }}">
+    <h2 class="chess-title">賽程表</h2>
+    <div id="tournament-bracket" class="tournament-container chess-grid-lines" data-tournament-id="{{ tournament.id }}">
         <div class="text-center p-5">
-            <div class="spinner-border text-primary" role="status">
-                <span class="visually-hidden">Loading...</span>
+            <div class="loading-animation">
+                <div class="spinner"></div>
+                <p class="mt-3">正在加載賽程表...</p>
             </div>
-            <p class="mt-3">Loading tournament bracket...</p>
         </div>
     </div>
     
-    <div class="card mt-4">
+    <div class="card mt-4 match-card-chinese">
         <div class="card-body">
-            <h4>Legend</h4>
+            <h4>圖例</h4>
             <div class="row">
                 <div class="col-md-3">
                     <div class="d-flex align-items-center mb-2">
                         <div class="seeded-badge me-2">S</div>
-                        <span>Seeded Player</span>
+                        <span>種子選手</span>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="player winner mb-2" style="display: inline-block; padding: 0.25rem 0.5rem; width: auto;">
-                        Winner
+                        勝利者
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="player bye mb-2" style="display: inline-block; padding: 0.25rem 0.5rem; width: auto;">
-                        Bye
+                        轍轎
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <p><small>Click on player to mark as winner</small></p>
+                    <p><small>點擊選手將其標記為勝利者</small></p>
                 </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 添加中國象棋特色元素 -->
+    <div class="row mt-5 mb-3">
+        <div class="col-md-12 text-center">
+            <div class="d-flex justify-content-center gap-3">
+                <div class="chess-piece-card chess-piece-red">谅</div>
+                <div class="chess-piece-card chess-piece-red">相</div>
+                <div class="chess-piece-card chess-piece-red">車</div>
+                <div class="chess-piece-card chess-piece-black">將</div>
+                <div class="chess-piece-card chess-piece-black">士</div>
+                <div class="chess-piece-card chess-piece-black">谹</div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Confetti Canvas -->
-<canvas id="confetti-canvas" style="position: fixed; top: 0; left: 0; pointer-events: none; z-index: 1000; width: 100%; height: 100%; display: none;"></canvas>
+<!-- Confetti Canvas with improved styling -->
+<canvas id="confetti-canvas"></canvas>
 {% endblock %}
 
 {% block extra_js %}
