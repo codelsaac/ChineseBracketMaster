@@ -277,27 +277,25 @@ def update_match_result(match_id, winner_id):
             # We need to identify the match where one player has a bye
             # and immediately advance them to the next round
 
-            # First check: if this is a semi-final match and we've just updated the player1 or player2
-            # of the final match, we need to check if the other semi-final has a bye
+            # Check if this is an auto-bye match where one player has not been set yet
+            # We should only auto-advance if one player has a bye (null)
             if next_match.player1_id is not None and next_match.player2_id is None:
-                # If player 2 is empty, and there are no more matches after this one
-                # (this is the final), we should auto-advance player 1 as the winner
+                # Handle differently if this is the final match
                 if next_match.next_match_id is None:
-                    # This is the final match and player 2 is a bye, so player 1 wins
-                    next_match.winner_id = next_match.player1_id
-                    print(f"Auto-win for player {next_match.player1_id} in final match {next_match.id} due to bye")
+                    # This is the final match, but we DON'T auto-advance player 1 as the winner
+                    # The user must explicitly choose the winner even in a bye situation
+                    print(f"Player {next_match.player1_id} in final match {next_match.id} needs explicit selection")
                 else:
-                    # Not the final, so just propagate as normal
+                    # Not the final match, so auto-advance as normal
                     propagate_auto_advance(next_match, next_match.player1_id)
             elif next_match.player2_id is not None and next_match.player1_id is None:
-                # If player 1 is empty, and there are no more matches after this one
-                # (this is the final), we should auto-advance player 2 as the winner
+                # Handle differently if this is the final match
                 if next_match.next_match_id is None:
-                    # This is the final match and player 1 is a bye, so player 2 wins
-                    next_match.winner_id = next_match.player2_id
-                    print(f"Auto-win for player {next_match.player2_id} in final match {next_match.id} due to bye")
+                    # This is the final match, but we DON'T auto-advance player 2 as the winner
+                    # The user must explicitly choose the winner even in a bye situation
+                    print(f"Player {next_match.player2_id} in final match {next_match.id} needs explicit selection")
                 else:
-                    # Not the final, so just propagate as normal
+                    # Not the final match, so auto-advance as normal
                     propagate_auto_advance(next_match, next_match.player2_id)
                 
         # Save the current match
@@ -338,13 +336,14 @@ def propagate_auto_advance(match, winner_id):
                 # Both players are set, no bye to auto-advance
                 return
                 
-            # If this is the final match, don't propagate further
+            # Check if this is the final match
             next_next_match = Match.query.get(next_match.next_match_id) if next_match.next_match_id else None
             if next_next_match is None:
-                # No match after this one, so don't auto-advance further (we're at the final)
+                # This is the final match - we DON'T auto-advance in the final even if one side is a bye
+                print(f"Final match {next_match.id} - not auto-advancing players")
                 return
                 
-            # Check if we need to continue auto-advancing in next match (if it's also a bye)
+            # For non-final matches, continue auto-advancing in case of byes
             if next_match.player1_id is not None and next_match.player2_id is None:
                 # Player 2 is a bye, so player 1 advances automatically
                 propagate_auto_advance(next_match, next_match.player1_id)
