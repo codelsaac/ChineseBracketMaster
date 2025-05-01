@@ -8,6 +8,16 @@
  * @param {Object} data - Tournament bracket data from API
  */
 function initializeBracket(data) {
+    console.log('Initializing bracket with data:', data);
+    
+    // First, cleanup any existing trophy elements anywhere in the DOM
+    // This ensures we don't have leftover trophies from previous renders
+    const existingTrophies = document.querySelectorAll('.winner-trophy');
+    existingTrophies.forEach(trophy => {
+        console.log('Removing existing trophy during initialization');
+        trophy.remove();
+    });
+    
     const tournamentContainer = document.getElementById('tournament-bracket');
     if (!tournamentContainer) return;
     
