@@ -60,7 +60,7 @@ a:hover {
 .header {
     position: relative;
     text-align: center;
-    background: linear-gradient(60deg, var(--primary-red) 0%, #c1121f 100%);
+    background: linear-gradient(60deg, #e63946 0%, #c1121f 100%);
     color: white;
     padding: 0;
     overflow: hidden;
@@ -68,7 +68,7 @@ a:hover {
 }
 
 .inner-header {
-    min-height: var(--header-height);
+    min-height: 15vh;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -134,7 +134,7 @@ a:hover {
     height: 15vh;
     margin-bottom: -7px; /* Fix for safari gap */
     min-height: 80px;
-    max-height: 120px;
+    max-height: 150px;
 }
 
 /* Animation */
@@ -172,6 +172,22 @@ a:hover {
 }
 
 /* 暗色模式下的波浪填充 */
+body.dark-mode .header {
+    background: linear-gradient(60deg, #9b2226 0%, #660708 100%);
+}
+
+body.dark-mode .parallax > use:nth-child(1) {
+    fill: rgba(93, 74, 51, 0.7);
+}
+
+body.dark-mode .parallax > use:nth-child(2) {
+    fill: rgba(93, 74, 51, 0.5);
+}
+
+body.dark-mode .parallax > use:nth-child(3) {
+    fill: rgba(93, 74, 51, 0.3);
+}
+
 body.dark-mode .parallax > use:nth-child(4) {
     fill: var(--bg-dark-mode);
 }
