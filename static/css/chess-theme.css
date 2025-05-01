@@ -21,11 +21,13 @@
 }
 
 body.dark-mode .chess-board-bg {
-    background-color: #3c3226;
+    background-color: rgba(60, 50, 38, 0.85);
     background-image: 
         linear-gradient(rgba(212, 162, 83, 0.2) 1px, transparent 1px),
         linear-gradient(90deg, rgba(212, 162, 83, 0.2) 1px, transparent 1px);
     border-color: #5d4a33;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 /* 中國象棋棋子卡片 */
@@ -104,10 +106,12 @@ body.dark-mode .chess-board-bg {
 
 /* 中國風格比賽卡片 */
 .match-card-chinese {
-    background-color: #f8f9fa;
+    background-color: rgba(248, 249, 250, 0.85);
     border: 2px solid var(--primary-red);
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .match-card-chinese:before {
@@ -123,8 +127,10 @@ body.dark-mode .chess-board-bg {
 }
 
 body.dark-mode .match-card-chinese {
-    background-color: var(--card-dark-mode);
+    background-color: rgba(31, 31, 31, 0.85);
     border-color: #c1121f;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 /* 棋盤橘紅色按鈕 */
@@ -228,7 +234,7 @@ body.dark-mode .tournament-rules li {
 .match-card {
     border: 2px solid #d4a255;
     border-radius: var(--border-radius);
-    background-color: #f8f1e0;
+    background-color: rgba(248, 241, 224, 0.85);
     padding: 15px;
     margin-bottom: 1.5rem;
     position: relative;
@@ -236,11 +242,15 @@ body.dark-mode .tournament-rules li {
     transition: all 0.3s ease;
     overflow: visible;
     width: 280px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 body.dark-mode .match-card {
-    background-color: #2d2b27;
+    background-color: rgba(45, 43, 39, 0.85);
     border-color: #5d4a33;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .match-card:hover {
@@ -371,12 +381,16 @@ body.dark-mode .player.bye, body.dark-mode .match-player.bye {
 .championship-match {
     border-color: var(--accent-gold);
     box-shadow: 0 0 18px rgba(255, 215, 0, 0.4);
-    background-color: #fdf9e9;
+    background-color: rgba(253, 249, 233, 0.9);
     z-index: 10;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 body.dark-mode .championship-match {
-    background-color: #332f22;
+    background-color: rgba(51, 47, 34, 0.9);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .championship-match:before {
