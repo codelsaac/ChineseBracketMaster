@@ -5,33 +5,33 @@
    ======================== */
 :root {
   /* Light Theme (Material Design) - Enhanced Contrast */
-  --light-primary: #0D6EFD;       /* Darker Blue */
-  --light-primary-light: #499BFF; /* Lighter blue */
-  --light-primary-dark: #0255D2;  /* Much Darker blue */
-  --light-secondary: #E91E63;     /* Deeper Pink */
+  --light-primary: #0B5ED7;       /* Even Darker Blue for better contrast */
+  --light-primary-light: #3D8BFD; /* Richer lighter blue */
+  --light-primary-dark: #0A48AD;  /* Even darker blue for higher contrast */
+  --light-secondary: #D00B4B;     /* Deeper Pink with better visibility */
   --light-background: #FFFFFF;    /* White */
   --light-text: #121212;          /* Almost Black */
-  --light-text-secondary: #545454; /* Darker Medium grey */
+  --light-text-secondary: #444444; /* Darker Medium grey for improved contrast */
   --light-surface: #F5F5F5;       /* Light grey */
-  --light-error: #DC3545;         /* Deeper Red */
-  --light-success: #198754;       /* Deeper Green */
-  --light-warning: #FFC107;       /* Amber */
-  --light-border: #CED4DA;        /* Darker border */
-  --light-shadow: rgba(0, 0, 0, 0.2);
+  --light-error: #C82333;         /* Deeper Red with higher contrast */
+  --light-success: #0F753E;       /* Deeper Green with higher contrast */
+  --light-warning: #EBA20B;       /* Deeper Amber for better contrast */
+  --light-border: #ADB5BD;        /* Darker border for better visibility */
+  --light-shadow: rgba(0, 0, 0, 0.25);
 
   /* Dark Theme - Enhanced Contrast */
-  --dark-primary: #BB86FC;        /* Purple */
-  --dark-primary-light: #D7B8FF;  /* Lighter purple */
-  --dark-primary-dark: #9A67EA;   /* Darker purple */
-  --dark-secondary: #03DAC6;      /* Teal */
+  --dark-primary: #CFA4FF;        /* Brighter Purple for better contrast in dark mode */
+  --dark-primary-light: #E2CCFF;  /* Even lighter purple */
+  --dark-primary-dark: #A670E8;   /* More visible purple */
+  --dark-secondary: #05F7DF;      /* Brighter Teal for better visibility */
   --dark-background: #121212;     /* Dark grey */
   --dark-text: #FFFFFF;           /* White */
-  --dark-text-secondary: #D0D0D0; /* Even Lighter grey for better contrast */
+  --dark-text-secondary: #E5E5E5; /* Even Lighter grey for maximum contrast */
   --dark-surface: #1E1E1E;        /* Dark grey */
-  --dark-error: #F86384;          /* Brighter Pink-ish */
-  --dark-success: #4AEF61;        /* Brighter Green */
-  --dark-warning: #FFCF44;        /* Yellow */
-  --dark-border: #3D3D3D;         /* Lighter border for contrast */
+  --dark-error: #FF6B8B;          /* Brighter Pink-ish for better visibility */
+  --dark-success: #4EF769;        /* Brighter Green with better visibility */
+  --dark-warning: #FFD74E;        /* Brighter Yellow for better contrast */
+  --dark-border: #4D4D4D;         /* Lighter border for better contrast */
   --dark-shadow: rgba(0, 0, 0, 0.5);
 
   /* Default theme (light) */
@@ -453,6 +453,7 @@ body.dark-theme .alert-error {
   margin-bottom: var(--spacing-xs);
   cursor: pointer;
   transition: background-color var(--transition-fast);
+  border: 1px solid transparent;
 }
 
 .player:last-child {
@@ -460,17 +461,30 @@ body.dark-theme .alert-error {
 }
 
 .player:hover {
-  background-color: rgba(33, 150, 243, 0.1);
+  background-color: rgba(11, 94, 215, 0.15); /* Higher contrast hover color */
+  border-color: var(--light-primary-light);
 }
 
 .player.winner {
-  background-color: rgba(76, 175, 80, 0.1);
-  font-weight: 500;
+  background-color: rgba(15, 117, 62, 0.2); /* Higher contrast winner background */
+  font-weight: 600; /* Bolder to increase visibility */
+  border: 1px solid var(--light-success); /* Add border to winners */
 }
 
 .player.bye {
   color: var(--text-secondary);
   font-style: italic;
+  background-color: rgba(108, 117, 125, 0.1); /* Light background for bye entries */
+}
+
+body.dark-theme .player:hover {
+  background-color: rgba(207, 164, 255, 0.25); /* Better hover color for dark mode */
+  border-color: var(--dark-primary-light);
+}
+
+body.dark-theme .player.winner {
+  background-color: rgba(78, 247, 105, 0.2); /* Better winner background for dark mode */
+  border-color: var(--dark-success);
 }
 
 .player-name {

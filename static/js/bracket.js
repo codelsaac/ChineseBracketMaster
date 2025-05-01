@@ -137,7 +137,7 @@ function createPlayerElement(playerId, players, winnerId) {
     const playerElement = document.createElement('div');
     playerElement.className = 'player';
     
-    if (playerId) {
+    if (playerId && players[playerId]) {
         const player = players[playerId];
         
         // Check if this player is the winner
@@ -174,6 +174,10 @@ function createPlayerElement(playerId, players, winnerId) {
         playerDetailsDiv.appendChild(playerSchoolDiv);
         
         playerElement.appendChild(playerDetailsDiv);
+    } else if (playerId) {
+        // Player exists in database but not in current tournament (edge case)
+        playerElement.classList.add('bye');
+        playerElement.textContent = 'Bye';
     } else {
         // Empty slot or bye
         playerElement.classList.add('bye');

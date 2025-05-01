@@ -161,7 +161,7 @@
                 
                 {% for match in matches %}
                     <div class="match-card {% if round_num|int == max_round %}championship-match{% endif %}">
-                        {% if match.player1_id %}
+                        {% if match.player1_id and match.player1_id|string in bracket_data.players %}
                             <div class="player {% if match.winner_id == match.player1_id %}winner{% endif %}">
                                 <div class="player-name">
                                     {{ bracket_data.players[match.player1_id|string].name }}
@@ -172,10 +172,10 @@
                                 <div class="player-school">{{ bracket_data.players[match.player1_id|string].school }}</div>
                             </div>
                         {% else %}
-                            <div class="player">TBD</div>
+                            <div class="player">{% if not match.player1_id %}TBD{% else %}Bye{% endif %}</div>
                         {% endif %}
                         
-                        {% if match.player2_id %}
+                        {% if match.player2_id and match.player2_id|string in bracket_data.players %}
                             <div class="player {% if match.winner_id == match.player2_id %}winner{% endif %}">
                                 <div class="player-name">
                                     {{ bracket_data.players[match.player2_id|string].name }}
@@ -186,7 +186,7 @@
                                 <div class="player-school">{{ bracket_data.players[match.player2_id|string].school }}</div>
                             </div>
                         {% else %}
-                            <div class="player">TBD</div>
+                            <div class="player bye">{% if not match.player2_id %}TBD{% else %}Bye{% endif %}</div>
                         {% endif %}
                     </div>
                 {% endfor %}
