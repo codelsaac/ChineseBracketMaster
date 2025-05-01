@@ -13,12 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Initialize confetti for winners
         initConfetti();
-        
-        // Initialize preview mode
-        initPreviewMode();
-        
-        // Initialize color customization
-        initColorCustomization();
     }
     
     // Initialize sortable players if on the players page
@@ -283,44 +277,7 @@ function celebrateWinner() {
     }, 3000);
 }
 
-/**
- * Initialize preview mode
- */
-function initPreviewMode() {
-    const previewButton = document.getElementById('preview-toggle');
-    if (!previewButton) return;
-    
-    previewButton.addEventListener('click', function() {
-        const tournamentId = document.getElementById('tournament-bracket').dataset.tournamentId;
-        
-        // Get tournament data
-        fetch(`/api/tournament/${tournamentId}/bracket`)
-            .then(response => response.json())
-            .then(data => {
-                // Populate the preview dropdown
-                const rounds = Object.keys(data.rounds).sort((a, b) => parseInt(a) - parseInt(b));
-                const selectElement = document.getElementById('preview-round');
-                selectElement.innerHTML = '';
-                
-                rounds.forEach(round => {
-                    const option = document.createElement('option');
-                    option.value = round;
-                    option.textContent = getRoundTitle(parseInt(round), rounds.length);
-                    selectElement.appendChild(option);
-                });
-                
-                // Show the preview modal
-                const previewModal = new bootstrap.Modal(document.getElementById('previewModeModal'));
-                previewModal.show();
-                
-                // Setup preview controls
-                setupPreviewControls(data);
-            })
-            .catch(error => {
-                console.error('Error loading tournament data for preview:', error);
-            });
-    });
-}
+
 
 /**
  * Setup preview controls
