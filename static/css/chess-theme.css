@@ -227,13 +227,13 @@ body.dark-mode .tournament-rules li {
     border: 2px solid #d4a255;
     border-radius: var(--border-radius);
     background-color: #f8f1e0;
-    padding: 15px;
-    margin-bottom: 20px;
+    padding: 12px 15px;
+    margin-bottom: 18px;
     position: relative;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     overflow: visible;
-    width: 250px;
+    width: 220px;
     display: flex;
     flex-direction: column;
     margin-left: auto;
@@ -261,8 +261,8 @@ body.dark-mode .match-card {
 /* 賽事中的選手卡片 */
 /* 選手樣式 */
 .player {
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 8px 10px;
+    margin-bottom: 8px;
     border-radius: var(--border-radius);
     background-color: white;
     border-left: 3px solid transparent;

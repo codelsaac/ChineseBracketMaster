@@ -332,7 +332,16 @@ def delete_tournament(tournament_id):
         print(f"Error deleting tournament: {str(e)}")
         flash(f'Error deleting tournament: {str(e)}', 'error')
     
-    return redirect(url_for('index'))
+    # 使用JavaScript重定向，以避免刪除後的頁面鎖定問題
+    return '''<script>
+        setTimeout(function() {
+            window.location.href = "/";
+        }, 500);
+    </script>
+    <p>正在刪除比賽，即將返回首頁...</p>
+    '''
+    # 舊的重定向方式，可能導致頁面鎖定
+    # return redirect(url_for('index'))
 
 @app.route('/tournament/<int:tournament_id>/export/pdf')
 def export_bracket_pdf(tournament_id):
