@@ -17,16 +17,16 @@
 ## 技術架構
 
 - 後端：Python Flask
-- 數據庫：PostgreSQL與SQLAlchemy
+- 數據庫：Firebase Firestore (雲端NoSQL數據庫)
 - 前端：HTML, CSS, JavaScript (使用Material Design風格)
-- 依賴庫：confetti-js (慶祝特效), SortableJS (拖拽排序), WeasyPrint (PDF生成)
+- 依賴庫：firebase-admin (Firebase SDK), confetti-js (慶祝特效), SortableJS (拖拽排序), WeasyPrint (PDF生成)
 
 ## 本地部署指南
 
 ### 先決條件
 
 - Python 3.9+
-- PostgreSQL數據庫
+- Firebase帳戶和專案
 - Node.js（用於管理前端依賴）
 
 ### 安裝步驟
@@ -57,21 +57,21 @@
    npm install
    ```
 
-5. **配置數據庫**
+5. **設置Firebase**
 
-   創建PostgreSQL數據庫，然後設置環境變量：
+   從Firebase控制台下載服務帳戶金鑰，然後設置環境變量：
 
    ```bash
    # Linux/Mac
-   export DATABASE_URL=postgresql://username:password@localhost/dbname
+   export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your-firebase-adminsdk-key.json"
+   export SESSION_SECRET="your_secret_key_here"
    
    # Windows
-   set DATABASE_URL=postgresql://username:password@localhost/dbname
+   set GOOGLE_APPLICATION_CREDENTIALS=C:\path\to\your-firebase-adminsdk-key.json
+   set SESSION_SECRET=your_secret_key_here
    ```
 
-6. **初始化數據庫**
-
-   啟動應用程式，資料表將自動創建：
+6. **啟動應用程式**
 
    ```bash
    python main.py
@@ -104,6 +104,14 @@ gunicorn --bind 0.0.0.0:5000 main:app
 1. 盡可能將來自同一學校的選手分開
 2. 合理分配種子選手
 3. 僅在第一輪平衡輪空選手
+
+## 數據結構
+
+系統使用Firebase Firestore存儲數據，主要集合包括：
+
+- **/tournaments/{tournament_id}**：存儲賽事信息
+- **/players/{player_id}**：存儲選手信息
+- **/matches/{match_id}**：存儲比賽信息
 
 ## 貢獻指南
 

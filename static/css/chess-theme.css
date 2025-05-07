@@ -332,14 +332,28 @@ body.dark-mode .player:hover, body.dark-mode .match-player:hover {
 }
 
 .player.winner, .match-player.winner {
-    background-color: #e6f3e6;
+    background-color: rgba(40, 167, 69, 0.15); /* Green background */
     font-weight: 700;
-    border-left: 3px solid #28a745;
+    border-left: 3px solid #28a745; /* Green border */
+}
+
+.player.loser, .match-player.loser {
+    background-color: rgba(230, 57, 70, 0.1); /* Red background */
+    color: #6c757d; /* Grey text for loser */
+    text-decoration: line-through; /* Strikethrough text */
+    border-left: 3px solid var(--primary-red); /* Red border */
 }
 
 body.dark-mode .player.winner, body.dark-mode .match-player.winner {
-    background-color: #1e3e1e;
-    border-color: #28a745;
+    background-color: rgba(40, 167, 69, 0.25); /* Dark mode Green background */
+    border-color: #28a745; /* Dark mode Green border */
+}
+
+body.dark-mode .player.loser, body.dark-mode .match-player.loser {
+    background-color: rgba(230, 57, 70, 0.2); /* Dark mode Red background */
+    color: #adb5bd; /* Lighter grey text for dark mode loser */
+    text-decoration: line-through;
+    border-color: var(--primary-red); /* Dark mode Red border */
 }
 
 .player.bye, .match-player.bye {

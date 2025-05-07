@@ -158,10 +158,23 @@ function showErrorMessage(message) {
     const container = document.getElementById('tournament-bracket');
     if (container) {
         container.innerHTML = `
-            <div class="alert alert-error">
-                <strong>Error:</strong> ${message}
+            <div class="alert alert-danger p-4 text-center">
+                <div class="mb-3"><i class="fas fa-exclamation-triangle fa-3x"></i></div>
+                <h4>Error</h4>
+                <p>${message}</p>
+                <div class="mt-3">
+                    <button onclick="location.reload()" class="btn btn-outline">
+                        <i class="fas fa-sync-alt"></i> Retry
+                    </button>
+                </div>
             </div>
         `;
+        
+        // Log error to console for debugging
+        console.error('Error displayed to user:', message);
+        
+        // Scroll to error message
+        container.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 }
 

@@ -10,6 +10,13 @@
 function initializeBracket(data) {
     console.log('Initializing bracket with data:', data);
     
+    // Check if API returned an error
+    if (data.error) {
+        console.error('API returned error:', data.error);
+        showErrorMessage(data.error || 'Failed to load tournament data. Please try again later.');
+        return;
+    }
+    
     // First, cleanup any existing trophy elements anywhere in the DOM
     // This ensures we don't have leftover trophies from previous renders
     const existingTrophies = document.querySelectorAll('.winner-trophy');
@@ -24,8 +31,21 @@ function initializeBracket(data) {
     const rounds = data.rounds;
     const players = data.players;
     
+    // Add checks: ensure rounds and players exist
+    if (!rounds || !players) {
+        console.error('Missing required data: rounds or players');
+        showErrorMessage('Tournament data is incomplete. Please try again later.');
+        return;
+    }
+    
     // Clear the container
     tournamentContainer.innerHTML = '';
+    
+    // Check if there's match data
+    if (Object.keys(rounds).length === 0) {
+        tournamentContainer.innerHTML = '<div class="alert alert-info">No matches available. Please add players and generate the bracket first.</div>';
+        return;
+    }
     
     // Get the number of rounds
     const roundKeys = Object.keys(rounds).sort((a, b) => parseInt(a) - parseInt(b));
@@ -220,65 +240,63 @@ function createMatchElement(match, players, roundNumber, totalRounds) {
 
 /**
  * Create a player element for a match
- * @param {number|null} playerId - Player ID or null for bye/empty slot
+ * @param {string|null} playerId - Player ID or null for bye/empty slot
  * @param {Object} players - Player data lookup object
- * @param {number|null} winnerId - ID of the match winner
+ * @param {string|null} winnerId - ID of the match winner
  * @returns {HTMLElement} The player element
  */
 function createPlayerElement(playerId, players, winnerId) {
+    // Create player element
     const playerElement = document.createElement('div');
-    playerElement.className = 'player';
+    playerElement.classList.add('player');
     
-    if (playerId && players[playerId]) {
-        const player = players[playerId];
-        
-        // Check if this player is the winner
+    // Defensive check
+    if (!players) {
+        console.error('Players data is missing');
+        playerElement.textContent = 'Error: Data missing';
+        playerElement.classList.add('bye');
+        return playerElement;
+    }
+    
+    // Set player ID attribute (safely handle null/undefined)
+    if (playerId) {
+        playerElement.dataset.playerId = playerId;
+    }
+    
+    // Try to get player data
+    let player = null;
+    if (playerId && typeof players === 'object') {
+        player = players[playerId];
+    }
+    
+    // If player data not found or playerId is empty, show TBD
+    if (!player) {
+        playerElement.textContent = 'TBD';
+        playerElement.classList.add('bye');
+        return playerElement;
+    }
+    
+    // Build player name display
+    const playerName = document.createElement('div');
+    playerName.classList.add('player-name');
+    playerName.textContent = player.name || 'Unnamed Player';
+    
+    // Build player school display
+    const playerSchool = document.createElement('div');
+    playerSchool.classList.add('player-school');
+    playerSchool.textContent = player.school || '';
+    
+    // Add to element
+    playerElement.appendChild(playerName);
+    playerElement.appendChild(playerSchool);
+    
+    // Apply winner/loser styles based on winnerId
+    if (winnerId) {
         if (playerId === winnerId) {
             playerElement.classList.add('winner');
+        } else {
+            playerElement.classList.add('loser');
         }
-        
-        // Set data attributes for player selection
-        playerElement.dataset.playerId = playerId;
-        
-        // Create player name and details
-        const playerNameDiv = document.createElement('div');
-        playerNameDiv.className = 'player-name';
-        
-        // 添加與學校相關的顏色（保持 Chinese Chess 主題顏色）
-        const schoolColorClass = player.school.length % 2 === 0 ? 'player-red' : 'player-black';
-        playerElement.classList.add(schoolColorClass);
-        
-        playerNameDiv.appendChild(document.createTextNode(player.name));
-        
-        // Add seeded badge if applicable
-        if (player.is_seeded) {
-            const seededBadge = document.createElement('span');
-            seededBadge.className = 'seeded-badge';
-            seededBadge.textContent = 'S';
-            seededBadge.title = 'Seeded Player';
-            playerNameDiv.appendChild(seededBadge);
-        }
-        
-        // Add school info
-        const playerSchoolDiv = document.createElement('div');
-        playerSchoolDiv.className = 'player-school';
-        playerSchoolDiv.textContent = player.school;
-        
-        // Combine elements
-        const playerDetailsDiv = document.createElement('div');
-        playerDetailsDiv.className = 'player-details';
-        playerDetailsDiv.appendChild(playerNameDiv);
-        playerDetailsDiv.appendChild(playerSchoolDiv);
-        
-        playerElement.appendChild(playerDetailsDiv);
-    } else if (playerId) {
-        // Player exists in database but not in current tournament (edge case)
-        playerElement.classList.add('bye');
-        playerElement.textContent = 'Bye';
-    } else {
-        // Empty slot or bye
-        playerElement.classList.add('bye');
-        playerElement.textContent = 'TBD';
     }
     
     return playerElement;
@@ -302,7 +320,7 @@ function addPlayerSelectionListeners() {
             }
             
             // Confirm the selection
-            if (confirm('確定將這名選手標記為比賽勝利者嗎?')) {
+            if (confirm('Are you sure you want to mark this player as the winner?')) {
                 updateMatchWinner(matchId, playerId);
             }
         });
@@ -361,7 +379,7 @@ function updateMatchWinner(matchId, winnerId) {
                         
                         // Show congratulatory message
                         setTimeout(() => {
-                            alert(`\u606d\u559c\uff01 ${winnerName} \u662f\u8cfd\u4e8b\u7684\u51a0\u8ecd\uff01`);
+                            alert(`Congratulations! ${winnerName} is the champion of the tournament!`);
                         }, 1000);
                     }
                 }

@@ -1,74 +1,27 @@
-# Database models for the application
-from app import db
+# SQLAlchemy models have been removed as part of the migration to Firebase Firestore.
+# You will need to redefine your data structures and access logic
+# using the Firebase Admin SDK (db_firestore client) in your routes.
 
-class Player(db.Model):
-    """Model for players participating in tournaments"""
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    school = db.Column(db.String(100), nullable=False)
-    is_seeded = db.Column(db.Boolean, default=False)
-    tournament_id = db.Column(db.Integer, db.ForeignKey('tournament.id'))
-    
-    def to_dict(self):
-        """Convert player model to dictionary for JSON serialization"""
-        return {
-            'id': self.id,
-            'name': self.name,
-            'school': self.school,
-            'is_seeded': self.is_seeded,
-            'tournament_id': self.tournament_id
-        }
+# Example Firestore Structure (adjust as needed):
 
-class Tournament(db.Model):
-    """Model for tournaments"""
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    date = db.Column(db.Date, nullable=False)
-    status = db.Column(db.String(20), default="setup")  # setup, in_progress, completed
-    players = db.relationship('Player', backref='tournament', lazy=True)
-    
-    def to_dict(self):
-        """Convert tournament model to dictionary for JSON serialization"""
-        return {
-            'id': self.id,
-            'name': self.name,
-            'date': self.date.isoformat(),
-            'status': self.status,
-            'players': [player.to_dict() for player in self.players]
-        }
+# /tournaments/{tournament_id}
+#   - name: "Tournament Name"
+#   - date: ...
+#   - status: "active" / "completed"
 
-class Match(db.Model):
-    """Model for tournament matches"""
-    id = db.Column(db.Integer, primary_key=True)
-    tournament_id = db.Column(db.Integer, db.ForeignKey('tournament.id'), nullable=False)
-    round_number = db.Column(db.Integer, nullable=False)
-    match_number = db.Column(db.Integer, nullable=False)
-    player1_id = db.Column(db.Integer, db.ForeignKey('player.id'))
-    player2_id = db.Column(db.Integer, db.ForeignKey('player.id'))
-    winner_id = db.Column(db.Integer, db.ForeignKey('player.id'))
-    next_match_id = db.Column(db.Integer, db.ForeignKey('match.id'))
-    
-    # Add a unique constraint to ensure no duplicate matches in the same tournament and round
-    __table_args__ = (
-        db.UniqueConstraint('tournament_id', 'round_number', 'match_number', name='match_tournament_round_number_uq'),
-    )
-    
-    # Define relationships
-    tournament = db.relationship('Tournament', backref='matches')
-    player1 = db.relationship('Player', foreign_keys=[player1_id])
-    player2 = db.relationship('Player', foreign_keys=[player2_id])
-    winner = db.relationship('Player', foreign_keys=[winner_id])
-    next_match = db.relationship('Match', remote_side=[id], backref='previous_matches')
-    
-    def to_dict(self):
-        """Convert match model to dictionary for JSON serialization"""
-        return {
-            'id': self.id,
-            'tournament_id': self.tournament_id,
-            'round_number': self.round_number,
-            'match_number': self.match_number,
-            'player1_id': self.player1_id,
-            'player2_id': self.player2_id,
-            'winner_id': self.winner_id,
-            'next_match_id': self.next_match_id
-        }
+# /players/{player_id}
+#   - name: "Player Name"
+#   - school: "School Name"
+#   - is_seed: True/False
+#   - tournament_ref: /tournaments/{tournament_id}  (or store tournament_id directly)
+
+# /matches/{match_id}
+#   - tournament_ref: /tournaments/{tournament_id}
+#   - round: 1
+#   - player1_ref: /players/{player_id} (or None for bye)
+#   - player2_ref: /players/{player_id} (or None for bye)
+#   - winner_ref: /players/{player_id} (or None if not played)
+#   - status: "pending" / "completed"
+
+# Access Firestore using the 'db_firestore' client initialized in app.py
+# from app import db_firestore

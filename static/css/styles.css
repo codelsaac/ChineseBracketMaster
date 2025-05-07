@@ -594,11 +594,6 @@ body.dark-theme .alert-error {
   border-color: var(--light-primary-light);
 }
 
-.player.winner {
-  background-color: rgba(15, 117, 62, 0.2); /* Higher contrast winner background */
-  font-weight: 600; /* Bolder to increase visibility */
-  border: 1px solid var(--light-success); /* Add border to winners */
-}
 
 .player.bye {
   color: var(--text-secondary);
@@ -611,10 +606,6 @@ body.dark-theme .player:hover {
   border-color: var(--dark-primary-light);
 }
 
-body.dark-theme .player.winner {
-  background-color: rgba(78, 247, 105, 0.2); /* Better winner background for dark mode */
-  border-color: var(--dark-success);
-}
 
 .player-name {
   display: flex;
@@ -664,15 +655,7 @@ body.dark-theme .championship-match {
   /* 不再顯示獎盃圖標 */
 }
 
-.championship-match .player.winner {
-  background-color: rgba(var(--light-success-rgb), 0.3);
-  transform: scale(1.02);
-  transition: all var(--transition-fast);
-}
 
-body.dark-theme .championship-match .player.winner {
-  background-color: rgba(var(--dark-success-rgb), 0.3);
-}
 
 /* ========================
     Responsive Styles
