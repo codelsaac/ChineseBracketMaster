@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: chinesebracketmaster # 您可以自訂服務名稱
+    env: python
+    region: oregon # 您可以選擇離您或您使用者最近的區域，例如: singapore, frankfurt
+    plan: free # 或其他付費方案，例如: starter
+    rootDir: ChineseBracketMaster # 指定包含您應用程式程式碼和 requirements.txt 的目錄
+    buildFilter:
+      paths:
+        - "ChineseBracketMaster/**" # 只有 ChineseBracketMaster 目錄下的變更才會觸發建置
+      ignoredPaths:
+        - "ChineseBracketMaster/tests/**" # 如果您有測試目錄，可以忽略
+    buildCommand: "pip install --upgrade pip && pip install -r requirements.txt"
+    startCommand: "gunicorn --workers 4 --bind 0.0.0.0:$PORT app_render:app"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11 # 或者您專案使用的 Python 版本
+      - key: GOOGLE_APPLICATION_CREDENTIALS_JSON
+        sync: false # 請在 Render 儀表板上設定此環境變數
+      - key: SESSION_SECRET
+        sync: false # 請在 Render 儀表板上設定此環境變數
+      # - key: ANOTHER_ENV_VAR # 如果您有其他環境變數
+      #   value: its_value
+
+# 如果您有資料庫或其他服務，可以在這裡定義
+# databases:
+#   - name: mydatabase
+#     plan: free # 或其他方案
+#     databaseName: myappdb # 資料庫名稱
+#     user: myappuser # 使用者名稱 
