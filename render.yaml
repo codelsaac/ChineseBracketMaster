@@ -4,7 +4,7 @@ services:
     env: python
     region: oregon # 您可以選擇離您或您使用者最近的區域，例如: singapore, frankfurt
     plan: free # 或其他付費方案，例如: starter
-    rootDir: ChineseBracketMaster # 指定包含您應用程式程式碼和 requirements.txt 的目錄
+    rootDir: . # 使用根目錄而不是子目錄
     buildFilter:
       paths:
         - "ChineseBracketMaster/**" # 只有 ChineseBracketMaster 目錄下的變更才會觸發建置
@@ -14,7 +14,7 @@ services:
     startCommand: "gunicorn --workers 4 --bind 0.0.0.0:$PORT app_render:app"
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11 # 或者您專案使用的 Python 版本
+        value: 3.11.4 # 完整的 Python 版本，包括修補版本號
       - key: GOOGLE_APPLICATION_CREDENTIALS_JSON
         sync: false # 請在 Render 儀表板上設定此環境變數
       - key: SESSION_SECRET
