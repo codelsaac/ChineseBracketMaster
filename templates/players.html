@@ -1,0 +1,215 @@
+{% extends "layout.html" %}
+
+{% block title %}管理選手 - {{ tournament.name }}{% endblock %}
+
+{% block content %}
+<div class="section fade-in">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="chess-title">管理選手 - {{ tournament.name }}</h1>
+        <div>
+            <a href="{{ url_for('index') }}" class="btn btn-outline">
+                <i class="fas fa-chevron-left"></i> 返回比賽列表
+            </a>
+            {% if tournament.status == 'setup' and players|length >= 2 %}
+                <form action="{{ url_for('generate_bracket', tournament_id=tournament.id) }}" method="POST" class="d-inline">
+                    <button type="submit" class="btn btn-chinese">
+                        <i class="fas fa-trophy"></i> 生成賽程表
+                    </button>
+                </form>
+            {% elif tournament.status == 'in_progress' %}
+                <a href="{{ url_for('view_tournament', tournament_id=tournament.id) }}" class="btn btn-chinese me-2">
+                    <i class="fas fa-trophy"></i> 查看賽程表
+                </a>
+                <form action="{{ url_for('generate_bracket', tournament_id=tournament.id) }}" method="POST" class="d-inline">
+                    <button type="submit" class="btn btn-outline" onclick="return confirm('您確定要重新生成賽程表嗎？這將刪除所有現有的比賽和結果。')">
+                        <i class="fas fa-sync"></i> 重新生成賽程表
+                    </button>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+    
+    {% if tournament.status == 'setup' or tournament.status == 'in_progress' %}
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card match-card-chinese glass-effect">
+                <div class="card-body">
+                    <h2>添加選手</h2>
+                    {% if tournament.status == 'in_progress' %}
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle"></i> 警告：在活動比賽中添加選手可能需要重新生成賽程表。
+                    </div>
+                    {% endif %}
+                    <form action="{{ url_for('add_player', tournament_id=tournament.id) }}" method="POST" class="needs-validation" novalidate>
+                        <div class="form-group mb-3">
+                            <label for="name" class="form-label">選手姓名</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                            <div class="invalid-feedback">
+                                請提供選手姓名。
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="school" class="form-label">學校</label>
+                            <input type="text" class="form-control" id="school" name="school" required>
+                            <div class="invalid-feedback">
+                                請提供學校名稱。
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <div class="checkbox-group">
+                                <input type="checkbox" class="form-check-input" id="is_seeded" name="is_seeded">
+                                <label class="form-check-label" for="is_seeded">種子選手</label>
+                            </div>
+                            <div class="form-text">種子選手將在賽程表中更佳地分配。</div>
+                        </div>
+                        <button type="submit" class="btn btn-chinese">
+                            <i class="fas fa-plus-circle"></i> 添加選手
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-7">
+            <div class="card chess-board-bg glass-effect">
+                <div class="card-body">
+                    <h2>選手分配規則</h2>
+                    <ul>
+                        <li><i class="fas fa-school text-primary"></i> <strong>學校分離：</strong> 同一學校的選手將盡可能被分到賽程表的不同部分。</li>
+                        <li><i class="fas fa-medal text-primary"></i> <strong>種子選手：</strong> 標記為種子的選手將策略性地庂佈在賽程中以達到最佳分配。</li>
+                        <li><i class="fas fa-forward text-primary"></i> <strong>轍轎：</strong> 如果選手數量不是2的冪次方，轍轎將添加在第一回合。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    
+    <div class="section mt-5">
+        <h2 class="chess-title">選手列表 ({{ players|length }})</h2>
+        
+        {% if players %}
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>姓名</th>
+                            <th>學校</th>
+                            <th>種子</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sortable-players">
+                        {% for player in players %}
+                            <tr id="player-{{ player.id }}" data-id="{{ player.id }}" data-name="{{ player.name }}" data-school="{{ player.school }}" data-seeded="{{ player.is_seeded|string|lower }}" class="sortable-player-row">
+                                <td>
+{{ player.name }}
+                                </td>
+                                <td>{{ player.school }}</td>
+                                <td>
+                                    {% if player.is_seeded %}
+                                        <span class="badge bg-primary">是</span>
+                                    {% else %}
+                                        <span class="badge bg-secondary">否</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <button onclick="editPlayer('{{ player.id }}')" class="btn btn-sm btn-outline">
+                                        <i class="fas fa-edit"></i> 編輯
+                                    </button>
+                                    <button onclick="confirmDeletePlayer('{{ player.id }}', '{{ player.name }}')" class="btn btn-sm btn-danger">
+                                        <i class="fas fa-trash"></i> 刪除
+                                    </button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+        {% else %}
+            <div class="alert alert-warning fade-in">
+                目前沒有添加任何選手。使用上方表格添加選手。
+            </div>
+        {% endif %}
+    </div>
+    
+    <!-- 添加中國象棋物品卡片 -->
+    <div class="row mt-4 mb-5">
+        <div class="col-md-12 text-center">
+            <div class="d-flex justify-content-center flex-wrap gap-3">
+                <div class="chess-piece-card chess-piece-red">谅</div>
+                <div class="chess-piece-card chess-piece-red">相</div>
+                <div class="chess-piece-card chess-piece-red">車</div>
+                <div class="chess-piece-card chess-piece-black">將</div>
+                <div class="chess-piece-card chess-piece-black">士</div>
+                <div class="chess-piece-card chess-piece-black">谹</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Edit Player Modal -->
+    <div class="modal fade" id="editPlayerModal" tabindex="-1" aria-labelledby="editPlayerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editPlayerModalLabel">編輯選手</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="edit-player-form" action="{{ url_for('edit_player', tournament_id=tournament.id, player_id=0) }}" method="POST" class="needs-validation" novalidate>
+                        <div class="form-group mb-3">
+                            <label for="edit-name" class="form-label">選手姓名</label>
+                            <input type="text" class="form-control" id="edit-name" name="name" required>
+                            <div class="invalid-feedback">
+                                請提供選手姓名。
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="edit-school" class="form-label">學校</label>
+                            <input type="text" class="form-control" id="edit-school" name="school" required>
+                            <div class="invalid-feedback">
+                                請提供學校名稱。
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <div class="checkbox-group">
+                                <input type="checkbox" class="form-check-input" id="edit-seeded" name="is_seeded">
+                                <label class="form-check-label" for="edit-seeded">種子選手</label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline" data-bs-dismiss="modal">取消</button>
+                            <button type="submit" class="btn btn-chinese">保存更改</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Delete Player Modal -->
+    <div class="modal" id="deletePlayerModal" tabindex="-1" aria-labelledby="deletePlayerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deletePlayerModalLabel">確認刪除</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="delete-confirm-message">您確定要刪除這名選手嗎？</p>
+                    {% if tournament.status != 'setup' %}
+                    <p class="text-warning">警告：這個比賽正在進行中。刪除選手可能會影響賽程表。</p>
+                    {% endif %}
+                    <p class="text-danger">此操作不能撤銷。</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline" data-bs-dismiss="modal">取消</button>
+                    <button type="button" id="confirm-delete-btn" class="btn btn-danger">刪除</button>
+                    <form id="delete-player-form" action="{{ url_for('delete_player', tournament_id=tournament.id, player_id=0) }}" method="POST" style="display: none;"></form> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

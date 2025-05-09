@@ -1,0 +1,153 @@
+{% extends "new-layout.html" %}
+
+{% block title %}首頁 - 中國象棋賽事管理{% endblock %}
+
+{% block content %}
+<div class="section fade-in">
+    <h1 class="float">中國象棋校際賽管理系統</h1>
+    <p class="lead">輕鬆創建和管理中國象棋比賽，自動生成比賽括號表。</p>
+    
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2>創建新比賽</h2>
+                    <form action="{{ url_for('new_tournament') }}" method="POST" class="needs-validation" novalidate>
+                        <div class="form-group mb-3">
+                            <label for="name" class="form-label">比賽名稱</label>
+                            <input type="text" class="form-control" id="name" name="name" required placeholder="例如：2023春季中國象棋校際選拔賽">
+                            <div class="invalid-feedback">
+                                請提供比賽名稱。
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="date" class="form-label">比賽日期</label>
+                            <input type="date" class="form-control" id="date" name="date" required>
+                            <div class="invalid-feedback">
+                                請選擇日期。
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-plus-circle"></i> 創建比賽
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2>比賽規則</h2>
+                    <ul class="tournament-rules">
+                        <li>
+                            <i class="fas fa-chess-king text-primary"></i>
+                            <strong>淘汰賽制：</strong> 單淘汰制比賽，一一淘汰選手直到產生冠軍。
+                        </li>
+                        <li>
+                            <i class="fas fa-school text-primary"></i>
+                            <strong>選手分配：</strong> 來自同一學校的選手將盡可能被分到不同的賽程區域。
+                        </li>
+                        <li>
+                            <i class="fas fa-medal text-primary"></i>
+                            <strong>種子選手：</strong> 種子選手將被最佳地分配在賽程中。
+                        </li>
+                        <li>
+                            <i class="fas fa-forward text-primary"></i>
+                            <strong>轍轎制：</strong> 必要的轍轎制只在第一回合分配。
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section mt-5">
+        <h2>現有比賽</h2>
+        
+        {% if tournaments %}
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>名稱</th>
+                            <th>日期</th>
+                            <th>狀態</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for tournament in tournaments %}
+                            <tr>
+                                <td>{{ tournament.name }}</td>
+                                <td>{{ tournament.date.strftime('%Y-%m-%d') }}</td>
+                                <td>
+                                    {% if tournament.status == 'setup' %}
+                                        <span class="badge bg-primary">設置中</span>
+                                    {% elif tournament.status == 'in_progress' %}
+                                        <span class="badge bg-success">進行中</span>
+                                    {% elif tournament.status == 'completed' %}
+                                        <span class="badge bg-secondary">已完成</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <a href="{{ url_for('players', tournament_id=tournament.id) }}" class="btn btn-sm btn-outline">
+                                        <i class="fas fa-users"></i> 選手
+                                    </a>
+                                    <a href="{{ url_for('view_tournament', tournament_id=tournament.id) }}" class="btn btn-sm btn-outline">
+                                        <i class="fas fa-trophy"></i> 賽程表
+                                    </a>
+                                    <button onclick="confirmDeleteTournament({{ tournament.id }}, '{{ tournament.name }}')" class="btn btn-sm btn-danger">
+                                        <i class="fas fa-trash"></i> 刪除
+                                    </button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="alert alert-warning fade-in">
+                目前沒有比賽。使用上方表格創建您的第一個比賽。
+            </div>
+        {% endif %}
+    </div>
+    
+    <!-- 刪除比賽的模態單 -->
+    <div class="modal fade" id="deleteTournamentModal" tabindex="-1" aria-labelledby="deleteTournamentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteTournamentModalLabel">確認刪除</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="delete-tournament-confirm-message">您確定要刪除這個比賽嗎？</p>
+                    <p class="text-danger">這將永久刪除比賽、所有選手和所有比賽數據。此操作無法撤消。</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline" data-bs-dismiss="modal">取消</button>
+                    <form id="delete-tournament-form" action="/tournament/0/delete" method="POST">
+                        <button type="submit" class="btn btn-danger">刪除比賽</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function confirmDeleteTournament(tournamentId, tournamentName) {
+        // 更新確認訊息
+        document.getElementById('delete-tournament-confirm-message').textContent = `您確定要刪除比賽 "${tournamentName}" 嗎？`;
+        
+        // 更新表單操作
+        const form = document.getElementById('delete-tournament-form');
+        form.action = form.action.replace('/0', `/${tournamentId}`);
+        
+        // 顯示模態單
+        const modal = new bootstrap.Modal(document.getElementById('deleteTournamentModal'));
+        modal.show();
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,1052 @@
+2025-05-05 11:42:53,185 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 11:42:53,223 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 11:42:53,247 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 11:42:53,251 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:18:13,234 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\\Lib\\netrc.py', reloading
+2025-05-05 12:18:13,234 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-05-05 12:18:13,301 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-05-05 12:18:13,453 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:18:13] "GET / HTTP/1.1" 200 -
+2025-05-05 12:18:13,720 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:18:13] "[36mGET /static/css/chess-theme.css HTTP/1.1[0m" 304 -
+2025-05-05 12:18:13,734 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:18:13] "[36mGET /static/css/new-styles.css HTTP/1.1[0m" 304 -
+2025-05-05 12:18:13,756 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:18:13] "[36mGET /static/js/new-animations.js HTTP/1.1[0m" 304 -
+2025-05-05 12:18:13,762 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:18:13] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+2025-05-05 12:18:13,767 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:18:13] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-05 12:18:17,068 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:18:17,106 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:18:17,135 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:18:17,135 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:18:25,618 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-05-05 12:18:25,684 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-05-05 12:18:25,800 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:18:25] "GET / HTTP/1.1" 200 -
+2025-05-05 12:18:26,051 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:18:26] "[36mGET /static/css/new-styles.css HTTP/1.1[0m" 304 -
+2025-05-05 12:18:26,085 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:18:26] "[36mGET /static/css/chess-theme.css HTTP/1.1[0m" 304 -
+2025-05-05 12:18:26,100 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:18:26] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-05 12:18:26,106 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:18:26] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+2025-05-05 12:18:26,107 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:18:26] "[36mGET /static/js/new-animations.js HTTP/1.1[0m" 304 -
+2025-05-05 12:18:27,765 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\google\\cloud\\firestore_v1\\base_collection.py', reloading
+2025-05-05 12:18:27,832 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:18:27] "GET /tournament/9hNNO1JdhA4SZilJKmyH/players HTTP/1.1" 200 -
+2025-05-05 12:18:27,879 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:18:27] "[36mGET /static/css/new-styles.css HTTP/1.1[0m" 304 -
+2025-05-05 12:18:27,899 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:18:27] "[36mGET /static/css/chess-theme.css HTTP/1.1[0m" 304 -
+2025-05-05 12:18:27,920 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:18:27] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+2025-05-05 12:18:27,920 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:18:27] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-05 12:18:27,920 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:18:27] "[36mGET /static/js/new-animations.js HTTP/1.1[0m" 304 -
+2025-05-05 12:18:31,398 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:18:31,454 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:18:31,478 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:18:31,478 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:20:41,512 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\\Lib\\xmlrpc\\__init__.py', reloading
+2025-05-05 12:20:42,461 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\\Lib\\glob.py', reloading
+2025-05-05 12:20:43,600 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:20:43,670 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:20:43,718 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.195:5000
+2025-05-05 12:20:43,721 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 12:20:43,735 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:20:43,758 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:20:43,822 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:20:43,855 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:20:43,861 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:20:44,748 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:20:44,790 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:20:44,812 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:20:44,816 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:24:16,190 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-05-05 12:24:16,253 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-05-05 12:24:16,459 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:24:16] "GET / HTTP/1.1" 200 -
+2025-05-05 12:24:16,772 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:24:16] "[36mGET /static/css/new-styles.css HTTP/1.1[0m" 304 -
+2025-05-05 12:24:16,774 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:24:16] "[36mGET /static/js/new-animations.js HTTP/1.1[0m" 304 -
+2025-05-05 12:24:16,790 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:24:16] "[36mGET /static/css/chess-theme.css HTTP/1.1[0m" 304 -
+2025-05-05 12:24:16,805 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:24:16] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-05 12:24:16,810 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:24:16] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+2025-05-05 12:24:38,368 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:24:38] "GET /tournament/9hNNO1JdhA4SZilJKmyH/players HTTP/1.1" 200 -
+2025-05-05 12:24:38,403 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:24:38] "[36mGET /static/css/new-styles.css HTTP/1.1[0m" 304 -
+2025-05-05 12:24:38,407 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:24:38] "[36mGET /static/css/chess-theme.css HTTP/1.1[0m" 304 -
+2025-05-05 12:24:38,407 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:24:38] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+2025-05-05 12:24:38,410 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:24:38] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-05 12:24:38,410 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:24:38] "[36mGET /static/js/new-animations.js HTTP/1.1[0m" 304 -
+2025-05-05 12:24:54,989 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:24:55,027 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:24:55,054 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.195:5000
+2025-05-05 12:24:55,054 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 12:24:55,061 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:24:56,154 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:24:56,207 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:24:56,217 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:24:56,233 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:25:00,255 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-05-05 12:25:00,319 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-05-05 12:25:00,411 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:25:00] "GET / HTTP/1.1" 200 -
+2025-05-05 12:25:00,692 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:25:00] "[36mGET /static/css/new-styles.css HTTP/1.1[0m" 304 -
+2025-05-05 12:25:00,715 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:25:00] "[36mGET /static/css/chess-theme.css HTTP/1.1[0m" 304 -
+2025-05-05 12:25:00,726 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:25:00] "[36mGET /static/js/new-animations.js HTTP/1.1[0m" 304 -
+2025-05-05 12:25:00,733 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:25:00] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+2025-05-05 12:25:00,737 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:25:00] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-05 12:25:03,442 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:25:03] "GET /tournament/pDDvVpSN4h70m8XjyAKO HTTP/1.1" 200 -
+2025-05-05 12:25:03,479 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:25:03] "[36mGET /static/css/new-styles.css HTTP/1.1[0m" 304 -
+2025-05-05 12:25:03,498 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:25:03] "[36mGET /static/css/chess-theme.css HTTP/1.1[0m" 304 -
+2025-05-05 12:25:03,510 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:25:03] "[36mGET /static/js/new-animations.js HTTP/1.1[0m" 304 -
+2025-05-05 12:25:03,510 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:25:03] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+2025-05-05 12:25:03,510 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:25:03] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-05 12:25:03,522 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:25:03] "[36mGET /static/js/bracket.js HTTP/1.1[0m" 304 -
+2025-05-05 12:25:03,710 - root - DEBUG - Fetched 3 players for bracket pDDvVpSN4h70m8XjyAKO
+2025-05-05 12:25:03,748 - root - DEBUG - Firestore query for matches returned 3 documents for tournament pDDvVpSN4h70m8XjyAKO
+2025-05-05 12:25:03,749 - root - DEBUG - Finished processing. Added matches to 2 rounds. Total matches processed: 3 for bracket pDDvVpSN4h70m8XjyAKO
+2025-05-05 12:25:03,750 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:25:03] "GET /api/tournament/pDDvVpSN4h70m8XjyAKO/bracket HTTP/1.1" 200 -
+2025-05-05 12:25:06,691 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:25:06] "GET /tournament/pDDvVpSN4h70m8XjyAKO/players HTTP/1.1" 200 -
+2025-05-05 12:25:06,745 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:25:06] "[36mGET /static/css/new-styles.css HTTP/1.1[0m" 304 -
+2025-05-05 12:25:06,753 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:25:06] "[36mGET /static/css/chess-theme.css HTTP/1.1[0m" 304 -
+2025-05-05 12:25:06,756 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:25:06] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+2025-05-05 12:25:06,759 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:25:06] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-05 12:25:06,759 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:25:06] "[36mGET /static/js/new-animations.js HTTP/1.1[0m" 304 -
+2025-05-05 12:25:08,111 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:25:08] "GET / HTTP/1.1" 200 -
+2025-05-05 12:25:08,144 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:25:08] "[36mGET /static/css/new-styles.css HTTP/1.1[0m" 304 -
+2025-05-05 12:25:08,150 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:25:08] "[36mGET /static/css/chess-theme.css HTTP/1.1[0m" 304 -
+2025-05-05 12:25:08,170 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:25:08] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+2025-05-05 12:25:08,171 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:25:08] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-05 12:25:08,171 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:25:08] "[36mGET /static/js/new-animations.js HTTP/1.1[0m" 304 -
+2025-05-05 12:27:31,276 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:27:31,276 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:27:31,327 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:27:31,339 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.195:5000
+2025-05-05 12:27:31,339 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 12:29:59,550 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:29:59] "[33mGET / HTTP/1.1[0m" 404 -
+2025-05-05 12:30:04,704 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:30:04,744 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:30:04,772 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.195:5000
+2025-05-05 12:30:04,772 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 12:30:04,780 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:30:05,690 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:30:05,718 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:30:05,750 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:30:05,750 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:30:07,079 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:30:07] "[33mGET / HTTP/1.1[0m" 404 -
+2025-05-05 12:30:07,740 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:30:07] "[33mGET / HTTP/1.1[0m" 404 -
+2025-05-05 12:30:10,003 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:30:10] "[33mGET / HTTP/1.1[0m" 404 -
+2025-05-05 12:30:14,771 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:30:14] "[33mGET / HTTP/1.1[0m" 404 -
+2025-05-05 12:30:15,092 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:30:15] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-05 12:30:21,065 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:30:21,067 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:30:21,097 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:30:21,129 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.195:5000
+2025-05-05 12:30:21,129 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 12:30:21,129 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:30:21,925 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:30:21,925 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:30:21,958 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:30:21,989 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:30:21,989 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:30:23,633 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:30:23] "[33mGET / HTTP/1.1[0m" 404 -
+2025-05-05 12:30:24,069 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:30:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-05 12:31:37,127 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:31:37,168 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:31:37,197 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.195:5000
+2025-05-05 12:31:37,197 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 12:31:37,197 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:31:38,002 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:31:38,032 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:31:38,048 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:31:38,048 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:31:40,716 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:31:40,945 - werkzeug - INFO - 192.168.31.195 - - [05/May/2025 12:31:40] "[33mGET / HTTP/1.1[0m" 404 -
+2025-05-05 12:31:41,038 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:31:41,122 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.195:5000
+2025-05-05 12:31:41,123 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 12:31:41,135 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:31:41,356 - werkzeug - INFO - 192.168.31.195 - - [05/May/2025 12:31:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-05 12:31:42,331 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:31:42,388 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:31:42,415 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:31:42,422 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:31:46,217 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:31:46,217 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:31:46,258 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:31:46,275 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.195:5000
+2025-05-05 12:31:46,275 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 12:32:09,940 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:32:09] "[33mGET / HTTP/1.1[0m" 404 -
+2025-05-05 12:32:10,499 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:32:10] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-05 12:32:58,874 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\main.py', reloading
+2025-05-05 12:32:58,874 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\main.py', reloading
+2025-05-05 12:32:58,874 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\main.py', reloading
+2025-05-05 12:32:59,113 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:32:59,906 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:32:59,940 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:32:59,956 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:32:59,956 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:33:06,014 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:33:06,014 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:33:06,054 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:33:06,061 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.195:5000
+2025-05-05 12:33:06,061 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 12:34:29,987 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:34:30,026 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:34:30,058 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.195:5000
+2025-05-05 12:34:30,058 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 12:34:30,061 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:34:30,907 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:34:30,953 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:34:30,973 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:34:30,976 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:34:37,110 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:34:37] "[33mGET / HTTP/1.1[0m" 404 -
+2025-05-05 12:34:37,394 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:34:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-05 12:34:52,188 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:34:52,217 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:34:52,257 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.195:5000
+2025-05-05 12:34:52,257 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 12:34:52,267 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:34:53,071 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:34:53,114 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:34:53,134 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:34:53,139 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:34:55,713 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:34:55] "[33mGET / HTTP/1.1[0m" 404 -
+2025-05-05 12:35:00,132 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:35:00,164 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:35:00,196 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.195:5000
+2025-05-05 12:35:00,196 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 12:35:00,212 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:35:01,020 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:35:01,052 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:35:01,068 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:35:01,068 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:35:03,332 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:35:03] "[33mGET / HTTP/1.1[0m" 404 -
+2025-05-05 12:35:12,549 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\tournament.py', reloading
+2025-05-05 12:35:12,549 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\tournament.py', reloading
+2025-05-05 12:35:12,549 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\tournament.py', reloading
+2025-05-05 12:35:12,734 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:35:13,449 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:35:13,644 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:35:13,655 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:35:13,705 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:35:13,730 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:35:13,735 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:35:14,431 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:35:14,476 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:35:14,494 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:35:14,494 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:35:14,598 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:35:14,629 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:35:14,645 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:35:14,662 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:35:23,493 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:35:23,508 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:35:23,546 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:35:23,576 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.195:5000
+2025-05-05 12:35:23,576 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 12:35:23,585 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:35:24,409 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:35:24,410 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:35:24,448 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:35:24,466 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:35:24,466 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:35:35,641 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\wsgi.py', reloading
+2025-05-05 12:35:35,641 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\wsgi.py', reloading
+2025-05-05 12:35:35,641 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\wsgi.py', reloading
+2025-05-05 12:35:35,641 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\wsgi.py', reloading
+2025-05-05 12:35:35,643 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\wsgi.py', reloading
+2025-05-05 12:35:35,643 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\wsgi.py', reloading
+2025-05-05 12:35:35,643 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\wsgi.py', reloading
+2025-05-05 12:35:35,643 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\wsgi.py', reloading
+2025-05-05 12:35:35,643 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\wsgi.py', reloading
+2025-05-05 12:35:35,643 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\wsgi.py', reloading
+2025-05-05 12:35:35,643 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\wsgi.py', reloading
+2025-05-05 12:35:35,643 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\wsgi.py', reloading
+2025-05-05 12:35:35,839 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:35:36,098 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:35:36,179 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:35:36,318 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:35:37,195 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:35:37,195 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:35:37,256 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:35:37,278 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:35:37,284 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:35:37,356 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\wsgi.py', reloading
+2025-05-05 12:35:37,356 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\wsgi.py', reloading
+2025-05-05 12:35:37,577 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:35:37,634 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:35:37,657 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:35:37,661 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:35:37,697 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:35:37,744 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:35:37,762 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:35:37,769 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:35:37,776 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:35:37,819 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:35:37,841 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:35:37,844 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:35:38,417 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:35:39,240 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:35:39,255 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:35:39,293 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:35:39,315 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:35:39,317 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:35:52,820 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:35:52,859 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:35:52,896 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.195:5000
+2025-05-05 12:35:52,897 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 12:35:52,905 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:35:53,931 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:35:53,973 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:35:53,995 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:35:53,995 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:35:57,924 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:35:57] "[33mGET / HTTP/1.1[0m" 404 -
+2025-05-05 12:36:11,173 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:36:11,221 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:36:11,253 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.195:5000
+2025-05-05 12:36:11,253 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 12:36:11,253 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:36:12,111 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:36:12,159 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:36:12,174 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:36:12,174 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:36:22,490 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:36:22] "[33mGET / HTTP/1.1[0m" 404 -
+2025-05-05 12:36:37,169 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\wsgi.py', reloading
+2025-05-05 12:36:37,169 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\wsgi.py', reloading
+2025-05-05 12:36:37,170 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\wsgi.py', reloading
+2025-05-05 12:36:37,170 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\wsgi.py', reloading
+2025-05-05 12:36:37,170 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\wsgi.py', reloading
+2025-05-05 12:36:37,544 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:36:37,893 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:36:38,123 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:36:38,319 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:36:38,322 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:36:38,643 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:36:38,644 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:36:38,699 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:36:38,727 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:36:38,727 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:36:39,426 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:36:39,426 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:36:39,465 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:36:39,482 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:36:39,495 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:36:39,499 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:36:39,499 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:36:39,511 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:37:03,409 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:37:03,409 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:37:03,418 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:37:03,418 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:37:03,418 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:37:03,885 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:37:04,202 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:37:04,209 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:37:04,456 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:37:05,505 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:37:05,583 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:37:05,585 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:37:05,644 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:37:05,644 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:37:05,674 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:37:05,676 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:37:05,680 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:37:05,683 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:37:05,771 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:37:05,771 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:37:05,827 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:37:05,861 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:37:05,868 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:37:05,982 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:37:05,982 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:37:05,983 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:37:05,982 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:37:05,984 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:37:05,984 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:37:06,850 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:37:07,110 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:37:08,117 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:37:08,118 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:37:08,159 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:37:08,165 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:37:08,187 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:37:08,190 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:37:08,191 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:37:08,194 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:37:08,253 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:37:08,253 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:37:08,308 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:37:08,328 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:37:08,331 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:37:12,073 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:37:12,073 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:37:12,073 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:37:12,073 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:37:12,124 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:37:12,124 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:37:12,163 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.195:5000
+2025-05-05 12:37:12,163 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.195:5000
+2025-05-05 12:37:12,163 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 12:37:12,163 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 12:37:12,172 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:37:12,172 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:37:13,081 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:37:13,081 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:37:13,081 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:37:13,081 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:37:13,121 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:37:13,121 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:37:13,145 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:37:13,145 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:37:13,147 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:37:13,147 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:37:14,729 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:37:14] "[33mGET / HTTP/1.1[0m" 404 -
+2025-05-05 12:37:33,770 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\firebase_admin\\credentials.py', reloading
+2025-05-05 12:37:33,770 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\firebase_admin\\credentials.py', reloading
+2025-05-05 12:37:33,770 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\firebase_admin\\credentials.py', reloading
+2025-05-05 12:37:33,770 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\firebase_admin\\credentials.py', reloading
+2025-05-05 12:37:33,770 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\firebase_admin\\credentials.py', reloading
+2025-05-05 12:37:33,770 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\jinja2\\__init__.py', reloading
+2025-05-05 12:37:33,770 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\jinja2\\__init__.py', reloading
+2025-05-05 12:37:33,770 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\jinja2\\__init__.py', reloading
+2025-05-05 12:37:33,770 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\jinja2\\__init__.py', reloading
+2025-05-05 12:37:33,770 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\jinja2\\environment.py', reloading
+2025-05-05 12:37:33,770 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\jinja2\\environment.py', reloading
+2025-05-05 12:37:33,770 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\jinja2\\environment.py', reloading
+2025-05-05 12:37:33,770 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\jinja2\\environment.py', reloading
+2025-05-05 12:37:33,807 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\sansio\\request.py', reloading
+2025-05-05 12:37:33,807 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\sansio\\request.py', reloading
+2025-05-05 12:37:33,807 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\sansio\\request.py', reloading
+2025-05-05 12:37:33,839 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\sansio\\response.py', reloading
+2025-05-05 12:37:33,839 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\sansio\\response.py', reloading
+2025-05-05 12:37:33,856 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\\Lib\\_pydatetime.py', reloading
+2025-05-05 12:37:33,856 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\\Lib\\_pydatetime.py', reloading
+2025-05-05 12:37:33,970 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:37:33,970 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\datastructures\\__init__.py', reloading
+2025-05-05 12:37:33,970 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\datastructures\\__init__.py', reloading
+2025-05-05 12:37:33,970 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:37:33,972 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\datastructures\\headers.py', reloading
+2025-05-05 12:37:33,972 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\datastructures\\headers.py', reloading
+2025-05-05 12:37:33,982 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:37:34,242 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:37:34,523 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:37:34,523 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:37:34,525 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:37:34,525 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:37:34,703 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:37:34,703 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:37:35,348 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:37:35,348 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:37:35,414 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:37:35,434 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:37:35,448 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:37:35,452 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:37:35,473 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:37:35,488 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:37:35,514 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:37:35,515 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:37:35,536 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:37:35,557 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:37:35,559 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:37:35,848 - root - INFO - Starting application with standalone runner
+2025-05-05 12:37:35,848 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:37:35,892 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:37:35,907 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:37:35,908 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:37:51,462 - root - INFO - Starting application with standalone runner
+2025-05-05 12:37:51,503 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:37:51,546 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.195:5000
+2025-05-05 12:37:51,547 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 12:37:51,559 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:37:52,413 - root - INFO - Starting application with standalone runner
+2025-05-05 12:37:52,450 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:37:52,468 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:37:52,471 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:37:54,492 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:37:54] "[33mGET / HTTP/1.1[0m" 404 -
+2025-05-05 12:38:01,606 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:38:01] "[33mGET / HTTP/1.1[0m" 404 -
+2025-05-05 12:39:01,256 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\google\\cloud\\firestore_v1\\document.py', reloading
+2025-05-05 12:39:01,257 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\google\\cloud\\firestore_v1\\document.py', reloading
+2025-05-05 12:39:01,256 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\google\\cloud\\firestore_v1\\document.py', reloading
+2025-05-05 12:39:01,257 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\google\\cloud\\firestore_v1\\document.py', reloading
+2025-05-05 12:39:01,256 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\google\\cloud\\firestore_v1\\document.py', reloading
+2025-05-05 12:39:01,462 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:39:01,561 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:39:01,570 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:39:01,599 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:39:01,872 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:39:01,888 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:39:01,894 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:39:01,894 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:39:02,250 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:39:03,291 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:39:03,321 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:39:03,321 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:39:03,400 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:39:03,451 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:39:03,458 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:39:03,645 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:39:03,714 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:39:03,725 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:39:03,767 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:39:03,767 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:39:03,783 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:39:03,824 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:39:03,831 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:39:03,966 - root - INFO - Starting application with standalone runner
+2025-05-05 12:39:03,966 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:39:04,030 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:39:04,034 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:39:04,034 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:39:04,034 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:39:04,034 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:39:04,089 - root - ERROR - Error initializing Firebase Admin SDK with credentials: The default Firebase app already exists. This means you called initialize_app() more than once without providing an app name as the second argument. In most cases you only need to call initialize_app() once. But if you do want to initialize multiple apps, pass a second argument to initialize_app() to give each app a unique name.
+2025-05-05 12:39:04,089 - root - ERROR - Error initializing Firebase Admin SDK with credentials: The default Firebase app already exists. This means you called initialize_app() more than once without providing an app name as the second argument. In most cases you only need to call initialize_app() once. But if you do want to initialize multiple apps, pass a second argument to initialize_app() to give each app a unique name.
+2025-05-05 12:39:04,089 - root - INFO - Firebase Admin SDK initialized without explicit credentials after credential failure.
+2025-05-05 12:39:04,089 - root - INFO - Firebase Admin SDK initialized without explicit credentials after credential failure.
+2025-05-05 12:39:04,120 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:39:04,120 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:39:04,120 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:39:04,120 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:39:04,180 - root - INFO - Starting application with standalone runner
+2025-05-05 12:39:04,215 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:39:04,233 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:39:04,233 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:39:04,281 - root - ERROR - Error initializing Firebase Admin SDK with credentials: The default Firebase app already exists. This means you called initialize_app() more than once without providing an app name as the second argument. In most cases you only need to call initialize_app() once. But if you do want to initialize multiple apps, pass a second argument to initialize_app() to give each app a unique name.
+2025-05-05 12:39:04,281 - root - ERROR - Error initializing Firebase Admin SDK with credentials: The default Firebase app already exists. This means you called initialize_app() more than once without providing an app name as the second argument. In most cases you only need to call initialize_app() once. But if you do want to initialize multiple apps, pass a second argument to initialize_app() to give each app a unique name.
+2025-05-05 12:39:04,281 - root - INFO - Firebase Admin SDK initialized without explicit credentials after credential failure.
+2025-05-05 12:39:04,281 - root - INFO - Firebase Admin SDK initialized without explicit credentials after credential failure.
+2025-05-05 12:39:04,314 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:39:04,314 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:39:04,314 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:39:04,314 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:39:25,512 - root - INFO - Starting application with standalone runner
+2025-05-05 12:39:25,554 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:39:25,556 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:39:25,556 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:39:25,600 - root - ERROR - Error initializing Firebase Admin SDK with credentials: The default Firebase app already exists. This means you called initialize_app() more than once without providing an app name as the second argument. In most cases you only need to call initialize_app() once. But if you do want to initialize multiple apps, pass a second argument to initialize_app() to give each app a unique name.
+2025-05-05 12:39:25,600 - root - ERROR - Error initializing Firebase Admin SDK with credentials: The default Firebase app already exists. This means you called initialize_app() more than once without providing an app name as the second argument. In most cases you only need to call initialize_app() once. But if you do want to initialize multiple apps, pass a second argument to initialize_app() to give each app a unique name.
+2025-05-05 12:39:25,601 - root - INFO - Firebase Admin SDK initialized without explicit credentials after credential failure.
+2025-05-05 12:39:25,601 - root - INFO - Firebase Admin SDK initialized without explicit credentials after credential failure.
+2025-05-05 12:39:25,632 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.195:5000
+2025-05-05 12:39:25,632 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.195:5000
+2025-05-05 12:39:25,633 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 12:39:25,633 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 12:39:25,640 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:39:25,640 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:39:26,575 - root - INFO - Starting application with standalone runner
+2025-05-05 12:39:26,618 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:39:26,621 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:39:26,621 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:39:26,661 - root - ERROR - Error initializing Firebase Admin SDK with credentials: The default Firebase app already exists. This means you called initialize_app() more than once without providing an app name as the second argument. In most cases you only need to call initialize_app() once. But if you do want to initialize multiple apps, pass a second argument to initialize_app() to give each app a unique name.
+2025-05-05 12:39:26,661 - root - ERROR - Error initializing Firebase Admin SDK with credentials: The default Firebase app already exists. This means you called initialize_app() more than once without providing an app name as the second argument. In most cases you only need to call initialize_app() once. But if you do want to initialize multiple apps, pass a second argument to initialize_app() to give each app a unique name.
+2025-05-05 12:39:26,661 - root - INFO - Firebase Admin SDK initialized without explicit credentials after credential failure.
+2025-05-05 12:39:26,661 - root - INFO - Firebase Admin SDK initialized without explicit credentials after credential failure.
+2025-05-05 12:39:26,685 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:39:26,685 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:39:26,688 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:39:26,688 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:40:35,073 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\utils.py', reloading
+2025-05-05 12:40:35,072 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\utils.py', reloading
+2025-05-05 12:40:35,073 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\utils.py', reloading
+2025-05-05 12:40:35,073 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\utils.py', reloading
+2025-05-05 12:40:35,073 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\utils.py', reloading
+2025-05-05 12:40:35,073 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\utils.py', reloading
+2025-05-05 12:40:35,073 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\utils.py', reloading
+2025-05-05 12:40:35,104 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\_internal.py', reloading
+2025-05-05 12:40:35,104 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\_internal.py', reloading
+2025-05-05 12:40:35,104 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\_internal.py', reloading
+2025-05-05 12:40:35,104 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\_internal.py', reloading
+2025-05-05 12:40:35,104 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\_internal.py', reloading
+2025-05-05 12:40:35,104 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\_internal.py', reloading
+2025-05-05 12:40:35,117 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\datastructures\\structures.py', reloading
+2025-05-05 12:40:35,117 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\datastructures\\structures.py', reloading
+2025-05-05 12:40:35,117 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\datastructures\\structures.py', reloading
+2025-05-05 12:40:35,117 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\datastructures\\structures.py', reloading
+2025-05-05 12:40:35,117 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\datastructures\\structures.py', reloading
+2025-05-05 12:40:35,117 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\datastructures\\structures.py', reloading
+2025-05-05 12:40:35,147 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\datastructures\\mixins.py', reloading
+2025-05-05 12:40:35,147 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\datastructures\\mixins.py', reloading
+2025-05-05 12:40:35,147 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\datastructures\\mixins.py', reloading
+2025-05-05 12:40:35,147 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\datastructures\\mixins.py', reloading
+2025-05-05 12:40:35,147 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\datastructures\\mixins.py', reloading
+2025-05-05 12:40:35,147 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\datastructures\\mixins.py', reloading
+2025-05-05 12:40:35,147 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\datastructures\\mixins.py', reloading
+2025-05-05 12:40:35,246 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:40:35,250 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:40:35,666 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:40:35,666 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:40:35,673 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:40:35,696 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:40:35,696 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:40:35,787 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:40:35,882 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:40:37,430 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:40:37,513 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:40:37,558 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:40:37,568 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:40:37,568 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:40:37,673 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:40:37,713 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:40:37,719 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:40:37,860 - root - INFO - Starting application with standalone runner
+2025-05-05 12:40:37,860 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:40:37,911 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:40:37,921 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:40:37,948 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:40:37,954 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:40:38,098 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:40:38,098 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:40:38,129 - root - INFO - Starting application with standalone runner
+2025-05-05 12:40:38,182 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:40:38,211 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:40:38,214 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:40:38,214 - root - INFO - Starting application with standalone runner
+2025-05-05 12:40:38,224 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:40:38,232 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:40:38,239 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:40:38,246 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:40:38,288 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:40:38,294 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:40:38,320 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:40:38,324 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:40:45,108 - root - INFO - Starting application with standalone runner
+2025-05-05 12:40:45,159 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:40:45,159 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:40:45,194 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.195:5000
+2025-05-05 12:40:45,195 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 12:40:45,205 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:40:46,109 - root - INFO - Starting application with standalone runner
+2025-05-05 12:40:46,159 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:40:46,162 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:40:46,187 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:40:46,191 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:41:07,620 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:41:07] "[33mGET / HTTP/1.1[0m" 404 -
+2025-05-05 12:41:15,684 - root - INFO - Starting application with standalone runner
+2025-05-05 12:41:15,684 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:41:15,725 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:41:15,727 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:41:15,764 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.195:5000
+2025-05-05 12:41:15,764 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 12:41:15,772 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:41:16,628 - root - INFO - Starting application with standalone runner
+2025-05-05 12:41:16,629 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:41:16,663 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:41:16,667 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:41:16,688 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:41:16,691 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:41:23,716 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:41:23] "[33mGET / HTTP/1.1[0m" 404 -
+2025-05-05 12:42:08,485 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:42:08,487 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:42:08,487 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:42:08,486 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:42:08,487 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:42:08,486 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:42:08,486 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:42:08,487 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:42:08,488 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:42:08,487 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:42:08,488 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:42:08,488 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:42:08,633 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:42:08,942 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:42:09,016 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:42:09,025 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:42:09,025 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:42:09,052 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:42:09,052 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:42:09,052 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:42:09,053 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:42:09,054 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:42:09,054 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:42:09,054 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:42:09,054 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:42:09,296 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:42:09,438 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:42:09,438 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:42:09,501 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:42:09,525 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:42:09,594 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:42:10,526 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:42:10,605 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:42:10,646 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:42:10,658 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:42:11,202 - root - INFO - Starting application with standalone runner
+2025-05-05 12:42:11,303 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:42:11,339 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:42:11,373 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:42:11,367 - root - INFO - Starting application with standalone runner
+2025-05-05 12:42:11,378 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:42:11,381 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:42:11,483 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:42:11,503 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:42:11,563 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:42:11,571 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:42:11,615 - root - INFO - Starting application with standalone runner
+2025-05-05 12:42:11,630 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:42:11,722 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:42:11,731 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:42:11,783 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:42:11,797 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:42:11,902 - root - INFO - Starting application with standalone runner
+2025-05-05 12:42:11,925 - root - INFO - Starting application with standalone runner
+2025-05-05 12:42:11,960 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:42:11,973 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:42:11,973 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:42:11,973 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:42:11,992 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:42:11,995 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:42:12,003 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:42:12,009 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:42:12,016 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:42:12,024 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:42:12,032 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:42:12,042 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:42:12,077 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:42:12,083 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:42:12,086 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:42:12,115 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:42:12,120 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:42:25,008 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:42:25] "[33mGET / HTTP/1.1[0m" 404 -
+2025-05-05 12:43:01,862 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:43:01] "[33mGET / HTTP/1.1[0m" 404 -
+2025-05-05 12:43:22,998 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\routes.py', reloading
+2025-05-05 12:43:22,998 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\routes.py', reloading
+2025-05-05 12:43:22,998 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\routes.py', reloading
+2025-05-05 12:43:22,998 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\routes.py', reloading
+2025-05-05 12:43:22,998 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\routes.py', reloading
+2025-05-05 12:43:22,998 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\routes.py', reloading
+2025-05-05 12:43:23,001 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\routes.py', reloading
+2025-05-05 12:43:23,001 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\routes.py', reloading
+2025-05-05 12:43:23,019 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app.py', reloading
+2025-05-05 12:43:23,019 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app.py', reloading
+2025-05-05 12:43:23,019 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app.py', reloading
+2025-05-05 12:43:23,019 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app.py', reloading
+2025-05-05 12:43:23,019 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app.py', reloading
+2025-05-05 12:43:23,019 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app.py', reloading
+2025-05-05 12:43:23,019 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app.py', reloading
+2025-05-05 12:43:23,224 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:43:23,273 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:43:23,324 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:43:23,324 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:43:23,699 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:43:23,907 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:43:23,984 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:43:23,986 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:43:23,986 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:43:24,002 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:43:24,220 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:43:24,874 - root - INFO - Starting application with standalone runner
+2025-05-05 12:43:24,919 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:43:25,051 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:43:25,088 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:43:25,159 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:43:25,165 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:43:25,180 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:43:25,197 - root - INFO - Starting application with standalone runner
+2025-05-05 12:43:25,207 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:43:25,257 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:43:25,295 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:43:25,290 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:43:25,301 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:43:25,301 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:43:25,339 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:43:25,345 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:43:25,839 - root - INFO - Starting application with standalone runner
+2025-05-05 12:43:25,903 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:43:25,906 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:43:25,934 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:43:25,940 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:43:26,030 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:43:26,030 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:43:26,076 - root - INFO - Starting application with standalone runner
+2025-05-05 12:43:26,090 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:43:26,122 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:43:26,126 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:43:26,142 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:43:26,148 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:43:26,151 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:43:26,181 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:43:26,187 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:43:26,213 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:43:26,240 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:43:26,246 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:43:26,324 - root - INFO - Starting application with standalone runner
+2025-05-05 12:43:26,374 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:43:26,374 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:43:26,396 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:43:26,402 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:44:01,117 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\run.py', reloading
+2025-05-05 12:44:01,117 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\run.py', reloading
+2025-05-05 12:44:01,117 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\run.py', reloading
+2025-05-05 12:44:01,124 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\run.py', reloading
+2025-05-05 12:44:01,117 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\run.py', reloading
+2025-05-05 12:44:01,124 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\run.py', reloading
+2025-05-05 12:44:01,124 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\run.py', reloading
+2025-05-05 12:44:01,126 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\run.py', reloading
+2025-05-05 12:44:01,124 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\run.py', reloading
+2025-05-05 12:44:01,124 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\run.py', reloading
+2025-05-05 12:44:01,126 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\run.py', reloading
+2025-05-05 12:44:01,124 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\run.py', reloading
+2025-05-05 12:44:01,126 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\run.py', reloading
+2025-05-05 12:44:01,126 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\run.py', reloading
+2025-05-05 12:44:01,126 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\run.py', reloading
+2025-05-05 12:44:01,126 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\run.py', reloading
+2025-05-05 12:44:01,273 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:44:01,273 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:44:01,274 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:44:01,570 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:44:01,644 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\google\\api_core\\exceptions.py', reloading
+2025-05-05 12:44:01,644 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\google\\api_core\\exceptions.py', reloading
+2025-05-05 12:44:01,644 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\google\\api_core\\exceptions.py', reloading
+2025-05-05 12:44:01,644 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\google\\api_core\\exceptions.py', reloading
+2025-05-05 12:44:01,644 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\google\\api_core\\exceptions.py', reloading
+2025-05-05 12:44:01,652 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask\\sansio\\app.py', reloading
+2025-05-05 12:44:01,652 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask\\sansio\\app.py', reloading
+2025-05-05 12:44:01,652 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask\\sansio\\app.py', reloading
+2025-05-05 12:44:01,652 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask\\sansio\\app.py', reloading
+2025-05-05 12:44:01,654 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask\\sansio\\app.py', reloading
+2025-05-05 12:44:01,658 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask\\sansio\\scaffold.py', reloading
+2025-05-05 12:44:01,658 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask\\sansio\\scaffold.py', reloading
+2025-05-05 12:44:01,658 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask\\sansio\\scaffold.py', reloading
+2025-05-05 12:44:01,661 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask\\sansio\\scaffold.py', reloading
+2025-05-05 12:44:01,661 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask\\sansio\\scaffold.py', reloading
+2025-05-05 12:44:01,821 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:44:02,296 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:44:02,442 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:44:02,444 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:44:02,444 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:44:02,575 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:44:02,655 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:44:03,624 - root - INFO - Starting application with standalone runner
+2025-05-05 12:44:03,811 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:44:03,839 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:44:03,920 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:44:03,927 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:44:03,941 - root - INFO - Starting application with standalone runner
+2025-05-05 12:44:03,993 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:44:04,111 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:44:04,124 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:44:04,211 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:44:04,244 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:44:04,435 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:44:05,181 - root - INFO - Starting application with standalone runner
+2025-05-05 12:44:05,279 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:44:05,299 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:44:05,357 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:44:05,365 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:44:05,385 - root - INFO - Starting application with standalone runner
+2025-05-05 12:44:05,425 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:44:05,474 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:44:05,483 - root - INFO - Found Firebase credentials at: C:\Users\user\Documents\program\SBA\ChineseBracketMaster\firebase-key.json
+2025-05-05 12:44:05,532 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:44:05,552 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:44:05,565 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:44:05,605 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:44:05,611 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:44:05,613 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:44:05,619 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:44:05,747 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:44:05,766 - root - INFO - Starting application with standalone runner
+2025-05-05 12:44:05,770 - root - INFO - File logging initialized. Logs will be saved to C:\Users\user\Documents\program\SBA\ChineseBracketMaster\logs\app.log
+2025-05-05 12:44:05,808 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:44:05,816 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:44:05,819 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:44:05,825 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:44:05,831 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:44:05,835 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:44:05,841 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:44:05,845 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:44:05,849 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:44:05,854 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:44:47,723 - root - INFO - Starting application with standalone runner
+2025-05-05 12:44:47,773 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:44:47,773 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:44:47,805 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.195:5000
+2025-05-05 12:44:47,806 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 12:44:47,814 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:44:48,656 - root - INFO - Starting application with standalone runner
+2025-05-05 12:44:48,706 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:44:48,706 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:44:48,723 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:44:48,723 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:44:50,043 - root - INFO - Accessing root route / (index)
+2025-05-05 12:44:50,105 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-05-05 12:44:50,173 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-05-05 12:44:50,338 - root - INFO - Found 9 tournaments
+2025-05-05 12:44:50,352 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:44:50] "GET / HTTP/1.1" 200 -
+2025-05-05 12:44:50,707 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:44:50] "GET /static/css/modal-fix.css HTTP/1.1" 200 -
+2025-05-05 12:44:50,725 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:44:50] "[36mGET /static/css/chess-theme.css HTTP/1.1[0m" 304 -
+2025-05-05 12:44:50,744 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:44:50] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+2025-05-05 12:44:50,755 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:44:50] "[36mGET /static/css/new-styles.css HTTP/1.1[0m" 304 -
+2025-05-05 12:44:50,765 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:44:50] "[36mGET /static/js/new-animations.js HTTP/1.1[0m" 304 -
+2025-05-05 12:44:50,767 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:44:50] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-05-05 12:45:06,809 - root - INFO - Accessing root route / (index)
+2025-05-05 12:45:06,893 - root - INFO - Found 9 tournaments
+2025-05-05 12:45:06,893 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:06] "GET / HTTP/1.1" 200 -
+2025-05-05 12:45:06,923 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:06] "[36mGET /static/css/new-styles.css HTTP/1.1[0m" 304 -
+2025-05-05 12:45:06,924 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:06] "[36mGET /static/css/chess-theme.css HTTP/1.1[0m" 304 -
+2025-05-05 12:45:06,930 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:06] "[36mGET /static/css/modal-fix.css HTTP/1.1[0m" 304 -
+2025-05-05 12:45:06,938 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:06] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+2025-05-05 12:45:06,941 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:06] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-05 12:45:06,941 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:06] "[36mGET /static/js/new-animations.js HTTP/1.1[0m" 304 -
+2025-05-05 12:45:14,574 - root - INFO - Starting application with standalone runner
+2025-05-05 12:45:14,622 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:45:14,622 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:45:14,656 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.195:5000
+2025-05-05 12:45:14,656 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-05 12:45:14,670 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:45:15,544 - root - INFO - Starting application with standalone runner
+2025-05-05 12:45:15,576 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:45:15,576 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:45:15,608 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:45:15,608 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:45:16,288 - root - INFO - Accessing root route / (index)
+2025-05-05 12:45:16,414 - root - INFO - Found 9 tournaments
+2025-05-05 12:45:16,415 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:16] "GET / HTTP/1.1" 200 -
+2025-05-05 12:45:16,435 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:16] "[36mGET /static/css/new-styles.css HTTP/1.1[0m" 304 -
+2025-05-05 12:45:16,436 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:16] "[36mGET /static/css/chess-theme.css HTTP/1.1[0m" 304 -
+2025-05-05 12:45:16,440 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:16] "[36mGET /static/css/modal-fix.css HTTP/1.1[0m" 304 -
+2025-05-05 12:45:16,442 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:16] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+2025-05-05 12:45:16,445 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:16] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-05 12:45:16,448 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:16] "[36mGET /static/js/new-animations.js HTTP/1.1[0m" 304 -
+2025-05-05 12:45:20,800 - root - WARNING - Tournament 9hNNO1JdhA4SZilJKmyH is completed but has no bracket
+2025-05-05 12:45:20,839 - root - ERROR - Error viewing tournament 9hNNO1JdhA4SZilJKmyH: Could not build url for endpoint 'export_bracket_pdf' with values ['tournament_id']. Did you mean 'delete_player' instead?
+2025-05-05 12:45:20,840 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:20] "[32mGET /tournament/9hNNO1JdhA4SZilJKmyH HTTP/1.1[0m" 302 -
+2025-05-05 12:45:20,846 - root - INFO - Accessing root route / (index)
+2025-05-05 12:45:20,863 - root - INFO - Found 9 tournaments
+2025-05-05 12:45:20,867 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:20] "GET / HTTP/1.1" 200 -
+2025-05-05 12:45:20,955 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:20] "[36mGET /static/css/new-styles.css HTTP/1.1[0m" 304 -
+2025-05-05 12:45:20,977 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:20] "[36mGET /static/css/chess-theme.css HTTP/1.1[0m" 304 -
+2025-05-05 12:45:21,008 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:21] "[36mGET /static/css/modal-fix.css HTTP/1.1[0m" 304 -
+2025-05-05 12:45:21,008 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:21] "[36mGET /static/js/theme.js HTTP/1.1[0m" 304 -
+2025-05-05 12:45:21,009 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:21] "[36mGET /static/js/new-animations.js HTTP/1.1[0m" 304 -
+2025-05-05 12:45:21,011 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:21] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-05 12:45:29,399 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\routing\\map.py', reloading
+2025-05-05 12:45:29,399 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug\\routing\\map.py', reloading
+2025-05-05 12:45:29,444 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:29] "[35m[1mGET /tournament/9hNNO1JdhA4SZilJKmyH/players HTTP/1.1[0m" 500 -
+2025-05-05 12:45:29,497 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:29] "GET /tournament/9hNNO1JdhA4SZilJKmyH/players?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-05-05 12:45:29,497 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:29] "GET /tournament/9hNNO1JdhA4SZilJKmyH/players?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-05-05 12:45:29,583 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:29] "GET /tournament/9hNNO1JdhA4SZilJKmyH/players?__debugger__=yes&cmd=resource&f=console.png&s=kyWBPECtBvmiH6Yqdl87 HTTP/1.1" 200 -
+2025-05-05 12:45:29,622 - werkzeug - INFO - 127.0.0.1 - - [05/May/2025 12:45:29] "GET /tournament/9hNNO1JdhA4SZilJKmyH/players?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-05-05 12:45:30,067 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:45:31,054 - root - INFO - Starting application with standalone runner
+2025-05-05 12:45:31,096 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:45:31,098 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:45:31,113 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:45:31,113 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:45:31,772 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:45:32,642 - root - INFO - Starting application with standalone runner
+2025-05-05 12:45:32,669 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:45:32,685 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:45:32,701 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:45:32,701 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:46:55,640 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\routes.py', reloading
+2025-05-05 12:46:55,640 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\routes.py', reloading
+2025-05-05 12:46:55,640 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\routes.py', reloading
+2025-05-05 12:46:55,647 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\routes.py', reloading
+2025-05-05 12:46:55,864 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:46:56,182 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:46:56,840 - root - INFO - Starting application with standalone runner
+2025-05-05 12:46:56,895 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:46:56,895 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:46:56,910 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:46:56,910 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:46:57,212 - root - INFO - Starting application with standalone runner
+2025-05-05 12:46:57,244 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:46:57,244 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:46:57,260 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:46:57,260 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:46:57,710 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app.py', reloading
+2025-05-05 12:46:57,710 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app.py', reloading
+2025-05-05 12:46:57,710 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app.py', reloading
+2025-05-05 12:46:57,710 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app.py', reloading
+2025-05-05 12:46:57,710 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app.py', reloading
+2025-05-05 12:46:57,710 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app.py', reloading
+2025-05-05 12:46:58,206 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:46:58,422 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:46:59,445 - root - INFO - Starting application with standalone runner
+2025-05-05 12:46:59,495 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:46:59,495 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:46:59,517 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:46:59,521 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:46:59,623 - root - INFO - Starting application with standalone runner
+2025-05-05 12:46:59,655 - root - INFO - Firebase Admin SDK initialized successfully with credentials.
+2025-05-05 12:46:59,655 - root - INFO - Successfully imported tournament module functions
+2025-05-05 12:46:59,671 - werkzeug - WARNING -  * Debugger is active!
+2025-05-05 12:46:59,687 - werkzeug - INFO -  * Debugger PIN: 630-898-995
+2025-05-05 12:47:01,265 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:47:01,267 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:47:01,267 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:47:01,267 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:47:01,269 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:47:01,269 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:47:01,285 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:47:01,288 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\app_runner.py', reloading
+2025-05-05 12:47:01,406 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\run.py', reloading
+2025-05-05 12:47:01,406 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\run.py', reloading
+2025-05-05 12:47:01,406 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\run.py', reloading
+2025-05-05 12:47:01,406 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\run.py', reloading
+2025-05-05 12:47:01,407 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\run.py', reloading
+2025-05-05 12:47:01,407 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\run.py', reloading
+2025-05-05 12:47:01,407 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\run.py', reloading
+2025-05-05 12:47:01,415 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\run.py', reloading
+2025-05-05 12:47:01,415 - werkzeug - INFO -  * Detected change in 'C:\\Users\\user\\Documents\\program\\SBA\\ChineseBracketMaster\\run.py', reloading
+2025-05-05 12:47:01,737 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-05 12:47:01,858 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
