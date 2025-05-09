@@ -6,6 +6,9 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 from flask import Flask
 
+import sys
+sys.modules['app'] = sys.modules[__name__]
+
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
 
@@ -85,3 +88,5 @@ else:
 # Create the Flask application
 app = Flask(__name__)
 app.secret_key = os.environ.get("SESSION_SECRET", "dev_secret_key")
+
+import routes
