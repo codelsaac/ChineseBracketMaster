@@ -21,81 +21,9 @@
 - 前端：HTML, CSS, JavaScript (使用Material Design風格)
 - 依賴庫：firebase-admin (Firebase SDK), confetti-js (慶祝特效), SortableJS (拖拽排序), WeasyPrint (PDF生成)
 
-## 本地部署指南
+## 安裝與使用
 
-### 先決條件
-
-- Python 3.9+
-- Firebase帳戶和專案
-- Node.js（用於管理前端依賴）
-
-### 安裝步驟
-
-1. **克隆代碼庫**
-
-   ```bash
-   git clone [儲存庫URL]
-   cd chinese-chess-tournament
-   ```
-
-2. **設置Python虛擬環境**
-
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # 在Windows上使用: venv\Scripts\activate
-   ```
-
-3. **安裝後端依賴**
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **安裝前端依賴**
-
-   ```bash
-   npm install
-   ```
-
-5. **設置Firebase**
-
-   從Firebase控制台下載服務帳戶金鑰，然後設置環境變量：
-
-   ```bash
-   # Linux/Mac
-   export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your-firebase-adminsdk-key.json"
-   export SESSION_SECRET="your_secret_key_here"
-   
-   # Windows
-   set GOOGLE_APPLICATION_CREDENTIALS=C:\path\to\your-firebase-adminsdk-key.json
-   set SESSION_SECRET=your_secret_key_here
-   ```
-
-6. **啟動應用程式**
-
-   ```bash
-   python main.py
-   ```
-
-### 運行應用程式
-
-```bash
-# 開發模式
-python main.py
-
-# 或在生產環境下使用Gunicorn
-gunicorn --bind 0.0.0.0:5000 main:app
-```
-
-應用程式將在 http://localhost:5000 上運行
-
-## 使用說明
-
-1. **創建賽事**：在首頁點擊「新增賽事」按鈕
-2. **管理選手**：在賽事頁面點擊「管理選手」，可以添加、編輯或刪除選手
-3. **生成賽程表**：當選手數量達到至少2人時，點擊「生成賽程表」按鈕
-4. **記錄比賽結果**：在賽程表上點擊獲勝選手姓名來記錄比賽結果
-5. **導出賽程表**：使用「導出」按鈕將賽程表導出為PDF
+詳細的本地部署指南、運行說明和使用方法，請參閱 <mcfile name="INSTALL.md" path="c:\Users\user\Documents\program\SBA\ChineseBracketMaster\INSTALL.md"></mcfile> 文件。
 
 ## 賽程生成規則
 
@@ -112,6 +40,52 @@ gunicorn --bind 0.0.0.0:5000 main:app
 - **/tournaments/{tournament_id}**：存儲賽事信息
 - **/players/{player_id}**：存儲選手信息
 - **/matches/{match_id}**：存儲比賽信息
+
+## 項目背景 (原始需求)
+
+**Prompt: Inter-School Chinese Chess Competition System**
+
+**Objective:**
+Develop a program to generate the final competition schedule (賽程表) for an inter-school Chinese chess competition using a knockout system.
+
+**Main Target:**
+The program should produce a competition chart, ensuring:
+Separation of players from the same school, where possible.
+Separation of seed players, where possible.
+Balanced distribution of 'byes' in the first round only.
+
+**Key Tasks:**
+
+1.  **Input and Data Collection:**
+    *   Collect player information: names, school, and seeding status.
+    *   Gather competition rules and constraints.
+2.  **Data Structure and Storage:**
+    *   Select appropriate data structures to store player information.
+    *   Store competition rules and constraints.
+3.  **Algorithm Design:**
+    *   Design algorithms to generate the competition chart.
+    *   Ensure algorithms separate players from the same school and seed players.
+    *   Implement logic to handle 'byes' for non-power of 2 participants.
+4.  **Program Implementation:**
+    *   Develop a modular program to produce the competition chart.
+    *   Implement error handling and validation for data inputs.
+    *   Ensure the program interface is user-friendly.
+5.  **Output and Presentation:**
+    *   Design the layout of the competition chart.
+    *   Generate the competition chart based on input data and constraints.
+    *   Ensure the output format is clear and easily readable.
+6.  **Testing and Evaluation:**
+    *   Create test cases to validate the program's functionality.
+    *   Conduct unit tests, system tests, and user acceptance tests.
+    *   Collect feedback and record test results.
+    *   Make necessary improvements based on testing outcomes.
+
+**Deliverables:**
+
+*   Program code
+*   Prototype presentation and documentation
+*   Test plan and test results
+*   Evaluation report with suggested improvements
 
 ## 貢獻指南
 

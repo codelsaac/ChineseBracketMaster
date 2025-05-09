@@ -1,0 +1,12 @@
+flask>=3.1.0
+flask-babel
+flask-login>=0.6.3
+flask-wtf>=1.2.2
+email-validator>=2.2.0
+firebase-admin>=6.5.0
+python-dotenv
+werkzeug
+gunicorn>=23.0.0
+weasyprint>=65.1
+html2image>=2.0.5
+google-cloud-firestore

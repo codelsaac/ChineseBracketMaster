@@ -195,7 +195,8 @@ function editPlayer(playerId) {
     // Fill the edit form with player data
     const editForm = document.getElementById('edit-player-form');
     if (editForm) {
-        editForm.action = editForm.action.replace('/0', `/${playerId}`);
+        // Fix the URL replacement pattern
+        editForm.action = editForm.action.replace('/player/0', `/player/${playerId}`);
         editForm.querySelector('#edit-name').value = playerData.name;
         editForm.querySelector('#edit-school').value = playerData.school;
         editForm.querySelector('#edit-seeded').checked = playerData.isSeeded;
@@ -215,7 +216,8 @@ function confirmDeletePlayer(playerId, playerName) {
     const deleteForm = document.getElementById('delete-player-form');
     if (!deleteForm) return;
     
-    deleteForm.action = deleteForm.action.replace('/0', `/${playerId}`);
+    // Fix the URL replacement pattern
+    deleteForm.action = deleteForm.action.replace('/player/0', `/player/${playerId}`);
     
     // Set player name in confirmation message
     const confirmMessage = document.getElementById('delete-confirm-message');

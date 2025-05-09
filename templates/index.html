@@ -111,7 +111,7 @@
                                     <a href="{{ url_for('view_tournament', tournament_id=tournament.id) }}" class="btn btn-sm btn-outline">
                                         <i class="fas fa-trophy"></i> 賽程表
                                     </a>
-                                    <button onclick="confirmDeleteTournament({{ tournament.id }}, '{{ tournament.name }}')" class="btn btn-sm btn-danger">
+                                    <button onclick="confirmDeleteTournament('{{ tournament.id }}', '{{ tournament.name }}')" class="btn btn-sm btn-danger">
                                         <i class="fas fa-trash"></i> 刪除
                                     </button>
                                 </td>
@@ -152,12 +152,15 @@
 
 <script>
     function confirmDeleteTournament(tournamentId, tournamentName) {
+        console.log(`Confirming delete for tournament ID: ${tournamentId}, Name: ${tournamentName}`); // Add console log
         // 更新確認訊息
         document.getElementById('delete-tournament-confirm-message').textContent = `您確定要刪除比賽 "${tournamentName}" 嗎？`;
         
         // 更新表單操作
         const form = document.getElementById('delete-tournament-form');
-        form.action = form.action.replace('/0', `/${tournamentId}`);
+        console.log('Form action before replace:', form.action); // Add console log
+        form.action = form.action.replace('/0/delete', `/${tournamentId}/delete`); // Correct the replacement pattern
+        console.log('Form action after replace:', form.action); // Add console log
         
         // 顯示模態單
         const modal = new bootstrap.Modal(document.getElementById('deleteTournamentModal'));

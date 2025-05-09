@@ -621,3 +621,56 @@ def update_player_order(tournament_id):
 
 # Add any other routes from the original file if they were missed
 # Ensure all <int:id> are changed to <string:id> where appropriate
+
+@app.route('/tournament/<string:tournament_id>/delete', methods=['POST'])
+def delete_tournament(tournament_id):
+    app.logger.info(f'Received request to delete tournament with ID: {tournament_id}') # Add app logger
+    """Delete a tournament and all its related data."""
+    if not db_firestore:
+        flash("Database connection not available.", "error")
+        return redirect(url_for('index'))
+
+    tournament_ref = db_firestore.collection('tournaments').document(tournament_id)
+    tournament_doc = _get_doc_or_404(tournament_ref)
+    tournament_data = _doc_to_dict(tournament_doc)
+    logging.info(f"Attempting to delete tournament: {tournament_id} - {tournament_data.get('name')}")
+
+    try:
+        # 使用批處理刪除所有相關數據
+        batch = db_firestore.batch()
+        logging.debug(f"Starting batch delete for tournament {tournament_id}")
+
+        # 1. 刪除所有相關的比賽
+        matches_query = db_firestore.collection('matches').where('tournament_id', '==', tournament_id)
+        matches_docs = list(matches_query.stream())
+        logging.info(f"Found {len(matches_docs)} matches to delete for tournament {tournament_id}")
+        for doc in matches_docs:
+            logging.debug(f"Adding match {doc.id} to delete batch")
+            batch.delete(doc.reference)
+        
+        # 2. 刪除所有相關的選手
+        players_query = db_firestore.collection('players').where('tournament_id', '==', tournament_id)
+        players_docs = list(players_query.stream())
+        logging.info(f"Found {len(players_docs)} players to delete for tournament {tournament_id}")
+        for doc in players_docs:
+            logging.debug(f"Adding player {doc.id} to delete batch")
+            batch.delete(doc.reference)
+        
+        # 3. 最後刪除比賽本身
+        batch.delete(tournament_ref)
+        
+        # 3. 最後刪除比賽本身
+        logging.debug(f"Adding tournament {tournament_id} itself to delete batch")
+        batch.delete(tournament_ref)
+
+        # 提交批處理操作
+        logging.info(f"Committing batch delete for tournament {tournament_id}")
+        batch.commit()
+        logging.info(f"Batch delete committed successfully for tournament {tournament_id}")
+        
+        flash(f'比賽 "{tournament_data.get("name")}" 已成功刪除', 'success')
+    except Exception as e:
+        logging.error(f"Error deleting tournament {tournament_id}: {e}")
+        flash(f'刪除比賽時發生錯誤: {str(e)}', 'error')
+    
+    return redirect(url_for('index'))

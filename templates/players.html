@@ -114,10 +114,10 @@
                                     {% endif %}
                                 </td>
                                 <td>
-                                    <button onclick="editPlayer({{ player.id }})" class="btn btn-sm btn-outline">
+                                    <button onclick="editPlayer('{{ player.id }}')" class="btn btn-sm btn-outline">
                                         <i class="fas fa-edit"></i> 編輯
                                     </button>
-                                    <button onclick="confirmDeletePlayer({{ player.id }}, '{{ player.name }}')" class="btn btn-sm btn-danger">
+                                    <button onclick="confirmDeletePlayer('{{ player.id }}', '{{ player.name }}')" class="btn btn-sm btn-danger">
                                         <i class="fas fa-trash"></i> 刪除
                                     </button>
                                 </td>
@@ -151,7 +151,7 @@
     <!-- Edit Player Modal -->
     <div class="modal fade" id="editPlayerModal" tabindex="-1" aria-labelledby="editPlayerModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content glass-effect">
+            <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="editPlayerModalLabel">編輯選手</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -191,7 +191,7 @@
     <!-- Delete Player Modal -->
     <div class="modal" id="deletePlayerModal" tabindex="-1" aria-labelledby="deletePlayerModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content glass-effect">
+            <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="deletePlayerModalLabel">確認刪除</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -205,9 +205,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline" data-bs-dismiss="modal">取消</button>
-                    <form id="delete-player-form" action="{{ url_for('delete_player', tournament_id=tournament.id, player_id=0) }}" method="POST">
-                        <button type="submit" class="btn btn-danger">刪除</button>
-                    </form>
+                    <button type="button" id="confirm-delete-btn" class="btn btn-danger">刪除</button>
+                    <form id="delete-player-form" action="{{ url_for('delete_player', tournament_id=tournament.id, player_id=0) }}" method="POST" style="display: none;"></form> 
                 </div>
             </div>
         </div>

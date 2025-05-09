@@ -539,7 +539,7 @@ body.dark-mode .footer-wave-container .shape-fill {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 9999;
+    z-index: 1030; /* Lowered z-index below Bootstrap modal */
     pointer-events: none;
     display: none;
 }
@@ -635,6 +635,39 @@ body.dark-mode .chess-grid-lines {
 body.dark-mode .close {
     color: var(--text-dark-mode);
 }
+
+/* Ensure modal content and footer are interactive */
+.modal-content, .modal-footer {
+    pointer-events: auto;
+}
+
+/* Ensure modal backdrop is behind and non-interactive */
+.modal-backdrop {
+    z-index: 1040; /* Default Bootstrap backdrop z-index */
+    pointer-events: none;
+    /* opacity: 0; Reverted this change */
+}
+
+/* Prevent body style changes when modal is open */
+body.modal-open {
+    overflow: auto !important; /* Ensure scrollbar doesn't disappear */
+    padding-right: 0 !important; /* Prevent padding adjustment */
+    background-color: inherit !important; /* Ensure background doesn't change */
+}
+
+/* Ensure modal is on top */
+.modal {
+    z-index: 1050; /* Default Bootstrap modal z-index */
+    /* pointer-events: auto !important; Removed this rule */
+}
+
+.modal-content {
+    z-index: 1051; /* Ensure content is above modal base */
+}
+
+
+
+
 
 /* 對小屏幕設備的響應式調整 */
 @media (max-width: 768px) {
