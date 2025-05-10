@@ -36,7 +36,7 @@ if cred_json:
         # 測試連接
         try:
             collection_ref = db_firestore.collection('test_connection')
-            logger.info(f"資料庫連接測試: 存取集合參考成功 - {collection_ref.path}")
+            logger.info(f"資料庫連接測試: 存取集合參考成功 - {collection_ref.id}")
         except Exception as e:
             logger.error(f"資料庫連接測試失敗: {e}")
             logger.error(traceback.format_exc())
