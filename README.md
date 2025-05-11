@@ -87,12 +87,3 @@ Balanced distribution of 'byes' in the first round only.
 *   Test plan and test results
 *   Evaluation report with suggested improvements
 
-## 貢獻指南
-
-如果您希望貢獻代碼，請按以下步驟操作：
-
-1. Fork此儲存庫
-2. 創建功能分支 (`git checkout -b feature/amazing-feature`)
-3. 提交更改 (`git commit -m 'Add some amazing feature'`)
-4. 推送到分支 (`git push origin feature/amazing-feature`)
-5. 打開Pull Request
