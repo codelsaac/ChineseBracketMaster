@@ -4,9 +4,76 @@ import logging
 import firebase_admin
 from firebase_admin import credentials, firestore
 from flask import Flask
+import sys
+from logging.handlers import RotatingFileHandler
 
-# Configure logging
-logging.basicConfig(level=logging.DEBUG)
+# 建立日誌目錄（如果不存在）
+logs_dir = os.path.join(os.path.dirname(__file__), 'logs')
+if not os.path.exists(logs_dir):
+    os.makedirs(logs_dir)
+
+# 配置根記錄器
+root_logger = logging.getLogger()
+root_logger.setLevel(logging.DEBUG)  # 全局級別設為 DEBUG
+
+# 控制台處理器 - 處理 Windows 控制台編碼問題
+try:
+    console_handler = logging.StreamHandler(sys.stdout)
+    console_handler.setLevel(logging.INFO)
+    console_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+    console_handler.setFormatter(console_formatter)
+    root_logger.addHandler(console_handler)
+except UnicodeError:
+    # 如果有編碼問題，使用僅限 ASCII 的格式
+    console_handler = logging.StreamHandler(sys.stdout)
+    console_handler.setLevel(logging.INFO)
+    console_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+    console_handler.setFormatter(console_formatter)
+    
+    class AsciiStreamHandler(logging.StreamHandler):
+        def emit(self, record):
+            try:
+                msg = self.format(record)
+                # 轉換為 ASCII，替換無法表示的字符
+                msg = msg.encode('ascii', 'replace').decode('ascii')
+                stream = self.stream
+                stream.write(msg + self.terminator)
+                self.flush()
+            except Exception:
+                self.handleError(record)
+    
+    ascii_handler = AsciiStreamHandler(sys.stdout)
+    ascii_handler.setLevel(logging.INFO)
+    ascii_handler.setFormatter(console_formatter)
+    root_logger.addHandler(ascii_handler)
+
+# 文件處理器 - 一般日誌
+file_handler = RotatingFileHandler(
+    os.path.join(logs_dir, 'app.log'), 
+    maxBytes=5*1024*1024,  # 5MB
+    backupCount=10,
+    encoding='utf-8'  # 明確指定UTF-8編碼
+)
+file_handler.setLevel(logging.DEBUG)
+file_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+file_handler.setFormatter(file_formatter)
+
+# 文件處理器 - 錯誤日誌
+error_handler = RotatingFileHandler(
+    os.path.join(logs_dir, 'error.log'), 
+    maxBytes=5*1024*1024,  # 5MB
+    backupCount=10,
+    encoding='utf-8'  # 明確指定UTF-8編碼
+)
+error_handler.setLevel(logging.ERROR)
+error_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s\n%(pathname)s:%(lineno)d\n%(message)s\n')
+error_handler.setFormatter(error_formatter)
+
+# 添加處理器到根記錄器
+root_logger.addHandler(file_handler)
+root_logger.addHandler(error_handler)
+
+logging.info("Application started - log system configured")
 
 # --- Firebase Initialization ---
 # 嘗試多種方式初始化Firebase

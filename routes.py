@@ -166,58 +166,96 @@ def add_player(tournament_id):
 @app.route('/tournament/<string:tournament_id>/edit_player/<string:player_id>', methods=['POST'])
 def edit_player(tournament_id, player_id):
     """Edit a player's details"""
+    logging.info(f"Attempting to edit player {player_id} from tournament {tournament_id}")
+    
     if not db_firestore:
+        logging.error("Database connection not available")
         flash("Database connection not available.", "error")
         return redirect(url_for('players', tournament_id=tournament_id))
 
-    player_ref = db_firestore.collection('players').document(player_id)
-    player_doc = _get_doc_or_404(player_ref)
-    player_data = _doc_to_dict(player_doc)
-
-    # Ensure player belongs to the specified tournament
-    if player_data.get('tournament_id') != tournament_id:
-        flash('Player does not belong to this tournament', 'error')
-        return redirect(url_for('players', tournament_id=tournament_id))
-
     try:
-        new_name = request.form.get('name')
-        new_school = request.form.get('school')
-        new_is_seeded = request.form.get('is_seeded') == 'on'
+        player_ref = db_firestore.collection('players').document(player_id)
+        player_doc = player_ref.get()
+        
+        if not player_doc.exists:
+            logging.error(f"Player {player_id} not found")
+            flash('Player not found', 'error')
+            return redirect(url_for('players', tournament_id=tournament_id))
+            
+        player_data = player_doc.to_dict()
+        player_data['id'] = player_doc.id
+
+        # Ensure player belongs to the specified tournament
+        if player_data.get('tournament_id') != tournament_id:
+            logging.error(f"Player {player_id} does not belong to tournament {tournament_id}")
+            flash('Player does not belong to this tournament', 'error')
+            return redirect(url_for('players', tournament_id=tournament_id))
+
+        # Log form data for debugging
+        logging.debug(f"Form data: {request.form}")
+        
+        new_name = request.form.get('name', '').strip()
+        new_school = request.form.get('school', '').strip()
+        # Handle checkbox field properly
+        new_is_seeded = 'is_seeded' in request.form
+        
+        logging.info(f"Edit player data: name={new_name}, school={new_school}, seeded={new_is_seeded}")
         
         if not new_name or not new_school:
-             flash('Player name and school cannot be empty.', 'error')
-             return redirect(url_for('players', tournament_id=tournament_id))
+            logging.warning("Player name or school is empty")
+            flash('Player name and school cannot be empty.', 'error')
+            return redirect(url_for('players', tournament_id=tournament_id))
+
+        # Check if data is unchanged, skip update if same
+        if (player_data.get('name') == new_name and 
+            player_data.get('school') == new_school and 
+            player_data.get('is_seeded') == new_is_seeded):
+            logging.info("Player data unchanged, skipping update")
+            flash('No changes detected', 'info')
+            return redirect(url_for('players', tournament_id=tournament_id))
 
         # Check for duplicates, excluding the current player
-        players_ref = db_firestore.collection('players')
-        existing_player_query = players_ref.where('tournament_id', '==', tournament_id) \
-                                         .where('name', '==', new_name) \
-                                         .where('school', '==', new_school)
+        try:
+            players_ref = db_firestore.collection('players')
+            existing_player_query = players_ref.where('tournament_id', '==', tournament_id) \
+                                            .where('name', '==', new_name) \
+                                            .where('school', '==', new_school)
 
-        existing_docs = list(existing_player_query.stream())
+            existing_docs = list(existing_player_query.stream())
 
-        # Filter out the current player from the results
-        duplicate_exists = False
-        for doc in existing_docs:
-            if doc.id != player_id:
-                duplicate_exists = True
-                break
+            # Filter out the current player from the results
+            duplicate_exists = False
+            for doc in existing_docs:
+                if doc.id != player_id:
+                    duplicate_exists = True
+                    break
 
-        if duplicate_exists:
-            flash(f'Another player named "{new_name}" from "{new_school}" already exists in this tournament', 'error')
+            if duplicate_exists:
+                logging.warning(f"Duplicate player found: name={new_name}, school={new_school}")
+                flash(f'Another player named "{new_name}" from "{new_school}" already exists in this tournament', 'error')
+                return redirect(url_for('players', tournament_id=tournament_id))
+        except Exception as query_error:
+            logging.error(f"Error checking for duplicate players: {query_error}")
+            flash('Error checking for duplicate players', 'error')
             return redirect(url_for('players', tournament_id=tournament_id))
 
         # Update player data
-        update_data = {
-            'name': new_name,
-            'school': new_school,
-            'is_seeded': new_is_seeded
-        }
-        player_ref.update(update_data)
-
-        flash('Player updated successfully', 'success')
+        try:
+            update_data = {
+                'name': new_name,
+                'school': new_school,
+                'is_seeded': new_is_seeded
+            }
+            player_ref.update(update_data)
+            logging.info(f"Player {player_id} updated successfully")
+            flash('Player updated successfully', 'success')
+        except Exception as update_error:
+            logging.error(f"Error updating player data: {update_error}")
+            flash(f'Error updating player data: {str(update_error)}', 'error')
+            return redirect(url_for('players', tournament_id=tournament_id))
+            
     except Exception as e:
-        logging.error(f"Error updating player {player_id}: {e}")
+        logging.exception(f"Unexpected error editing player {player_id}: {e}")
         flash(f'Error updating player: {str(e)}', 'error')
 
     return redirect(url_for('players', tournament_id=tournament_id))

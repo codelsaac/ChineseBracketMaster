@@ -1,0 +1,328 @@
+/* 基本樣式 */
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 標題和文字樣式 */
+.chess-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.float {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.lead {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* 卡片樣式 */
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 1.5rem;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.glass-effect {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.chess-board-bg {
+    background-image: linear-gradient(45deg, rgba(240, 173, 78, 0.1), rgba(217, 83, 79, 0.1));
+}
+
+.match-card-chinese {
+    background-image: linear-gradient(45deg, rgba(92, 184, 92, 0.1), rgba(2, 117, 216, 0.1));
+}
+
+/* 按鈕樣式 */
+.btn {
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: #d9534f;
+    border-color: #d9534f;
+}
+
+.btn-primary:hover {
+    background-color: #c9302c;
+    border-color: #c9302c;
+}
+
+.btn-outline {
+    color: #d9534f;
+    border-color: #d9534f;
+    background-color: transparent;
+}
+
+.btn-outline:hover {
+    color: #fff;
+    background-color: #d9534f;
+}
+
+/* 中國象棋棋子卡片 */
+.chess-piece-card {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: default;
+}
+
+.chess-piece-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.chess-piece-red {
+    background-color: #d9534f;
+    border: 2px solid #c9302c;
+}
+
+.chess-piece-black {
+    background-color: #292b2c;
+    border: 2px solid #1a1a1a;
+}
+
+/* 比賽規則列表樣式 */
+.tournament-rules li {
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+}
+
+.tournament-rules i {
+    margin-right: 0.5rem;
+}
+
+/* 導航欄滾動效果 */
+.navbar {
+    transition: all 0.3s ease;
+}
+
+.navbar-scrolled {
+    background-color: rgba(33, 37, 41, 0.95) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 表格增強響應式 */
+@media (max-width: 767px) {
+    table {
+        border: 0;
+    }
+    
+    table thead {
+        display: none;
+    }
+    
+    table tr {
+        margin-bottom: 1rem;
+        display: block;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    table td {
+        display: block;
+        text-align: right;
+        border-bottom: 1px solid #eee;
+        padding: 0.75rem;
+    }
+    
+    table td:last-child {
+        border-bottom: 0;
+    }
+    
+    table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        color: #6c757d;
+    }
+    
+    /* 操作按鈕列居中 */
+    table td:last-child {
+        text-align: center;
+    }
+}
+
+/* 移動設備樣式優化 */
+.mobile-view .chess-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.mobile-view .lead {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.mobile-view .card-body {
+    padding: 1rem;
+}
+
+.mobile-view .chess-piece-card {
+    width: 60px;
+    height: 60px;
+    font-size: 2.2rem;
+    margin: 0.25rem;
+}
+
+.mobile-view .table {
+    font-size: 0.9rem;
+}
+
+.mobile-view .btn-sm {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.85rem;
+}
+
+.mobile-view .form-control {
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+.mobile-view .d-flex.flex-wrap.gap-1 {
+    justify-content: flex-start;
+}
+
+/* 響應式設計調整 - 直向設備優化 */
+@media (max-width: 767px) {
+    .chess-title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .lead {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .chess-piece-card {
+        width: 60px;
+        height: 60px;
+        font-size: 2.2rem;
+        margin: 0.25rem;
+    }
+    
+    /* 確保表格內容在手機上可讀 */
+    .table {
+        font-size: 0.9rem;
+    }
+    
+    /* 讓按鈕更適合觸控 */
+    .btn-sm {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.85rem;
+    }
+    
+    /* 調整表單元素大小 */
+    .form-control {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+    
+    /* 改善操作欄佈局 */
+    .d-flex.flex-wrap.gap-1 {
+        justify-content: flex-start;
+    }
+    
+    /* 增加點擊區域 */
+    .btn, a {
+        padding: 0.5rem 0.8rem;
+        touch-action: manipulation;
+    }
+    
+    /* 表單標籤更明顯 */
+    .form-label {
+        font-size: 1rem;
+        font-weight: 500;
+    }
+}
+
+/* 超小屏幕設備進一步優化 */
+@media (max-width: 480px) {
+    .chess-piece-card {
+        width: 50px;
+        height: 50px;
+        font-size: 1.8rem;
+    }
+    
+    .card {
+        margin-bottom: 1rem;
+    }
+    
+    /* 調整表格顯示 */
+    .table th, .table td {
+        padding: 0.5rem 0.3rem;
+    }
+    
+    /* 確保模態單在小屏幕上更好顯示 */
+    .modal-dialog {
+        margin: 0.5rem;
+    }
+    
+    .modal-content {
+        border-radius: 8px;
+    }
+    
+    /* 調整按鈕大小 */
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* 棋子卡片容器優化 */
+.chess-pieces-container {
+    padding: 0.5rem;
+    margin: 0 auto;
+} 

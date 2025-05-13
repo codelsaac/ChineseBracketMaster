@@ -7,8 +7,9 @@
     <h1 class="chess-title float">中國象棋校際賽管理系統</h1>
     <p class="lead">輕鬆創建和管理中國象棋比賽，自動生成比賽括號表。</p>
     
+    <!-- 修改行佈局以在手機上堆疊 -->
     <div class="row mt-4">
-        <div class="col-md-6">
+        <div class="col-lg-6 col-md-12 mb-4">
             <div class="card chess-board-bg glass-effect">
                 <div class="card-body">
                     <h2>創建新比賽</h2>
@@ -27,7 +28,7 @@
                                 請選擇日期。
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-primary w-100">
                             <i class="fas fa-plus-circle"></i> 創建比賽
                         </button>
                     </form>
@@ -35,7 +36,7 @@
             </div>
         </div>
         
-        <div class="col-md-6">
+        <div class="col-lg-6 col-md-12 mb-4">
             <div class="card match-card-chinese glass-effect">
                 <div class="card-body">
                     <h2>比賽規則</h2>
@@ -62,21 +63,21 @@
         </div>
     </div>
     
-    <!-- 添加中國象棋物品卡片 -->
-    <div class="row mt-4 mb-5">
-        <div class="col-md-12 text-center">
-            <div class="d-flex justify-content-center flex-wrap gap-3">
-                <div class="chess-piece-card chess-piece-red">谅</div>
+    <!-- 調整中國象棋物品卡片佈局 -->
+    <div class="row my-4">
+        <div class="col-12 text-center">
+            <div class="d-flex justify-content-center flex-wrap gap-2 chess-pieces-container">
+                <div class="chess-piece-card chess-piece-red">傌</div>
                 <div class="chess-piece-card chess-piece-red">相</div>
-                <div class="chess-piece-card chess-piece-red">車</div>
+                <div class="chess-piece-card chess-piece-red">俥</div>
                 <div class="chess-piece-card chess-piece-black">將</div>
                 <div class="chess-piece-card chess-piece-black">士</div>
-                <div class="chess-piece-card chess-piece-black">谹</div>
+                <div class="chess-piece-card chess-piece-black">象</div>
             </div>
         </div>
     </div>
     
-    <div class="section mt-5 bg-white p-4 rounded shadow">
+    <div class="section mt-4 bg-white p-3 p-md-4 rounded shadow">
         <h2 class="text-dark">現有比賽</h2>
         
         {% if tournaments %}
@@ -105,15 +106,17 @@
                                     {% endif %}
                                 </td>
                                 <td>
-                                    <a href="{{ url_for('players', tournament_id=tournament.id) }}" class="btn btn-sm btn-outline">
-                                        <i class="fas fa-users"></i> 選手
-                                    </a>
-                                    <a href="{{ url_for('view_tournament', tournament_id=tournament.id) }}" class="btn btn-sm btn-outline">
-                                        <i class="fas fa-trophy"></i> 賽程表
-                                    </a>
-                                    <button onclick="confirmDeleteTournament('{{ tournament.id }}', '{{ tournament.name }}')" class="btn btn-sm btn-danger">
-                                        <i class="fas fa-trash"></i> 刪除
-                                    </button>
+                                    <div class="d-flex flex-wrap gap-1">
+                                        <a href="{{ url_for('players', tournament_id=tournament.id) }}" class="btn btn-sm btn-outline mb-1">
+                                            <i class="fas fa-users"></i> 選手
+                                        </a>
+                                        <a href="{{ url_for('view_tournament', tournament_id=tournament.id) }}" class="btn btn-sm btn-outline mb-1">
+                                            <i class="fas fa-trophy"></i> 賽程表
+                                        </a>
+                                        <button onclick="confirmDeleteTournament('{{ tournament.id }}', '{{ tournament.name }}')" class="btn btn-sm btn-danger mb-1">
+                                            <i class="fas fa-trash"></i> 刪除
+                                        </button>
+                                    </div>
                                 </td>
                             </tr>
                         {% endfor %}

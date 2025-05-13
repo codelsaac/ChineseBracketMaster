@@ -25,6 +25,31 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize alerts auto-dismiss
     initAlertsDismiss();
+
+    // 導航欄滾動效果
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+    }
+
+    // 表格響應式增強處理
+    const tables = document.querySelectorAll('table');
+    if (window.innerWidth < 768) {
+        tables.forEach(table => {
+            makeTableResponsive(table);
+        });
+    }
+
+    // 測試移動設備
+    if (isMobileDevice()) {
+        document.body.classList.add('mobile-device');
+    }
 });
 
 /**
@@ -310,6 +335,50 @@ function celebrateWinner() {
         console.log('Confetti celebration ended');
     }, 5000);
 }
+
+// 檢測是否為移動設備
+function isMobileDevice() {
+    return (window.innerWidth <= 768) || 
+           (navigator.maxTouchPoints > 0) || 
+           (navigator.msMaxTouchPoints > 0);
+}
+
+// 增強表格的響應式處理
+function makeTableResponsive(table) {
+    const headerCells = table.querySelectorAll('thead th');
+    const headerTexts = Array.from(headerCells).map(cell => cell.textContent.trim());
+    
+    const rows = table.querySelectorAll('tbody tr');
+    rows.forEach(row => {
+        const cells = row.querySelectorAll('td');
+        cells.forEach((cell, index) => {
+            if (headerTexts[index]) {
+                cell.setAttribute('data-label', headerTexts[index]);
+            }
+        });
+    });
+}
+
+// 增強棋子卡片動畫效果
+const chessPieces = document.querySelectorAll('.chess-piece-card');
+chessPieces.forEach(piece => {
+    piece.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.1) rotate(5deg)';
+    });
+    
+    piece.addEventListener('mouseleave', function() {
+        this.style.transform = '';
+    });
+});
+
+// 監聽視窗大小變化，調整UI元素
+window.addEventListener('resize', function() {
+    if (window.innerWidth <= 768) {
+        document.body.classList.add('mobile-view');
+    } else {
+        document.body.classList.remove('mobile-view');
+    }
+});
 
 
 
